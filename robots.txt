@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Permitir acceso a todos los archivos estáticos
+Allow: /assets/
+Allow: /categorias/
+Allow: /articulos/
+
+# Sitemap
+Sitemap: https://tudominio.com/sitemap.xml
+
+# Tiempo de espera entre requests (opcional)
+Crawl-delay: 1

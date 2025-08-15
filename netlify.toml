@@ -1,0 +1,70 @@
+[build]
+  publish = "."
+  command = ""
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[redirects]]
+  from = "/categorias"
+  to = "/categorias/"
+  status = 301
+
+[[redirects]]
+  from = "/articulos"
+  to = "/articulos/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/bolsos-de-mano"
+  to = "/categorias/bolsos-de-mano/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/mochilas"
+  to = "/categorias/mochilas/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/carteras"
+  to = "/categorias/carteras/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/tote-bags"
+  to = "/categorias/tote-bags/"
+  status = 301
+
+[[redirects]]
+  from = "/articulos"
+  to = "/articulos/"
+  status = 301
