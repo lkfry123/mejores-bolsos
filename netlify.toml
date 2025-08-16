@@ -40,11 +40,6 @@
   status = 301
 
 [[redirects]]
-  from = "/articulos"
-  to = "/articulos/"
-  status = 301
-
-[[redirects]]
   from = "/categorias/bolsos-de-mano"
   to = "/categorias/bolsos-de-mano/"
   status = 301
@@ -62,9 +57,4 @@
 [[redirects]]
   from = "/categorias/tote-bags"
   to = "/categorias/tote-bags/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos"
-  to = "/articulos/"
   status = 301
