@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar todas las funcionalidades
     initMobileMenu();
     initSearchFunctionality();
+    initCategoryFiltering();
     initSmoothScroll();
     initExternalLinks();
     initScrollEffects();
@@ -44,44 +45,439 @@ function initMobileMenu() {
 function initSearchFunctionality() {
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.querySelector('.search-btn');
-    const articleCards = document.querySelectorAll('.article-card');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const searchSuggestions = document.getElementById('searchSuggestions');
     
     if (searchInput && searchBtn) {
-        // Búsqueda al escribir
+        // Búsqueda al escribir (con debounce)
+        let searchTimeout;
         searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase().trim();
-            filterArticles(searchTerm, articleCards);
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase().trim();
+                if (searchTerm.length >= 1) {
+                    showSearchSuggestions(searchTerm);
+                } else {
+                    hideSearchSuggestions();
+                }
+                if (searchTerm.length >= 2) {
+                    performSearch(searchTerm);
+                } else if (searchTerm.length === 0) {
+                    clearSearch();
+                }
+            }, 200);
         });
         
         // Búsqueda al hacer clic en el botón
         searchBtn.addEventListener('click', function() {
             const searchTerm = searchInput.value.toLowerCase().trim();
-            filterArticles(searchTerm, articleCards);
+            if (searchTerm.length >= 2) {
+                performSearch(searchTerm);
+                hideSearchSuggestions();
+            }
         });
         
         // Búsqueda al presionar Enter
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 const searchTerm = this.value.toLowerCase().trim();
-                filterArticles(searchTerm, articleCards);
+                if (searchTerm.length >= 2) {
+                    performSearch(searchTerm);
+                    hideSearchSuggestions();
+                }
             }
+        });
+        
+        // Ocultar sugerencias al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+                hideSearchSuggestions();
+            }
+        });
+        
+        // Limpiar búsqueda
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', clearSearch);
+        }
+    }
+}
+
+// Base de datos de artículos para búsqueda
+const articlesDatabase = [
+    {
+        title: "Los 10 Mejores Bolsos de Mano 2025",
+        description: "Descubre los bolsos más elegantes y funcionales del año. Desde opciones de lujo hasta alternativas asequibles.",
+        category: "Bolsos de Mano",
+        url: "/articulos/mejores-bolsos-de-mano-2025.html",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=250&fit=crop",
+        date: "15 Enero 2025",
+        tags: ["bolsos", "mano", "elegantes", "lujo", "funcionales"]
+    },
+    {
+        title: "Mejores Mochilas para Trabajo 2025",
+        description: "Encuentra la mochila perfecta para tu jornada laboral. Comodidad, estilo y funcionalidad en una sola opción.",
+        category: "Mochilas",
+        url: "/articulos/mejores-mochilas-para-trabajo-2025.html",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=250&fit=crop",
+        date: "12 Enero 2025",
+        tags: ["mochilas", "trabajo", "comodidad", "funcionalidad", "laboral"]
+    },
+    {
+        title: "Top 5 Carteras para Mujeres Profesionales 2025",
+        description: "Descubre las mejores carteras para mujeres profesionales. Elegancia, funcionalidad y estilo en cada opción.",
+        category: "Carteras",
+        url: "/articulos/top-5-carteras-mujeres-profesionales-2025.html",
+        image: "/assets/images/toughergun-wallet.jpg",
+        date: "10 Enero 2025",
+        tags: ["carteras", "profesionales", "mujeres", "elegancia", "funcionalidad"]
+    },
+    {
+        title: "Carteras Organizadoras: Guía Completa 2025",
+        description: "Mantén tus pertenencias organizadas con las mejores carteras organizadoras del mercado.",
+        category: "Carteras",
+        url: "/articulos/carteras-organizadoras-2025.html",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=250&fit=crop",
+        date: "10 Enero 2025",
+        tags: ["carteras", "organizadoras", "organización", "pertenencias", "mercado"]
+    }
+];
+
+// Sugerencias de búsqueda populares
+const popularSearchTerms = [
+    "carteras",
+    "bolsos de mano",
+    "mochilas",
+    "trabajo",
+    "elegantes",
+    "profesionales",
+    "organizadoras",
+    "lujo",
+    "funcionales",
+    "comodidad"
+];
+
+function performSearch(searchTerm) {
+    const searchResults = articlesDatabase.filter(article => {
+        const searchableText = [
+            article.title.toLowerCase(),
+            article.description.toLowerCase(),
+            article.category.toLowerCase(),
+            ...article.tags.map(tag => tag.toLowerCase())
+        ].join(' ');
+        
+        return searchableText.includes(searchTerm);
+    });
+    
+    displaySearchResults(searchResults, searchTerm);
+}
+
+function displaySearchResults(results, searchTerm) {
+    const searchResultsSection = document.getElementById('searchResults');
+    const latestArticlesSection = document.getElementById('latestArticles');
+    const searchResultsGrid = document.getElementById('searchResultsGrid');
+    const resultCount = document.getElementById('resultCount');
+    const searchTermSpan = document.getElementById('searchTerm');
+    
+    if (searchResultsSection && latestArticlesSection && searchResultsGrid) {
+        // Actualizar contadores
+        resultCount.textContent = results.length;
+        searchTermSpan.textContent = searchTerm;
+        
+        // Limpiar resultados anteriores
+        searchResultsGrid.innerHTML = '';
+        
+        if (results.length > 0) {
+            // Crear tarjetas de resultados
+            results.forEach(article => {
+                const articleCard = createArticleCard(article);
+                searchResultsGrid.appendChild(articleCard);
+            });
+            
+            // Mostrar sección de resultados y ocultar artículos recientes
+            searchResultsSection.style.display = 'block';
+            latestArticlesSection.style.display = 'none';
+            
+            // Scroll suave a los resultados
+            searchResultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // Mostrar sugerencias de otros artículos cuando no hay resultados
+            showAlternativeArticles(searchTerm);
+            searchResultsSection.style.display = 'block';
+            latestArticlesSection.style.display = 'none';
+            
+            // Scroll suave a los resultados
+            searchResultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+}
+
+function showAlternativeArticles(searchTerm) {
+    const searchResultsGrid = document.getElementById('searchResultsGrid');
+    const resultCount = document.getElementById('resultCount');
+    const searchTermSpan = document.getElementById('searchTerm');
+    
+    // Obtener artículos alternativos (todos excepto los que ya se buscaron)
+    const alternativeArticles = articlesDatabase.filter(article => {
+        const searchableText = [
+            article.title.toLowerCase(),
+            article.description.toLowerCase(),
+            article.category.toLowerCase(),
+            ...article.tags.map(tag => tag.toLowerCase())
+        ].join(' ');
+        
+        return !searchableText.includes(searchTerm.toLowerCase());
+    });
+    
+    // Mostrar hasta 4 artículos alternativos
+    const articlesToShow = alternativeArticles.slice(0, 4);
+    
+    searchResultsGrid.innerHTML = `
+        <div class="no-results-with-suggestions">
+            <div class="no-results-message">
+                <p>No se encontraron artículos para "<strong>${searchTerm}</strong>"</p>
+                <p>Te sugerimos estos artículos relacionados:</p>
+            </div>
+            <div class="alternative-articles">
+                ${articlesToShow.map(article => `
+                    <article class="article-card alternative-article">
+                        <div class="article-image">
+                            <img src="${article.image}" alt="${article.title}">
+                        </div>
+                        <div class="article-content">
+                            <h3><a href="${article.url}">${article.title}</a></h3>
+                            <p>${article.description}</p>
+                            <div class="article-meta">
+                                <span class="article-date">${article.date}</span>
+                                <span class="article-category">${article.category}</span>
+                            </div>
+                        </div>
+                    </article>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    // Actualizar contador para mostrar sugerencias
+    resultCount.textContent = articlesToShow.length;
+    searchTermSpan.textContent = 'sugerencias';
+}
+
+function createArticleCard(article) {
+    const card = document.createElement('article');
+    card.className = 'article-card';
+    card.innerHTML = `
+        <div class="article-image">
+            <img src="${article.image}" alt="${article.title}">
+        </div>
+        <div class="article-content">
+            <h3><a href="${article.url}">${article.title}</a></h3>
+            <p>${article.description}</p>
+            <div class="article-meta">
+                <span class="article-date">${article.date}</span>
+                <span class="article-category">${article.category}</span>
+            </div>
+        </div>
+    `;
+    return card;
+}
+
+function showSearchSuggestions(searchTerm) {
+    const searchSuggestions = document.getElementById('searchSuggestions');
+    if (!searchSuggestions) return;
+    
+    // Generar sugerencias
+    const suggestions = generateSuggestions(searchTerm);
+    
+    if (suggestions.length > 0) {
+        searchSuggestions.innerHTML = '';
+        
+        // Agregar sugerencias de artículos
+        if (suggestions.articles.length > 0) {
+            const articleSection = document.createElement('div');
+            articleSection.className = 'suggestion-section';
+            articleSection.innerHTML = '<h4>Artículos</h4>';
+            
+            suggestions.articles.forEach(article => {
+                const suggestionItem = createArticleSuggestion(article, searchTerm);
+                articleSection.appendChild(suggestionItem);
+            });
+            
+            searchSuggestions.appendChild(articleSection);
+        }
+        
+        // Agregar sugerencias de términos populares
+        if (suggestions.terms.length > 0) {
+            const termsSection = document.createElement('div');
+            termsSection.className = 'suggestion-section';
+            termsSection.innerHTML = '<h4>Términos populares</h4>';
+            
+            suggestions.terms.forEach(term => {
+                const suggestionItem = createTermSuggestion(term, searchTerm);
+                termsSection.appendChild(suggestionItem);
+            });
+            
+            searchSuggestions.appendChild(termsSection);
+        }
+        
+        searchSuggestions.style.display = 'block';
+    } else {
+        hideSearchSuggestions();
+    }
+}
+
+function generateSuggestions(searchTerm) {
+    const suggestions = {
+        articles: [],
+        terms: []
+    };
+    
+    // Buscar artículos que coincidan
+    articlesDatabase.forEach(article => {
+        const searchableText = [
+            article.title.toLowerCase(),
+            article.description.toLowerCase(),
+            article.category.toLowerCase(),
+            ...article.tags.map(tag => tag.toLowerCase())
+        ].join(' ');
+        
+        if (searchableText.includes(searchTerm)) {
+            suggestions.articles.push(article);
+        }
+    });
+    
+    // Buscar términos populares que coincidan
+    popularSearchTerms.forEach(term => {
+        if (term.toLowerCase().includes(searchTerm) && !suggestions.terms.includes(term)) {
+            suggestions.terms.push(term);
+        }
+    });
+    
+    // Limitar resultados
+    suggestions.articles = suggestions.articles.slice(0, 3);
+    suggestions.terms = suggestions.terms.slice(0, 5);
+    
+    return suggestions;
+}
+
+function createArticleSuggestion(article, searchTerm) {
+    const item = document.createElement('div');
+    item.className = 'suggestion-item article-suggestion';
+    item.innerHTML = `
+        <div class="suggestion-image">
+            <img src="${article.image}" alt="${article.title}">
+        </div>
+        <div class="suggestion-content">
+            <h5>${highlightSearchTerm(article.title, searchTerm)}</h5>
+            <p>${article.category}</p>
+        </div>
+    `;
+    
+    item.addEventListener('click', () => {
+        window.location.href = article.url;
+    });
+    
+    return item;
+}
+
+function createTermSuggestion(term, searchTerm) {
+    const item = document.createElement('div');
+    item.className = 'suggestion-item term-suggestion';
+    item.innerHTML = `
+        <div class="suggestion-icon">🔍</div>
+        <span>${highlightSearchTerm(term, searchTerm)}</span>
+    `;
+    
+    item.addEventListener('click', () => {
+        const searchInput = document.getElementById('searchInput');
+        searchInput.value = term;
+        performSearch(term);
+        hideSearchSuggestions();
+    });
+    
+    return item;
+}
+
+function highlightSearchTerm(text, searchTerm) {
+    if (!searchTerm) return text;
+    
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+}
+
+function hideSearchSuggestions() {
+    const searchSuggestions = document.getElementById('searchSuggestions');
+    if (searchSuggestions) {
+        searchSuggestions.style.display = 'none';
+    }
+}
+
+function clearSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const searchResultsSection = document.getElementById('searchResults');
+    const latestArticlesSection = document.getElementById('latestArticles');
+    
+    if (searchInput) {
+        searchInput.value = '';
+    }
+    
+    if (searchResultsSection && latestArticlesSection) {
+        searchResultsSection.style.display = 'none';
+        latestArticlesSection.style.display = 'block';
+    }
+    
+    hideSearchSuggestions();
+}
+
+// ===== FILTRADO POR CATEGORÍAS =====
+function initCategoryFiltering() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const articleCards = document.querySelectorAll('.article-card');
+    
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                
+                // Si es "todos", filtrar en la misma página
+                if (category === 'todos') {
+                    // Remover clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+                    
+                    // Filtrar artículos
+                    filterArticlesByCategory(category, articleCards);
+                } else {
+                    // Para otras categorías, navegar a la página dedicada
+                    navigateToCategoryPage(category);
+                }
+            });
         });
     }
 }
 
-function filterArticles(searchTerm, articleCards) {
+function navigateToCategoryPage(category) {
+    const categoryPages = {
+        'bolsos-de-mano': '/articulos/bolsos-de-mano.html',
+        'mochilas': '/articulos/mochilas.html',
+        'carteras': '/articulos/carteras.html',
+        'tote-bags': '/articulos/tote-bags.html'
+    };
+    
+    const targetPage = categoryPages[category];
+    if (targetPage) {
+        window.location.href = targetPage;
+    }
+}
+
+function filterArticlesByCategory(category, articleCards) {
     let hasResults = false;
     
     articleCards.forEach(card => {
-        const title = card.querySelector('h3 a').textContent.toLowerCase();
-        const description = card.querySelector('p').textContent.toLowerCase();
-        const category = card.querySelector('.article-category').textContent.toLowerCase();
+        const cardCategory = card.getAttribute('data-category');
         
-        const matches = title.includes(searchTerm) || 
-                       description.includes(searchTerm) || 
-                       category.includes(searchTerm);
-        
-        if (matches) {
+        if (category === 'todos' || cardCategory === category) {
             card.style.display = 'block';
             card.style.animation = 'fadeInUp 0.3s ease-out';
             hasResults = true;
@@ -90,8 +486,28 @@ function filterArticles(searchTerm, articleCards) {
         }
     });
     
-    // Mostrar mensaje si no hay resultados
-    showNoResultsMessage(hasResults, searchTerm);
+    // Mostrar mensaje si no hay resultados para la categoría
+    if (!hasResults && category !== 'todos') {
+        showNoCategoryResults(category);
+    }
+}
+
+function showNoCategoryResults(category) {
+    const articlesGrid = document.querySelector('.articles-grid');
+    let noResultsMsg = document.getElementById('no-category-results');
+    
+    if (!noResultsMsg) {
+        noResultsMsg = document.createElement('div');
+        noResultsMsg.id = 'no-category-results';
+        noResultsMsg.className = 'no-results';
+        noResultsMsg.innerHTML = `
+            <p>No hay artículos disponibles en la categoría "${category}"</p>
+            <p>Prueba con otra categoría o vuelve a "Todos"</p>
+        `;
+        articlesGrid.appendChild(noResultsMsg);
+    } else {
+        noResultsMsg.style.display = 'block';
+    }
 }
 
 function showNoResultsMessage(hasResults, searchTerm) {

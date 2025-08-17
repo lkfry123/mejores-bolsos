@@ -37,8 +37,13 @@
             <h1 class="hero-title">Mejores Bolsos y Mochilas 2025</h1>
             <p class="hero-subtitle">Descubre las mejores opciones para complementar tu estilo. Guías expertas con reseñas detalladas y recomendaciones personalizadas.</p>
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Buscar artículos..." class="search-input">
-                <button class="search-btn">Buscar</button>
+                <div class="search-input-wrapper">
+                    <input type="text" id="searchInput" placeholder="Buscar artículos..." class="search-input">
+                    <button class="search-btn">Buscar</button>
+                    <div class="search-suggestions" id="searchSuggestions" style="display: none;">
+                        <!-- Las sugerencias se insertarán aquí dinámicamente -->
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -48,55 +53,69 @@
         <div class="container">
             <h2 class="section-title">Explora por Categoría</h2>
             <div class="categories-grid">
-                <div class="category-card">
+                <a href="/articulos/bolsos-de-mano.html" class="category-card">
                     <div class="category-image">
                         <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=300&fit=crop" alt="Bolsos de mano elegantes">
                     </div>
                     <div class="category-content">
                         <h3>Bolsos de Mano</h3>
                         <p>Elegantes y versátiles para cualquier ocasión</p>
-                        <a href="/categorias/bolsos-de-mano/" class="btn btn-primary">Ver Artículos</a>
+                        <span class="btn btn-primary">Ver Artículos</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="category-card">
+                <a href="/articulos/mochilas.html" class="category-card">
                     <div class="category-image">
                         <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" alt="Mochilas modernas">
                     </div>
                     <div class="category-content">
                         <h3>Mochilas</h3>
                         <p>Funcionales y estilosas para el día a día</p>
-                        <a href="/categorias/mochilas/" class="btn btn-primary">Ver Artículos</a>
+                        <span class="btn btn-primary">Ver Artículos</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="category-card">
+                <a href="/articulos/carteras.html" class="category-card">
                     <div class="category-image">
                         <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=300&fit=crop" alt="Carteras elegantes">
                     </div>
                     <div class="category-content">
                         <h3>Carteras</h3>
                         <p>Pequeñas pero poderosas para tus esenciales</p>
-                        <a href="/categorias/carteras/" class="btn btn-primary">Ver Artículos</a>
+                        <span class="btn btn-primary">Ver Artículos</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="category-card">
+                <a href="/articulos/tote-bags.html" class="category-card">
                     <div class="category-image">
                         <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=400&h=300&fit=crop" alt="Tote bags">
                     </div>
                     <div class="category-content">
                         <h3>Tote Bags</h3>
                         <p>Espaciosas y ecológicas para cualquier momento</p>
-                        <a href="/categorias/tote-bags/" class="btn btn-primary">Ver Artículos</a>
+                        <span class="btn btn-primary">Ver Artículos</span>
                     </div>
-                </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados de Búsqueda -->
+    <section class="search-results" id="searchResults" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Resultados de Búsqueda</h2>
+            <div class="search-info">
+                <p id="searchInfo">Encontrados <span id="resultCount">0</span> resultados para "<span id="searchTerm"></span>"</p>
+                <button id="clearSearch" class="btn btn-secondary">Limpiar Búsqueda</button>
+            </div>
+            <div class="articles-grid" id="searchResultsGrid">
+                <!-- Los resultados se insertarán aquí dinámicamente -->
             </div>
         </div>
     </section>
 
     <!-- Últimos Artículos -->
-    <section class="latest-articles">
+    <section class="latest-articles" id="latestArticles">
         <div class="container">
             <h2 class="section-title">Últimos Artículos</h2>
             <div class="articles-grid">
@@ -164,10 +183,10 @@
                 <div class="footer-section">
                     <h4>Categorías</h4>
                     <ul>
-                        <li><a href="/categorias/bolsos-de-mano/">Bolsos de Mano</a></li>
-                        <li><a href="/categorias/mochilas/">Mochilas</a></li>
-                        <li><a href="/categorias/carteras/">Carteras</a></li>
-                        <li><a href="/categorias/tote-bags/">Tote Bags</a></li>
+                        <li><a href="/articulos/bolsos-de-mano.html">Bolsos de Mano</a></li>
+                        <li><a href="/articulos/mochilas.html">Mochilas</a></li>
+                        <li><a href="/articulos/carteras.html">Carteras</a></li>
+                        <li><a href="/articulos/tote-bags.html">Tote Bags</a></li>
                     </ul>
                 </div>
             </div>
