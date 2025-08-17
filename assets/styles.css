@@ -399,6 +399,45 @@ mark {
     background: var(--color-gris-oscuro);
 }
 
+/* ===== ESTILOS PARA RESULTADOS SIN COINCIDENCIAS ===== */
+.no-results-with-suggestions {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.no-results-message {
+    margin-bottom: var(--spacing-xl);
+}
+
+.no-results-message p {
+    font-size: var(--font-size-large);
+    color: var(--color-gris-medio);
+    margin-bottom: var(--spacing-sm);
+}
+
+.no-results-message p:first-child {
+    font-size: var(--font-size-xl);
+    color: var(--color-negro);
+    font-weight: 500;
+}
+
+.alternative-articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.alternative-article {
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.alternative-article:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
 /* ===== NAVEGACIÓN ===== */
 .navbar {
     position: fixed;

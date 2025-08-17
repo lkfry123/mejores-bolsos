@@ -111,7 +111,7 @@ const articlesDatabase = [
         url: "/articulos/mejores-bolsos-de-mano-2025.html",
         image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=250&fit=crop",
         date: "15 Enero 2025",
-        tags: ["bolsos", "mano", "elegantes", "lujo", "funcionales"]
+        tags: ["bolsos", "mano", "elegantes", "lujo", "funcionales", "2025"]
     },
     {
         title: "Mejores Mochilas para Trabajo 2025",
@@ -120,25 +120,16 @@ const articlesDatabase = [
         url: "/articulos/mejores-mochilas-para-trabajo-2025.html",
         image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=250&fit=crop",
         date: "12 Enero 2025",
-        tags: ["mochilas", "trabajo", "comodidad", "funcionalidad", "laboral"]
+        tags: ["mochilas", "trabajo", "comodidad", "funcionalidad", "laboral", "2025"]
     },
     {
         title: "Top 5 Carteras para Mujeres Profesionales 2025",
-        description: "Descubre las mejores carteras para mujeres profesionales. Elegancia, funcionalidad y estilo en cada opción.",
+        description: "Selección rápida con foco en durabilidad, organización y precio. Perfectas para la oficina y uso diario.",
         category: "Carteras",
         url: "/articulos/top-5-carteras-mujeres-profesionales-2025.html",
         image: "/assets/images/toughergun-wallet.jpg",
-        date: "10 Enero 2025",
-        tags: ["carteras", "profesionales", "mujeres", "elegancia", "funcionalidad"]
-    },
-    {
-        title: "Carteras Organizadoras: Guía Completa 2025",
-        description: "Mantén tus pertenencias organizadas con las mejores carteras organizadoras del mercado.",
-        category: "Carteras",
-        url: "/articulos/carteras-organizadoras-2025.html",
-        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=250&fit=crop",
-        date: "10 Enero 2025",
-        tags: ["carteras", "organizadoras", "organización", "pertenencias", "mercado"]
+        date: "15 Enero 2025",
+        tags: ["carteras", "profesionales", "mujeres", "elegancia", "funcionalidad", "oficina", "2025"]
     }
 ];
 
@@ -150,10 +141,11 @@ const popularSearchTerms = [
     "trabajo",
     "elegantes",
     "profesionales",
-    "organizadoras",
     "lujo",
     "funcionales",
-    "comodidad"
+    "comodidad",
+    "oficina",
+    "2025"
 ];
 
 function performSearch(searchTerm) {
@@ -165,7 +157,18 @@ function performSearch(searchTerm) {
             ...article.tags.map(tag => tag.toLowerCase())
         ].join(' ');
         
-        return searchableText.includes(searchTerm);
+        // Búsqueda exacta
+        if (searchableText.includes(searchTerm)) {
+            return true;
+        }
+        
+        // Búsqueda por palabras individuales
+        const searchWords = searchTerm.split(' ').filter(word => word.length > 2);
+        const textWords = searchableText.split(' ');
+        
+        return searchWords.some(searchWord => 
+            textWords.some(textWord => textWord.includes(searchWord))
+        );
     });
     
     displaySearchResults(searchResults, searchTerm);
@@ -216,8 +219,8 @@ function showAlternativeArticles(searchTerm) {
     const resultCount = document.getElementById('resultCount');
     const searchTermSpan = document.getElementById('searchTerm');
     
-    // Obtener artículos alternativos (todos excepto los que ya se buscaron)
-    const alternativeArticles = articlesDatabase.filter(article => {
+    // Obtener artículos alternativos con puntuación de relevancia
+    const alternativeArticles = articlesDatabase.map(article => {
         const searchableText = [
             article.title.toLowerCase(),
             article.description.toLowerCase(),
@@ -225,11 +228,35 @@ function showAlternativeArticles(searchTerm) {
             ...article.tags.map(tag => tag.toLowerCase())
         ].join(' ');
         
-        return !searchableText.includes(searchTerm.toLowerCase());
-    });
+        let relevanceScore = 0;
+        const searchWords = searchTerm.toLowerCase().split(' ').filter(word => word.length > 2);
+        
+        // Calcular puntuación de relevancia
+        searchWords.forEach(word => {
+            if (searchableText.includes(word)) {
+                relevanceScore += 1;
+            }
+            // Bonus por coincidencias en título
+            if (article.title.toLowerCase().includes(word)) {
+                relevanceScore += 2;
+            }
+            // Bonus por coincidencias en categoría
+            if (article.category.toLowerCase().includes(word)) {
+                relevanceScore += 1;
+            }
+        });
+        
+        return { article, relevanceScore };
+    })
+    .filter(item => item.relevanceScore > 0)
+    .sort((a, b) => b.relevanceScore - a.relevanceScore)
+    .slice(0, 4)
+    .map(item => item.article);
     
-    // Mostrar hasta 4 artículos alternativos
-    const articlesToShow = alternativeArticles.slice(0, 4);
+    // Si no hay artículos relacionados, mostrar todos los artículos
+    if (alternativeArticles.length === 0) {
+        alternativeArticles.push(...articlesDatabase.slice(0, 4));
+    }
     
     searchResultsGrid.innerHTML = `
         <div class="no-results-with-suggestions">
@@ -238,7 +265,7 @@ function showAlternativeArticles(searchTerm) {
                 <p>Te sugerimos estos artículos relacionados:</p>
             </div>
             <div class="alternative-articles">
-                ${articlesToShow.map(article => `
+                ${alternativeArticles.map(article => `
                     <article class="article-card alternative-article">
                         <div class="article-image">
                             <img src="${article.image}" alt="${article.title}">
@@ -258,7 +285,7 @@ function showAlternativeArticles(searchTerm) {
     `;
     
     // Actualizar contador para mostrar sugerencias
-    resultCount.textContent = articlesToShow.length;
+    resultCount.textContent = alternativeArticles.length;
     searchTermSpan.textContent = 'sugerencias';
 }
 
@@ -351,6 +378,28 @@ function generateSuggestions(searchTerm) {
             suggestions.terms.push(term);
         }
     });
+    
+    // Si no hay sugerencias de artículos, mostrar artículos relacionados
+    if (suggestions.articles.length === 0) {
+        const searchWords = searchTerm.split(' ').filter(word => word.length > 2);
+        articlesDatabase.forEach(article => {
+            const searchableText = [
+                article.title.toLowerCase(),
+                article.description.toLowerCase(),
+                article.category.toLowerCase(),
+                ...article.tags.map(tag => tag.toLowerCase())
+            ].join(' ');
+            
+            // Verificar si alguna palabra de búsqueda está presente
+            const hasRelatedWord = searchWords.some(word => 
+                searchableText.includes(word)
+            );
+            
+            if (hasRelatedWord && suggestions.articles.length < 3) {
+                suggestions.articles.push(article);
+            }
+        });
+    }
     
     // Limitar resultados
     suggestions.articles = suggestions.articles.slice(0, 3);
