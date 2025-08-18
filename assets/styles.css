@@ -536,6 +536,21 @@ mark {
     font-size: var(--font-size-large);
 }
 
+/* Article Featured Image */
+.article-featured-image {
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.article-featured-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-height: 400px;
+    object-fit: cover;
+}
+
 /* Intro Section */
 .intro-section {
     padding: var(--spacing-xl) 0;
