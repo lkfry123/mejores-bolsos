@@ -185,15 +185,7 @@ const articlesDatabase = [
         date: "30 Enero 2025",
         tags: ["tote bags", "reutilizables", "compras", "sostenible", "ecológico", "2025", "grocery", "aisladas"]
     },
-    {
-        title: "Mejores Mochilas para Trabajo 2025",
-        description: "Encuentra la mochila perfecta para tu jornada laboral. Comodidad, estilo y funcionalidad en una sola opción.",
-        category: "Mochilas",
-        url: "/articulos/mejores-mochilas-para-trabajo-2025.html",
-        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=250&fit=crop",
-        date: "12 Enero 2025",
-        tags: ["mochilas", "trabajo", "comodidad", "funcionalidad", "laboral", "2025"]
-    },
+
     {
         title: "Top 5 Carteras para Mujeres Profesionales 2025",
         description: "Selección rápida con foco en durabilidad, organización y precio. Perfectas para la oficina y uso diario.",
@@ -210,7 +202,6 @@ const popularSearchTerms = [
     "carteras",
     "bolsos de mano",
     "mochilas",
-    "trabajo",
     "elegantes",
     "profesionales",
     "lujo",
