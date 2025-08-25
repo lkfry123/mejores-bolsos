@@ -105,6 +105,15 @@ function initSearchFunctionality() {
 // Base de datos de artículos para búsqueda
 const articlesDatabase = [
     {
+        title: "Resistentes y con Estilo: Las Mejores Mochilas para Tu Día a Día 2025",
+        description: "Descubre por qué invertir en una mochila de alta calidad es esencial. Guía completa con las mejores mochilas resistentes y estilosas para el uso diario.",
+        category: "Mochilas",
+        url: "/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025.html",
+        image: "../photos/LOVEVOOK%20Laptop%20Backpack%20for%20Women%2015.6in%20Computer%20Backpacks%20Dark%20Green.jpg",
+        date: "30 Enero 2025",
+        tags: ["mochilas", "calidad", "resistente", "día a día", "durabilidad", "protección", "comodidad", "organización", "versatilidad", "LOVEVOOK", "SwissGear", "The North Face", "TSA", "FlexVent", "2025"]
+    },
+    {
         title: "Los 10 Mejores Bolsos de Mano 2025",
         description: "Descubre los bolsos más elegantes y funcionales del año. Desde opciones de lujo hasta alternativas asequibles.",
         category: "Bolsos de Mano",
@@ -226,7 +235,15 @@ const popularSearchTerms = [
     "sostenible",
     "compras",
     "grocery",
-    "aisladas"
+    "aisladas",
+    "calidad",
+    "resistente",
+    "durabilidad",
+    "protección",
+    "organización",
+    "versatilidad",
+    "TSA",
+    "FlexVent"
 ];
 
 function performSearch(searchTerm) {
