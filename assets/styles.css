@@ -1134,11 +1134,22 @@ mark {
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
 }
 
 .article-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--box-shadow-hover);
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-card:focus {
+    outline: 2px solid var(--color-terracota);
+    outline-offset: 2px;
 }
 
 .article-image {
@@ -1168,13 +1179,13 @@ mark {
     line-height: 1.3;
 }
 
-.article-content h3 a {
+.article-content h3 {
     color: var(--color-negro);
     text-decoration: none;
     transition: var(--transition);
 }
 
-.article-content h3 a:hover {
+.article-card:hover .article-content h3 {
     color: var(--color-terracota);
 }
 
