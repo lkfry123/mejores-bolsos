@@ -311,6 +311,7 @@ body {
     transition: var(--transition);
     box-shadow: var(--box-shadow);
     background-color: var(--color-blanco);
+    cursor: pointer;
 }
 
 .other-category-item:hover {
@@ -322,6 +323,16 @@ body {
     display: flex;
     text-decoration: none;
     color: inherit;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.other-category-item a:hover {
+    text-decoration: none;
+    color: inherit;
 }
 
 .other-category-item img {
@@ -329,6 +340,7 @@ body {
     height: 80px;
     object-fit: cover;
     border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    pointer-events: none;
 }
 
 .category-info {
@@ -337,6 +349,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    pointer-events: none;
 }
 
 .category-info h5 {
@@ -344,6 +357,7 @@ body {
     font-size: var(--font-size-base);
     font-weight: 600;
     color: var(--color-negro);
+    pointer-events: none;
 }
 
 .category-info p {
@@ -351,6 +365,33 @@ body {
     font-size: var(--font-size-small);
     color: var(--color-gris-medio);
     line-height: 1.4;
+    pointer-events: none;
+}
+
+/* ===== ESTILOS ADICIONALES PARA ASEGURAR CLICKABILIDAD ===== */
+.footer-section .other-categories .other-category-item {
+    position: relative;
+}
+
+.footer-section .other-categories .other-category-item a {
+    display: flex !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    width: 100% !important;
+    height: 100% !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.footer-section .other-categories .other-category-item a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.footer-section .other-categories .other-category-item a:focus {
+    outline: 2px solid var(--color-terracota);
+    outline-offset: 2px;
 }
 
 /* ===== ESTILOS DE BÚSQUEDA ===== */
