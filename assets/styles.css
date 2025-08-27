@@ -63,6 +63,41 @@ body {
     background-color: var(--color-blanco);
 }
 
+/* ===== LANGUAGE SWITCHER ===== */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--color-blanco);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow);
+    padding: 8px;
+    display: flex;
+    gap: 4px;
+}
+
+.lang-link {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: var(--color-gris-medio);
+    font-weight: 500;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-size: var(--font-size-small);
+}
+
+.lang-link:hover {
+    background-color: var(--color-gris-claro);
+    color: var(--color-negro);
+}
+
+.lang-link.active {
+    background-color: var(--color-terracota);
+    color: var(--color-blanco);
+}
+
 /* ===== UTILIDADES ===== */
 .container {
     max-width: 1200px;

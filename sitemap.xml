@@ -1,126 +1,332 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Página principal -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Main pages -->
     <url>
-        <loc>https://tudominio.com/</loc>
+        <loc>https://affordable-handbags.com/es/</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/"/>
     </url>
     
-    <!-- Páginas de categorías -->
     <url>
-        <loc>https://tudominio.com/categorias/bolsos-de-mano/</loc>
+        <loc>https://affordable-handbags.com/en/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/"/>
+    </url>
+    
+    <!-- Category pages -->
+    <url>
+        <loc>https://affordable-handbags.com/es/categorias/</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/categorias/mochilas/</loc>
+        <loc>https://affordable-handbags.com/en/categorias/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/categorias/bolsos-de-mano/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/bolsos-de-mano/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/bolsos-de-mano/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/bolsos-de-mano/"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/en/categorias/bolsos-de-mano/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/bolsos-de-mano/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/bolsos-de-mano/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/bolsos-de-mano/"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/categorias/mochilas/</loc>
         <lastmod>2025-01-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/mochilas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/mochilas/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/mochilas/"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/categorias/carteras/</loc>
+        <loc>https://affordable-handbags.com/en/categorias/mochilas/</loc>
+        <lastmod>2025-01-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/mochilas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/mochilas/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/mochilas/"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/categorias/carteras/</loc>
         <lastmod>2025-01-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/carteras/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/carteras/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/carteras/"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/categorias/tote-bags/</loc>
+        <loc>https://affordable-handbags.com/en/categorias/carteras/</loc>
+        <lastmod>2025-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/carteras/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/carteras/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/carteras/"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/categorias/tote-bags/</loc>
         <lastmod>2025-01-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/tote-bags/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/tote-bags/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/tote-bags/"/>
     </url>
     
-    <!-- Página de artículos -->
     <url>
-        <loc>https://tudominio.com/articulos/</loc>
+        <loc>https://affordable-handbags.com/en/categorias/tote-bags/</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/categorias/tote-bags/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/categorias/tote-bags/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/categorias/tote-bags/"/>
+    </url>
+    
+    <!-- Article pages -->
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/"/>
     </url>
     
-    <!-- Artículos -->
     <url>
-        <loc>https://tudominio.com/articulos/mejores-bolsos-de-mano-2025.html</loc>
+        <loc>https://affordable-handbags.com/en/articulos/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/"/>
+    </url>
+    
+    <!-- Individual articles -->
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/mejores-bolsos-de-mano-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/mejores-bolsos-de-mano-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/mejores-bolsos-de-mano-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/mejores-bolsos-de-mano-2025.html"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/articulos/mejores-mochilas-para-trabajo-2025.html</loc>
+        <loc>https://affordable-handbags.com/en/articulos/mejores-bolsos-de-mano-2025.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/mejores-bolsos-de-mano-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/mejores-bolsos-de-mano-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/mejores-bolsos-de-mano-2025.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/mejores-mochilas-para-trabajo-2025.html</loc>
         <lastmod>2025-01-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/mejores-mochilas-para-trabajo-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/mejores-mochilas-para-trabajo-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/mejores-mochilas-para-trabajo-2025.html"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/articulos/top-5-carteras-mujeres-profesionales-2025.html</loc>
+        <loc>https://affordable-handbags.com/en/articulos/mejores-mochilas-para-trabajo-2025.html</loc>
+        <lastmod>2025-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/mejores-mochilas-para-trabajo-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/mejores-mochilas-para-trabajo-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/mejores-mochilas-para-trabajo-2025.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/top-5-carteras-mujeres-profesionales-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/top-5-carteras-mujeres-profesionales-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/top-5-carteras-mujeres-profesionales-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/top-5-carteras-mujeres-profesionales-2025.html"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/articulos/carteras-organizadoras-2025.html</loc>
+        <loc>https://affordable-handbags.com/en/articulos/top-5-carteras-mujeres-profesionales-2025.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/top-5-carteras-mujeres-profesionales-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/top-5-carteras-mujeres-profesionales-2025.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/top-5-carteras-mujeres-profesionales-2025.html"/>
+    </url>
+    
+    <!-- Category overview pages -->
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/bolsos-de-mano.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/bolsos-de-mano.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/bolsos-de-mano.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/bolsos-de-mano.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/en/articulos/bolsos-de-mano.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/bolsos-de-mano.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/bolsos-de-mano.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/bolsos-de-mano.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/mochilas.html</loc>
+        <lastmod>2025-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/mochilas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/mochilas.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/mochilas.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/en/articulos/mochilas.html</loc>
+        <lastmod>2025-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/mochilas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/mochilas.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/mochilas.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/carteras.html</loc>
         <lastmod>2025-01-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/carteras.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/carteras.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/carteras.html"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/articulos/bolsos-de-mano-para-trabajo-2025.html</loc>
+        <loc>https://affordable-handbags.com/en/articulos/carteras.html</loc>
+        <lastmod>2025-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/carteras.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/carteras.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/carteras.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/articulos/tote-bags.html</loc>
         <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/tote-bags.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/tote-bags.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/tote-bags.html"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/articulos/bolsos-de-mano-de-lujo-2025.html</loc>
-        <lastmod>2025-01-05</lastmod>
+        <loc>https://affordable-handbags.com/en/articulos/tote-bags.html</loc>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/articulos/tote-bags.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/articulos/tote-bags.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/articulos/tote-bags.html"/>
     </url>
     
+    <!-- Legal pages -->
     <url>
-        <loc>https://tudominio.com/articulos/bolsos-de-mano-asequibles-2025.html</loc>
-        <lastmod>2025-01-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://tudominio.com/articulos/bolsos-de-mano-organizadores-2025.html</loc>
-        <lastmod>2025-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://tudominio.com/articulos/bolsos-de-mano-para-viaje-2025.html</loc>
-        <lastmod>2024-12-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Páginas legales -->
-    <url>
-        <loc>https://tudominio.com/politica-privacidad.html</loc>
+        <loc>https://affordable-handbags.com/es/politica-privacidad.html</loc>
         <lastmod>2025-01-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/politica-privacidad.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/politica-privacidad.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/politica-privacidad.html"/>
     </url>
     
     <url>
-        <loc>https://tudominio.com/aviso-afiliados.html</loc>
+        <loc>https://affordable-handbags.com/en/politica-privacidad.html</loc>
         <lastmod>2025-01-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/politica-privacidad.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/politica-privacidad.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/politica-privacidad.html"/>
     </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/es/aviso-afiliados.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/aviso-afiliados.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/aviso-afiliados.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/aviso-afiliados.html"/>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/en/aviso-afiliados.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/aviso-afiliados.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/aviso-afiliados.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/aviso-afiliados.html"/>
+    </url>
+    
 </urlset>
+

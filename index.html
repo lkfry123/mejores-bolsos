@@ -5,174 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mejores Bolsos y Mochilas 2025 - Guías de Compra</title>
     <meta name="description" content="Descubre los mejores bolsos, mochilas y carteras del 2025. Guías completas con reseñas, comparativas y recomendaciones de expertos.">
+    
+    <!-- Canonical and hreflang tags -->
+    <link rel="canonical" href="https://affordable-handbags.com/es/">
+    <link rel="alternate" hreflang="es" href="https://affordable-handbags.com/es/">
+    <link rel="alternate" hreflang="en" href="https://affordable-handbags.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://affordable-handbags.com/es/">
+    
+    <!-- Redirect to Spanish version -->
+    <meta http-equiv="refresh" content="0; url=/es/">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/">Bolsos & Moda</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="/" class="nav-link active">Inicio</a></li>
-                <li><a href="/categorias/" class="nav-link">Categorías</a></li>
-                <li><a href="/articulos/" class="nav-link">Artículos</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="/es/" class="lang-link active">ES</a>
+        <a href="/en/" class="lang-link">EN</a>
+    </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-container">
-            <h1 class="hero-title">Mejores Bolsos y Mochilas 2025</h1>
-            <p class="hero-subtitle">Descubre las mejores opciones para complementar tu estilo. Guías expertas con reseñas detalladas y recomendaciones personalizadas.</p>
-            <div class="search-container">
-                <div class="search-input-wrapper">
-                    <input type="text" id="searchInput" placeholder="Buscar artículos..." class="search-input">
-                    <button class="search-btn">Buscar</button>
-                    <div class="search-suggestions" id="searchSuggestions" style="display: none;">
-                        <!-- Las sugerencias se insertarán aquí dinámicamente -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Redirect message -->
+    <div style="text-align: center; padding: 50px 20px; font-family: 'Inter', sans-serif;">
+        <h1>Redirigiendo...</h1>
+        <p>Si no eres redirigido automáticamente, <a href="/es/">haz clic aquí</a>.</p>
+        <p>If you're not redirected automatically, <a href="/en/">click here</a> for English.</p>
+    </div>
 
-    <!-- Categorías -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Explora por Categoría</h2>
-            <div class="categories-grid">
-                <a href="/articulos/bolsos-de-mano.html" class="category-card">
-                    <div class="category-image">
-                        <img src="photos/The%20Sak%20Sequoia%20Women's%20Hobo%20Handbag%20Purse.jpg" alt="Bolsos de mano elegantes" style="object-position: center 70%;">
-                    </div>
-                    <div class="category-content">
-                        <h3>Bolsos de Mano</h3>
-                        <p>Elegantes y versátiles para cualquier ocasión</p>
-                        <span class="btn btn-primary">Ver Artículos</span>
-                    </div>
-                </a>
-
-                <a href="/articulos/mochilas.html" class="category-card">
-                    <div class="category-image">
-                        <img src="photos/LOVEVOOK%20Laptop%20Backpack%20for%20Women%2015.6in%20Computer%20Backpacks%20Dark%20Green.jpg" alt="Mochilas modernas">
-                    </div>
-                    <div class="category-content">
-                        <h3>Mochilas</h3>
-                        <p>Funcionales y estilosas para el día a día</p>
-                        <span class="btn btn-primary">Ver Artículos</span>
-                    </div>
-                </a>
-
-                <a href="/articulos/carteras.html" class="category-card">
-                    <div class="category-image">
-                        <img src="photos/COACH%20Small%20Wristlet.jpg" alt="Carteras elegantes">
-                    </div>
-                    <div class="category-content">
-                        <h3>Carteras</h3>
-                        <p>Pequeñas pero poderosas para tus esenciales</p>
-                        <span class="btn btn-primary">Ver Artículos</span>
-                    </div>
-                </a>
-
-                <a href="/articulos/tote-bags.html" class="category-card">
-                    <div class="category-image">
-                        <img src="photos/BAGSMART%20Tote%20Bag%20for%20Women,%20Foldable%20Tote%20Bag%20With%20Zipper%20Travel%20Large%20Shoulder%20Bag%20Handbag%20for%20Work.jpg" alt="Tote bags">
-                    </div>
-                    <div class="category-content">
-                        <h3>Tote Bags</h3>
-                        <p>Espaciosas y ecológicas para cualquier momento</p>
-                        <span class="btn btn-primary">Ver Artículos</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resultados de Búsqueda -->
-    <section class="search-results" id="searchResults" style="display: none;">
-        <div class="container">
-            <h2 class="section-title">Resultados de Búsqueda</h2>
-            <div class="search-info">
-                <p id="searchInfo">Encontrados <span id="resultCount">0</span> resultados para "<span id="searchTerm"></span>"</p>
-                <button id="clearSearch" class="btn btn-secondary">Limpiar Búsqueda</button>
-            </div>
-            <div class="articles-grid" id="searchResultsGrid">
-                <!-- Los resultados se insertarán aquí dinámicamente -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Últimos Artículos -->
-    <section class="latest-articles" id="latestArticles">
-        <div class="container">
-            <h2 class="section-title">Últimos Artículos</h2>
-            <div class="articles-grid">
-
-
-
-
-                <article class="article-card">
-                    <div class="article-image">
-                        <img src="/assets/images/toughergun-wallet.jpg" alt="Top 5 Carteras para Mujeres Profesionales">
-                    </div>
-                    <div class="article-content">
-                        <h3><a href="/articulos/top-5-carteras-mujeres-profesionales-2025.html">Top 5 Carteras para Mujeres Profesionales 2025</a></h3>
-                        <p>Selección rápida con foco en durabilidad, organización y precio. Perfectas para la oficina y uso diario.</p>
-                        <div class="article-meta">
-                            <span class="article-date">15 Enero 2025</span>
-                            <span class="article-category">Carteras</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="contacto">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Bolsos & Moda</h3>
-                    <p>Tu guía confiable para encontrar los mejores bolsos, mochilas y accesorios de moda.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Útiles</h4>
-                    <ul>
-                        <li><a href="/politica-privacidad.html">Política de Privacidad</a></li>
-                        <li><a href="/aviso-afiliados.html">Aviso de Afiliados</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Categorías</h4>
-                    <ul>
-                        <li><a href="/articulos/bolsos-de-mano.html">Bolsos de Mano</a></li>
-                        <li><a href="/articulos/mochilas.html">Mochilas</a></li>
-                        <li><a href="/articulos/carteras.html">Carteras</a></li>
-                        <li><a href="/articulos/tote-bags.html">Tote Bags</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Bolsos & Moda. Todos los derechos reservados.</p>
-                <p class="affiliate-notice">Este sitio utiliza enlaces de afiliado. Podemos recibir una comisión si compras a través de nuestros enlaces.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="assets/script.js"></script>
+    <script>
+        // Fallback redirect
+        window.location.href = '/es/';
+    </script>
 </body>
 </html>
