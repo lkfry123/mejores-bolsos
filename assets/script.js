@@ -117,7 +117,7 @@ const articlesDatabase = [
         title: "Los 10 Mejores Bolsos de Mano 2025",
         description: "Descubre los bolsos más elegantes y funcionales del año. Desde opciones de lujo hasta alternativas asequibles.",
         category: "Bolsos de Mano",
-        url: "/articulos/mejores-bolsos-de-mano-2025.html",
+                    url: "/articulos/como-elegir-bolso-mano-perfecto-2025.html",
         image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=250&fit=crop",
         date: "15 Enero 2025",
         tags: ["bolsos", "mano", "elegantes", "lujo", "funcionales", "2025"]
