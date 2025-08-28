@@ -41,20 +41,40 @@
 
 [[redirects]]
   from = "/categorias/bolsos-de-mano"
-  to = "/categorias/bolsos-de-mano/"
+  to = "/es/categorias/bolsos-de-mano/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/bolsos-de-mano/"
+  to = "/es/categorias/bolsos-de-mano/"
   status = 301
 
 [[redirects]]
   from = "/categorias/mochilas"
-  to = "/categorias/mochilas/"
+  to = "/es/categorias/mochilas/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/mochilas/"
+  to = "/es/categorias/mochilas/"
   status = 301
 
 [[redirects]]
   from = "/categorias/carteras"
-  to = "/categorias/carteras/"
+  to = "/es/categorias/carteras/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/carteras/"
+  to = "/es/categorias/carteras/"
   status = 301
 
 [[redirects]]
   from = "/categorias/tote-bags"
-  to = "/categorias/tote-bags/"
+  to = "/es/categorias/tote-bags/"
+  status = 301
+
+[[redirects]]
+  from = "/categorias/tote-bags/"
+  to = "/es/categorias/tote-bags/"
   status = 301
