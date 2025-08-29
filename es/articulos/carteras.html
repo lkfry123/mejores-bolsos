@@ -212,6 +212,62 @@
     </footer>
 
     <script src="/assets/script.js"></script>
+    <script>
+        // Funcionalidad de filtros para artículos
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const articleCards = document.querySelectorAll('.article-card');
+
+            // Función para mostrar animación de fade in
+            function showCard(card) {
+                card.style.display = 'block';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 10);
+            }
+
+            // Función para ocultar tarjeta
+            function hideCard(card) {
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remover clase active de todos los botones
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    articleCards.forEach(card => {
+                        if (category === 'todos' || card.getAttribute('data-category') === category) {
+                            showCard(card);
+                        } else {
+                            hideCard(card);
+                        }
+                    });
+                });
+            });
+
+            // Inicializar con "Todos" activo
+            const todosBtn = document.querySelector('.filter-btn[data-category="todos"]');
+            if (todosBtn) {
+                todosBtn.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
   

@@ -573,54 +573,62 @@ function initCategoryFiltering() {
     
     if (filterButtons.length > 0) {
         filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 const category = this.getAttribute('data-category');
                 
-                // Si es "todos", filtrar en la misma página
-                if (category === 'todos') {
-                    // Remover clase active de todos los botones
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Agregar clase active al botón clickeado
-                    this.classList.add('active');
-                    
-                    // Filtrar artículos
-                    filterArticlesByCategory(category, articleCards);
-                } else {
-                    // Para otras categorías, navegar a la página dedicada
-                    navigateToCategoryPage(category);
-                }
+                // Remover clase active de todos los botones
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Agregar clase active al botón clickeado
+                this.classList.add('active');
+                
+                // Filtrar artículos en la misma página
+                filterArticlesByCategory(category, articleCards);
+                
+                return false;
             });
         });
-    }
-}
-
-function navigateToCategoryPage(category) {
-    const categoryPages = {
-        'bolsos-de-mano': '/articulos/bolsos-de-mano.html',
-        'mochilas': '/articulos/mochilas.html',
-        'carteras': '/articulos/carteras.html',
-        'tote-bags': '/articulos/tote-bags.html'
-    };
-    
-    const targetPage = categoryPages[category];
-    if (targetPage) {
-        window.location.href = targetPage;
     }
 }
 
 function filterArticlesByCategory(category, articleCards) {
     let hasResults = false;
     
+    // Función para mostrar animación de fade in
+    function showCard(card) {
+        card.style.display = 'block';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 10);
+    }
+
+    // Función para ocultar tarjeta
+    function hideCard(card) {
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.display = 'none';
+        }, 300);
+    }
+    
     articleCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
         
         if (category === 'todos' || cardCategory === category) {
-            card.style.display = 'block';
-            card.style.animation = 'fadeInUp 0.3s ease-out';
+            showCard(card);
             hasResults = true;
         } else {
-            card.style.display = 'none';
+            hideCard(card);
         }
     });
     
