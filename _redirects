@@ -1,0 +1,2 @@
+# Redirect all Netlify subdomain traffic to custom domain
+https://mejoresbolsos.netlify.app/*   https://affordable-handbags.com/:splat   301!
