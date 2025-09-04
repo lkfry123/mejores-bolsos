@@ -1,2 +1,6 @@
 # Redirect all Netlify subdomain traffic to custom domain
 https://mejoresbolsos.netlify.app/*   https://affordable-handbags.com/:splat   301!
+
+# Redirect old Spanish URLs to new English URLs
+/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025   /articles/best-durable-stylish-backpacks-2025   301
+/articulos/*   /articles/:splat   301
