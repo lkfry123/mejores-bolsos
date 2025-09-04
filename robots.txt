@@ -9,7 +9,7 @@ Allow: /categorias/
 Allow: /articulos/
 
 # Sitemap
-Sitemap: https://tudominio.com/sitemap.xml
+Sitemap: https://affordable-handbags.com/sitemap.xml
 
 # Tiempo de espera entre requests (opcional)
 Crawl-delay: 1
