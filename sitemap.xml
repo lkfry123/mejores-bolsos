@@ -11,35 +11,35 @@
     
     <!-- Category pages -->
     <url>
-        <loc>https://affordable-handbags.com/categorias/</loc>
+        <loc>https://affordable-handbags.com/categories/</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/categorias/bolsos-de-mano/</loc>
+        <loc>https://affordable-handbags.com/categories/bolsos-de-mano/</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/categorias/mochilas/</loc>
+        <loc>https://affordable-handbags.com/categories/mochilas/</loc>
         <lastmod>2025-01-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/categorias/carteras/</loc>
+        <loc>https://affordable-handbags.com/categories/carteras/</loc>
         <lastmod>2025-01-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/categorias/tote-bags/</loc>
+        <loc>https://affordable-handbags.com/categories/tote-bags/</loc>
         <lastmod>2025-01-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -50,33 +50,12 @@
         <loc>https://affordable-handbags.com/articles/</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     
     <!-- Individual articles -->
     <url>
         <loc>https://affordable-handbags.com/articles/3-functional-diaper-bags-moms-2025.html</loc>
-        <lastmod>2025-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://affordable-handbags.com/articles/3-rfid-security-wallets-2025.html</loc>
-        <lastmod>2025-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://affordable-handbags.com/articles/3-wristlet-wallets-women-2025.html</loc>
-        <lastmod>2025-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://affordable-handbags.com/articles/3-stylish-professional-backpacks-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -104,35 +83,35 @@
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/articles/minimalist-daily-bag-2025.html</loc>
+        <loc>https://affordable-handbags.com/articles/3-rfid-security-wallets-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/articles/handbags.html</loc>
+        <loc>https://affordable-handbags.com/articles/3-stylish-professional-backpacks-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/articles/fun-unique-gift-wallets-2025.html</loc>
+        <loc>https://affordable-handbags.com/articles/3-wristlet-wallets-women-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/articles/wallets.html</loc>
-        <lastmod>2025-01-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <loc>https://affordable-handbags.com/articles/backpacks.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/articles/how-to-choose-perfect-handbag-2025.html</loc>
+        <loc>https://affordable-handbags.com/articles/best-durable-stylish-backpacks-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -153,6 +132,27 @@
     </url>
     
     <url>
+        <loc>https://affordable-handbags.com/articles/fun-unique-gift-wallets-2025.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/articles/handbags.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://affordable-handbags.com/articles/how-to-choose-perfect-handbag-2025.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
         <loc>https://affordable-handbags.com/articles/laptop-backpacks-protection-style-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
@@ -160,14 +160,7 @@
     </url>
     
     <url>
-        <loc>https://affordable-handbags.com/articles/backpacks.html</loc>
-        <lastmod>2025-01-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://affordable-handbags.com/articles/best-durable-stylish-backpacks-2025.html</loc>
+        <loc>https://affordable-handbags.com/articles/minimalist-daily-bag-2025.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -182,9 +175,9 @@
     
     <url>
         <loc>https://affordable-handbags.com/articles/tote-bags.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     
     <url>
@@ -194,19 +187,11 @@
         <priority>0.9</priority>
     </url>
     
-    <!-- Legal pages -->
     <url>
-        <loc>https://affordable-handbags.com/politica-privacidad.html</loc>
-        <lastmod>2025-01-01</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <url>
-        <loc>https://affordable-handbags.com/aviso-afiliados.html</loc>
-        <lastmod>2025-01-01</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <loc>https://affordable-handbags.com/articles/wallets.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     
 </urlset>

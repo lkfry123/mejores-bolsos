@@ -3,6 +3,8 @@ Allow: /
 
 # Permitir acceso a todos los archivos estáticos
 Allow: /assets/
+Allow: /categories/
+Allow: /articles/
 Allow: /categorias/
 Allow: /articulos/
 

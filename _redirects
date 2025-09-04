@@ -25,3 +25,14 @@ https://mejoresbolsos.netlify.app/*   https://affordable-handbags.com/:splat   3
 /articles/resistentes-estilo-mejores-mochilas-dia-dia-2025.html   /articles/best-durable-stylish-backpacks-2025.html   301
 /articles/top-5-carteras-mujeres-profesionales-2025.html   /articles/top-5-professional-women-wallets-2025.html   301
 /articles/viajar-ligera-bolsos-aventureras-2025.html   /articles/travel-light-adventure-bags-2025.html   301
+
+# Redirect Spanish categorias to English categories
+/categorias/   /categories/   301
+/categorias/bolsos-de-mano/   /categories/bolsos-de-mano/   301
+/categorias/mochilas/   /categories/mochilas/   301
+/categorias/carteras/   /categories/carteras/   301
+/categorias/tote-bags/   /categories/tote-bags/   301
+
+# URL normalization rules
+/*/      /:splat/   301!    # add slash to pure directories
+/*.*/    /:splat    301!    # remove slash from files (e.g., .html, .jpg)
