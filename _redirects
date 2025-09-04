@@ -38,3 +38,9 @@ https://affordable-handbags.netlify.app/*   https://affordable-handbags.com/:spl
 /categorias/mochilas/   /categories/mochilas/   301
 /categorias/carteras/   /categories/carteras/   301
 /categorias/tote-bags/   /categories/tote-bags/   301
+
+# Redirect Spanish privacy policy to English
+/politica-privacidad.html   /privacy-policy.html   301
+
+# Redirect Spanish affiliate disclosure to English
+/aviso-afiliados.html   /affiliate-disclosure.html   301
