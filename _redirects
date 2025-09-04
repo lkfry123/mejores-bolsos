@@ -1,5 +1,11 @@
-# Redirect all Netlify subdomain traffic to custom domain
+# Domain redirects - redirect to non-www HTTPS version
+http://affordable-handbags.com/*   https://affordable-handbags.com/:splat   301!
+http://www.affordable-handbags.com/*   https://affordable-handbags.com/:splat   301!
+https://www.affordable-handbags.com/*   https://affordable-handbags.com/:splat   301!
+
+# Redirect Netlify subdomain to custom domain
 https://mejoresbolsos.netlify.app/*   https://affordable-handbags.com/:splat   301!
+https://affordable-handbags.netlify.app/*   https://affordable-handbags.com/:splat   301!
 
 # Redirect old Spanish URLs to new English URLs
 /articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025   /articles/best-durable-stylish-backpacks-2025   301
@@ -32,7 +38,3 @@ https://mejoresbolsos.netlify.app/*   https://affordable-handbags.com/:splat   3
 /categorias/mochilas/   /categories/mochilas/   301
 /categorias/carteras/   /categories/carteras/   301
 /categorias/tote-bags/   /categories/tote-bags/   301
-
-# URL normalization rules
-/*/      /:splat/   301!    # add slash to pure directories
-/*.*/    /:splat    301!    # remove slash from files (e.g., .html, .jpg)
