@@ -44,3 +44,14 @@ https://affordable-handbags.netlify.app/*   https://affordable-handbags.com/:spl
 
 # Redirect Spanish affiliate disclosure to English
 /aviso-afiliados.html   /affiliate-disclosure.html   301
+
+# Ensure static assets are served directly
+/photos/*   /photos/:splat   200
+/assets/*   /assets/:splat   200
+
+# Ensure image files are served with correct content type
+/*.jpg   /:splat   200
+/*.jpeg   /:splat   200
+/*.png   /:splat   200
+/*.gif   /:splat   200
+/*.webp   /:splat   200
