@@ -1,0 +1,12 @@
+{
+  "name": "mejores-bolsos",
+  "version": "1.0.0",
+  "description": "Affordable handbags website with sitemap generation",
+  "type": "module",
+  "scripts": {
+    "generate:sitemap": "node scripts/generate-sitemap.mjs"
+  },
+  "keywords": ["handbags", "bags", "sitemap", "seo"],
+  "author": "",
+  "license": "ISC"
+}

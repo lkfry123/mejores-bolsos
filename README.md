@@ -207,16 +207,25 @@ Añade el nuevo artículo a la página de categoría correspondiente en `/catego
 
 ### 3. Actualizar el sitemap.xml
 
-Añade la nueva URL al sitemap:
+El sitemap se genera automáticamente usando el script incluido. Para regenerar el sitemap después de añadir nuevos artículos:
 
-```xml
-<url>
-    <loc>https://tudominio.com/articulos/nombre-del-articulo.html</loc>
-    <lastmod>2025-01-XX</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-</url>
+```bash
+npm run generate:sitemap
 ```
+
+Este comando:
+- Escanea automáticamente el directorio `/articles/` para encontrar todos los archivos HTML
+- Obtiene las fechas de última modificación desde git
+- Genera un sitemap.xml válido con las URLs correctas
+- Actualiza el archivo `sitemap.xml` en la raíz del proyecto
+
+**Archivos generados:**
+- `sitemap.xml` - Mapa del sitio en la raíz del proyecto
+- `robots.txt` - Configuración para crawlers en la raíz del proyecto
+
+**Ubicación de archivos:**
+- Sitemap: `/sitemap.xml` (accesible en https://affordable-handbags.com/sitemap.xml)
+- Robots: `/robots.txt` (accesible en https://affordable-handbags.com/robots.txt)
 
 ### 4. Actualizar la página principal (opcional)
 
