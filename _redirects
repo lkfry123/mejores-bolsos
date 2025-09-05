@@ -48,6 +48,7 @@ https://affordable-handbags.netlify.app/*   https://affordable-handbags.com/:spl
 # Ensure static assets are served directly
 /photos/*   /photos/:splat   200
 /assets/*   /assets/:splat   200
+/images/*   /images/:splat   200
 
 # Ensure image files are served with correct content type
 /*.jpg   /:splat   200
