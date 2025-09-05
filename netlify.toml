@@ -78,3 +78,9 @@
   from = "/categorias/tote-bags/"
   to = "/es/categorias/tote-bags/"
   status = 301
+
+# Catch-all redirect for SPA behavior (must be last)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
