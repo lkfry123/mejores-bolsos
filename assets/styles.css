@@ -477,6 +477,32 @@ body {
     background-color: var(--color-gris-claro);
 }
 
+.search-results-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.search-results-header h2 {
+    color: var(--color-gris-oscuro);
+    margin-bottom: var(--spacing-sm);
+}
+
+.search-results-header p {
+    color: var(--color-gris-medio);
+    font-size: var(--font-size-large);
+    margin: 0;
+}
+
+.search-results-header #resultCount {
+    font-weight: 600;
+    color: var(--color-terracota);
+}
+
+.search-results-header #searchTerm {
+    font-weight: 600;
+    color: var(--color-verde-oliva);
+}
+
 .search-info {
     display: flex;
     justify-content: space-between;

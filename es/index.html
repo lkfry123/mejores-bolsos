@@ -137,7 +137,7 @@
     </section>
 
     <!-- Artículos Destacados -->
-    <section class="featured-articles">
+    <section id="latestArticles" class="featured-articles">
         <div class="container">
             <h2 class="section-title">Artículos Destacados</h2>
             <div class="articles-grid">
@@ -173,6 +173,19 @@
                         <span class="article-meta">15 Enero 2025</span>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section id="searchResults" class="search-results" style="display: none;">
+        <div class="container">
+            <div class="search-results-header">
+                <h2>Resultados de Búsqueda</h2>
+                <p>Se encontraron <span id="resultCount">0</span> resultados para "<span id="searchTerm"></span>"</p>
+            </div>
+            <div id="searchResultsGrid" class="articles-grid">
+                <!-- Los resultados de búsqueda se insertarán aquí dinámicamente -->
             </div>
         </div>
     </section>
