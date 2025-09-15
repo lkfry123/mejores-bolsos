@@ -102,8 +102,12 @@ function initSearchFunctionality() {
     }
 }
 
-// Base de datos de artículos para búsqueda
-const articlesDatabase = [
+// Function to get articles database based on current language
+function getArticlesDatabase() {
+    const currentPath = window.location.pathname;
+    
+    // Spanish articles database
+    const spanishArticles = [
     {
         title: "Resistentes y con Estilo: Las Mejores Mochilas para Tu Día a Día 2025",
         description: "Descubre por qué invertir en una mochila de alta calidad es esencial. Guía completa con las mejores mochilas resistentes y estilosas para el uso diario.",
@@ -195,50 +199,239 @@ const articlesDatabase = [
         date: "15 Enero 2025",
         tags: ["carteras", "profesionales", "mujeres", "elegancia", "funcionalidad", "oficina", "2025"]
     }
-];
+    ];
 
-// Sugerencias de búsqueda populares
-const popularSearchTerms = [
-    "carteras",
-    "bolsos de mano",
-    "mochilas",
-    "elegantes",
-    "profesionales",
-    "lujo",
-    "funcionales",
-    "comodidad",
-    "oficina",
-    "bodas",
-    "cenas",
-    "viajes",
-    "guía",
-    "ocasiones",
-    "2025",
-    "novia",
-    "clutch",
-    "satin",
-    "eventos",
-    "estilosas",
-    "laptop",
-    "antirrobo",
-    "USB",
-    "reutilizables",
-    "sostenible",
-    "compras",
-    "grocery",
-    "aisladas",
-    "calidad",
-    "resistente",
-    "durabilidad",
-    "protección",
-    "organización",
-    "versatilidad",
-    "TSA",
-    "FlexVent"
-];
+    // English articles database
+    const englishArticles = [
+        {
+            title: "How to Choose the Perfect Handbag 2025",
+            description: "Discover how to select the ideal bag according to the occasion. From special events to daily life, we guide you to find the perfect option that combines style, functionality and versatility.",
+            category: "Handbags",
+            url: "/articles/how-to-choose-perfect-handbag-2025.html",
+            image: "/photos/The Sak Sequoia Women's Hobo Handbag Purse.jpg",
+            date: "January 15, 2025",
+            tags: ["handbags", "guide", "occasions", "style", "functionality", "versatility", "2025"]
+        },
+        {
+            title: "3 Stylish Professional Backpacks 2025",
+            description: "Discover the best professional backpacks that combine elegance and functionality. Perfect for work, travel, and everyday use with modern designs and practical features.",
+            category: "Backpacks",
+            url: "/articles/3-stylish-professional-backpacks-2025.html",
+            image: "/photos/LOVEVOOK Laptop Backpack for Women 15.6in Computer Backpacks Dark Green.jpg",
+            date: "January 12, 2025",
+            tags: ["backpacks", "professional", "elegant", "functional", "work", "travel", "2025"]
+        },
+        {
+            title: "Top 5 Professional Women Wallets 2025",
+            description: "Choosing the right wallet not only adds style, it also provides organization and durability. Here we present our recommendations based on functionality, price and elegance.",
+            category: "Wallets",
+            url: "/articles/top-5-professional-women-wallets-2025.html",
+            image: "/photos/COACH Small Wristlet.jpg",
+            date: "January 15, 2025",
+            tags: ["wallets", "professional", "women", "elegance", "functionality", "office", "2025"]
+        },
+        {
+            title: "Best Durable and Stylish Backpacks 2025",
+            description: "Discover why investing in a high-quality backpack is essential. Complete guide with the best durable and stylish backpacks for daily use.",
+            category: "Backpacks",
+            url: "/articles/best-durable-stylish-backpacks-2025.html",
+            image: "/photos/LOVEVOOK Laptop Backpack for Women 15.6in Computer Backpacks Dark Green.jpg",
+            date: "January 30, 2025",
+            tags: ["backpacks", "quality", "durable", "daily use", "durability", "protection", "comfort", "organization", "versatility", "2025"]
+        },
+        {
+            title: "Best Lightweight Travel Backpacks 2025",
+            description: "Perfect for adventure and travel. Lightweight, spacious and with all the necessary compartments for your trips.",
+            category: "Backpacks",
+            url: "/articles/best-lightweight-travel-backpacks-2025.html",
+            image: "/photos/LOVEVOOK Laptop Backpack for Women 15.6in Computer Backpacks Dark Green.jpg",
+            date: "January 25, 2025",
+            tags: ["backpacks", "travel", "lightweight", "adventure", "spacious", "compartments", "2025"]
+        },
+        {
+            title: "Best Wedding Handbags 2025",
+            description: "Discover the 3 best handbags for weddings 2025. Complete guide with detailed reviews, comparisons and purchase links to find the perfect bag for your special day.",
+            category: "Handbags",
+            url: "/articles/best-wedding-handbags-2025.html",
+            image: "/photos/CHARMING TAILOR Classic Satin Clutch Bag Handbag.jpg",
+            date: "January 30, 2025",
+            tags: ["handbags", "weddings", "clutch", "elegant", "satin", "2025", "bride", "events"]
+        },
+        {
+            title: "Fun and Unique Gift Wallets 2025",
+            description: "Perfect gifts for any occasion. Unique and fun wallet designs that will surprise your loved ones.",
+            category: "Wallets",
+            url: "/articles/fun-unique-gift-wallets-2025.html",
+            image: "/photos/COACH Small Wristlet.jpg",
+            date: "January 20, 2025",
+            tags: ["wallets", "gifts", "unique", "fun", "designs", "surprise", "2025"]
+        },
+        {
+            title: "Minimalist Daily Bag 2025",
+            description: "The perfect balance between style and functionality. Minimalist designs for everyday use.",
+            category: "Handbags",
+            url: "/articles/minimalist-daily-bag-2025.html",
+            image: "/photos/The Sak Sequoia Women's Hobo Handbag Purse.jpg",
+            date: "January 18, 2025",
+            tags: ["handbags", "minimalist", "daily", "style", "functionality", "design", "2025"]
+        },
+        {
+            title: "Travel Light Adventure Bags 2025",
+            description: "Essential bags for your adventures. Light, resistant and with all the necessary features for outdoor activities.",
+            category: "Backpacks",
+            url: "/articles/travel-light-adventure-bags-2025.html",
+            image: "/photos/LOVEVOOK Laptop Backpack for Women 15.6in Computer Backpacks Dark Green.jpg",
+            date: "January 22, 2025",
+            tags: ["backpacks", "travel", "adventure", "light", "resistant", "outdoor", "activities", "2025"]
+        },
+        {
+            title: "Laptop Backpacks: Protection and Style 2025",
+            description: "Discover the best laptop backpacks with anti-theft protection, USB ports and TSA design. Complete guide with detailed reviews.",
+            category: "Backpacks",
+            url: "/articles/laptop-backpacks-protection-style-2025.html",
+            image: "/photos/VOLHER Laptop Backpack,Business Travel Anti Theft Slim Durable Laptops Backpack with USB Charging Port,Water Resistant.jpg",
+            date: "January 25, 2025",
+            tags: ["backpacks", "laptop", "anti-theft", "USB", "TSA", "protection", "2025"]
+        },
+        {
+            title: "3 Popular Amazon Tote Bags 2025",
+            description: "Discover the 3 most popular tote bags on Amazon 2025. Complete guide with detailed reviews, comparisons and purchase links.",
+            category: "Tote Bags",
+            url: "/articles/3-popular-amazon-tote-bags-2025.html",
+            image: "/photos/BAGSMART Tote Bag for Women, Foldable Tote Bag With Zipper Travel Large Shoulder Bag Handbag for Work.jpg",
+            date: "January 30, 2025",
+            tags: ["tote bags", "amazon", "popular", "shopping", "sustainable", "2025"]
+        },
+        {
+            title: "3 Functional Diaper Bags for Moms 2025",
+            description: "Discover the 3 best functional diaper bags for moms 2025. Complete guide with detailed reviews, comparisons and purchase links to keep everything organized with your baby.",
+            category: "Tote Bags",
+            url: "/articles/3-functional-diaper-bags-moms-2025.html",
+            image: "/photos/Diaper Bag Tote Large Tote Baby Bag Boy Diaper Bag Stylish Girl Diaper Ba Shoulder Mommy Bag.jpg",
+            date: "January 30, 2025",
+            tags: ["diaper bags", "moms", "babies", "organization", "functional", "2025", "tote bags"]
+        },
+        {
+            title: "3 Reusable Shopping Tote Bags 2025",
+            description: "Discover the 3 best reusable tote bags for shopping 2025. Complete guide with detailed reviews, comparisons and purchase links to reduce your environmental footprint while maintaining style.",
+            category: "Tote Bags",
+            url: "/articles/3-reusable-shopping-tote-bags-2025.html",
+            image: "/photos/Nook Theory Reusable Insulated Grocery Bag - Leak Proof, X Large Insulated Cooler Bag - Insulated Shopping Bags for Groceries - Travel Cooler Bag for Frozen.jpg",
+            date: "January 30, 2025",
+            tags: ["tote bags", "reusable", "shopping", "sustainable", "eco-friendly", "2025", "grocery", "insulated"]
+        },
+        {
+            title: "3 RFID Security Wallets 2025",
+            description: "Protect your cards with RFID blocking technology. Secure and stylish wallets for modern life.",
+            category: "Wallets",
+            url: "/articles/3-rfid-security-wallets-2025.html",
+            image: "/photos/COACH Small Wristlet.jpg",
+            date: "January 28, 2025",
+            tags: ["wallets", "RFID", "security", "protection", "cards", "technology", "2025"]
+        },
+        {
+            title: "3 Wristlet Wallets for Women 2025",
+            description: "Compact and elegant wristlet wallets perfect for essentials. Small but powerful for your daily needs.",
+            category: "Wallets",
+            url: "/articles/3-wristlet-wallets-women-2025.html",
+            image: "/photos/COACH Small Wristlet.jpg",
+            date: "January 26, 2025",
+            tags: ["wallets", "wristlet", "women", "compact", "elegant", "essentials", "2025"]
+        }
+    ];
+
+    // Return appropriate database based on current path
+    if (currentPath.startsWith('/es/') || currentPath === '/es' || currentPath === '/es/') {
+        return spanishArticles;
+    } else {
+        return englishArticles;
+    }
+}
+
+// Get the articles database
+const articlesDatabase = getArticlesDatabase();
+
+// Popular search terms based on language
+function getPopularSearchTerms() {
+    const currentPath = window.location.pathname;
+    
+    if (currentPath.startsWith('/es/') || currentPath === '/es' || currentPath === '/es/') {
+        return [
+            "carteras",
+            "bolsos de mano",
+            "mochilas",
+            "elegantes",
+            "profesionales",
+            "lujo",
+            "funcionales",
+            "comodidad",
+            "oficina",
+            "bodas",
+            "cenas",
+            "viajes",
+            "guía",
+            "ocasiones",
+            "2025",
+            "novia",
+            "clutch",
+            "satin",
+            "eventos",
+            "estilosas",
+            "laptop",
+            "antirrobo",
+            "USB",
+            "reutilizables",
+            "sostenible",
+            "compras",
+            "grocery",
+            "aisladas",
+            "calidad",
+            "resistente",
+            "durabilidad"
+        ];
+    } else {
+        return [
+            "handbags",
+            "backpacks",
+            "wallets",
+            "elegant",
+            "professional",
+            "luxury",
+            "functional",
+            "comfort",
+            "office",
+            "weddings",
+            "dinners",
+            "travel",
+            "guide",
+            "occasions",
+            "2025",
+            "bride",
+            "clutch",
+            "satin",
+            "events",
+            "stylish",
+            "laptop",
+            "anti-theft",
+            "USB",
+            "reusable",
+            "sustainable",
+            "shopping",
+            "grocery",
+            "insulated",
+            "quality",
+            "durable",
+            "durability"
+        ];
+    }
+}
+
+// Get popular search terms based on current language
+const popularSearchTerms = getPopularSearchTerms();
 
 function performSearch(searchTerm) {
-    const searchResults = articlesDatabase.filter(article => {
+    const currentDatabase = getArticlesDatabase();
+    const searchResults = currentDatabase.filter(article => {
         const searchableText = [
             article.title.toLowerCase(),
             article.description.toLowerCase(),
@@ -309,7 +502,8 @@ function showAlternativeArticles(searchTerm) {
     const searchTermSpan = document.getElementById('searchTerm');
     
     // Obtener artículos alternativos con puntuación de relevancia
-    const alternativeArticles = articlesDatabase.map(article => {
+    const currentDatabase = getArticlesDatabase();
+    const alternativeArticles = currentDatabase.map(article => {
         const searchableText = [
             article.title.toLowerCase(),
             article.description.toLowerCase(),
@@ -344,14 +538,14 @@ function showAlternativeArticles(searchTerm) {
     
     // Si no hay artículos relacionados, mostrar todos los artículos
     if (alternativeArticles.length === 0) {
-        alternativeArticles.push(...articlesDatabase.slice(0, 4));
+        alternativeArticles.push(...currentDatabase.slice(0, 4));
     }
     
     searchResultsGrid.innerHTML = `
         <div class="no-results-with-suggestions">
             <div class="no-results-message">
-                <p>No se encontraron artículos para "<strong>${searchTerm}</strong>"</p>
-                <p>Te sugerimos estos artículos relacionados:</p>
+                <p>${window.location.pathname.startsWith('/es/') ? 'No se encontraron artículos para' : 'No articles found for'} "<strong>${searchTerm}</strong>"</p>
+                <p>${window.location.pathname.startsWith('/es/') ? 'Te sugerimos estos artículos relacionados:' : 'We suggest these related articles:'}</p>
             </div>
             <div class="alternative-articles">
                 ${alternativeArticles.map(article => `
@@ -411,7 +605,7 @@ function showSearchSuggestions(searchTerm) {
         if (suggestions.articles.length > 0) {
             const articleSection = document.createElement('div');
             articleSection.className = 'suggestion-section';
-            articleSection.innerHTML = '<h4>Artículos</h4>';
+            articleSection.innerHTML = `<h4>${window.location.pathname.startsWith('/es/') ? 'Artículos' : 'Articles'}</h4>`;
             
             suggestions.articles.forEach(article => {
                 const suggestionItem = createArticleSuggestion(article, searchTerm);
@@ -425,7 +619,7 @@ function showSearchSuggestions(searchTerm) {
         if (suggestions.terms.length > 0) {
             const termsSection = document.createElement('div');
             termsSection.className = 'suggestion-section';
-            termsSection.innerHTML = '<h4>Términos populares</h4>';
+            termsSection.innerHTML = `<h4>${window.location.pathname.startsWith('/es/') ? 'Términos populares' : 'Popular terms'}</h4>`;
             
             suggestions.terms.forEach(term => {
                 const suggestionItem = createTermSuggestion(term, searchTerm);
@@ -448,7 +642,8 @@ function generateSuggestions(searchTerm) {
     };
     
     // Buscar artículos que coincidan
-    articlesDatabase.forEach(article => {
+    const currentDatabase = getArticlesDatabase();
+    currentDatabase.forEach(article => {
         const searchableText = [
             article.title.toLowerCase(),
             article.description.toLowerCase(),
