@@ -205,7 +205,7 @@ function getArticlesDatabase() {
         category: "Bolsos de Mano",
         url: "/articulos/bolsos-casual-elegantes-asequibles-invitadas-bodas-2025.html",
         image: "/photos/KKXIU Women Faux Leather Envelope Clutch Purse Foldover Bags.jpg",
-        date: "30 Enero 2025",
+        date: "18 Septiembre 2025",
         tags: ["bolsos de mano", "invitadas de boda", "asequibles", "elegantes", "casual", "clutch", "económicos", "2025"]
     }
     ];
@@ -352,8 +352,8 @@ function getArticlesDatabase() {
             description: "Discover the best affordable and elegant casual handbags perfect for wedding guests. Complete guide with detailed reviews and purchase links for stylish yet budget-friendly options.",
             category: "Handbags",
             url: "/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html",
-            image: "/photos/KKXIU Women Faux Leather Envelope Clutch Purse Foldover Bags.jpg",
-            date: "January 30, 2025",
+            image: "/photos/Y2k Shoulder Bag Red Patent Leather Purse For Women Small Vintage Handbag Burgundy Hobo Bags Faux Leather Underarm1.jpg",
+            date: "September 18, 2025",
             tags: ["handbags", "wedding guest", "affordable", "elegant", "casual", "clutch", "budget-friendly", "2025"]
         }
     ];
