@@ -1,3 +1,22 @@
-/es/*    /articulos/:splat    200
-/es      /articulos/    200
+# Canonicalize .html and /index.html to trailing-slash URLs
+/:splat/index.html   /:splat/   301!
+/:splat.html         /:splat/   301!
+
+# Serve homepages from their index files
+/               /index.html              200
+/es/            /es/index.html           200
+
+# Spanish categories and articles (clean trailing slashes)
+/es/categorias/:splat/     /es/categorias/:splat.html     200
+/es/articles/:splat/       /es/articles/:splat.html       200
+
+# Index pages for Spanish sections
+/es/categorias/            /es/categorias/index.html       200
+/es/articles/              /es/articles/index.html         200
+
+# English articles
+/articles/:splat/          /articles/:splat.html          200
+
+# English articles index
+/articles/                 /articles/index.html            200
 
