@@ -919,10 +919,25 @@ function initSmoothScroll() {
 
 // ===== ENLACES EXTERNOS =====
 function initExternalLinks() {
-    const externalLinks = document.querySelectorAll('a[href^="http"]');
+    const links = document.querySelectorAll('a[href^="http"]');
     
-    externalLinks.forEach(link => {
-        // Agregar atributos de seguridad para enlaces externos
+    links.forEach(link => {
+        // No abrir en nueva pestaña los enlaces del conmutador de idioma
+        if (link.closest('.language-switcher')) {
+            link.removeAttribute('target');
+            return;
+        }
+        
+        // Tratar como internos los enlaces del mismo origen (aunque sean absolutos)
+        try {
+            const url = new URL(link.href);
+            if (url.origin === window.location.origin) {
+                link.removeAttribute('target');
+                return;
+            }
+        } catch (_) {}
+        
+        // Enlaces externos: abrir en nueva pestaña con atributos de seguridad
         link.setAttribute('rel', 'sponsored noopener noreferrer');
         link.setAttribute('target', '_blank');
         
