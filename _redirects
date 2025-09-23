@@ -33,6 +33,10 @@
 # Spanish categories and articles (clean trailing slashes)
 /es/categorias/:splat/     /es/categorias/:splat.html     200
 
+# Redirect Spanish categories from /categorias/ to /es/categorias/
+/categorias/:splat/        /es/categorias/:splat/          301
+/categorias/               /es/categorias/                 301
+
 # Legacy Spanish slug in English articles → canonical English (MUST be before general /articulos/ rules)
 /articulos/bolsos-de-mano/   /articles/handbags/             301
 
