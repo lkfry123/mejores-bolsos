@@ -1,15 +1,17 @@
-# Canonicalize .html and /index.html to trailing-slash URLs
-/:splat/index.html   /:splat/   301!
-/:splat.html         /:splat/   301!
+# Serve homepages from their index files (MUST be first to avoid conflicts)
+/               /index.html              200
+/es/            /es/index.html           200
 
 # Redirect legacy Spanish articles path to public /articulos/
 /es/articles/*              /articulos/:splat/             301
 /es/articles                /articulos/                    301
 /es/articles/               /articulos/                    301
 
-# Serve homepages from their index files
-/               /index.html              200
-/es/            /es/index.html           200
+# Canonicalize .html and /index.html to trailing-slash URLs (exclude Spanish paths)
+/articles/:splat/index.html   /articles/:splat/   301!
+/articles/:splat.html         /articles/:splat/   301!
+/articulos/:splat/index.html  /articulos/:splat/  301!
+/articulos/:splat.html        /articulos/:splat/  301!
 
 # Map Spanish slugs under /articles/ to English equivalents (trailing slash)
 /articulos/como-elegir-bolso-mano-perfecto-2025/   /articles/how-to-choose-perfect-handbag-2025/        301
@@ -31,15 +33,15 @@
 # Spanish categories and articles (clean trailing slashes)
 /es/categorias/:splat/     /es/categorias/:splat.html     200
 
+# Legacy Spanish slug in English articles → canonical English (MUST be before general /articulos/ rules)
+/articulos/bolsos-de-mano/   /articles/handbags/             301
+
 # Serve /articulos/ from the Spanish articles directory
 /articulos/:splat/          /es/articulos/:splat.html       200
 /articulos/                 /es/articulos/index.html        200
 
 # Index pages for Spanish sections
 /es/categorias/            /es/categorias/index.html       200
-
-# Legacy Spanish slug in English articles → canonical English
-/articulos/bolsos-de-mano/   /articles/handbags/             301
 
 # English articles
 /articles/:splat/          /articles/:splat.html          200
