@@ -10,8 +10,17 @@
 /es/categorias/:splat/     /es/categorias/:splat.html     200
 /es/articles/:splat/       /es/articles/:splat.html       200
 
+# Spanish vanity path mapping: /articulos/ as the public prefix
+# 301 from old /es/articles/* to /articulos/:splat/
+/es/articles/*              /articulos/:splat/             301
+
+# Serve /articulos/ from the Spanish articles directory
+/articulos/:splat/          /es/articles/:splat.html       200
+/articulos/                 /es/articles/index.html        200
+
 # Index pages for Spanish sections
 /es/categorias/            /es/categorias/index.html       200
+# keep /es/articles/ for backward compatibility
 /es/articles/              /es/articles/index.html         200
 
 # English articles
