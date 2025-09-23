@@ -12,34 +12,34 @@
 /es/            /es/index.html           200
 
 # Map Spanish slugs under /articles/ to English equivalents (trailing slash)
-/articles/como-elegir-bolso-mano-perfecto-2025/   /articles/how-to-choose-perfect-handbag-2025/        301
-/articles/bolso-minimalista-dia-dia-2025/         /articles/minimalist-daily-bag-2025/                 301
-/articles/las-mejores-mochilas-mano-viajar-ligero-2025/   /articles/best-lightweight-travel-backpacks-2025/   301
-/articles/resistentes-estilo-mejores-mochilas-dia-dia-2025/   /articles/best-durable-stylish-backpacks-2025/   301
-/articles/mejores-bolsos-mano-bodas-2025/         /articles/best-wedding-handbags-2025/               301
-/articles/mochilas-para-laptop-proteccion-estilo-2025/   /articles/laptop-backpacks-protection-style-2025/   301
-/articles/viajar-ligera-bolsos-aventureras-2025/  /articles/travel-light-adventure-bags-2025/          301
-/articles/3-mochilas-profesionales-estilosas-2025/   /articles/3-stylish-professional-backpacks-2025/  301
-/articles/3-tote-bags-populares-amazon-2025/      /articles/3-popular-amazon-tote-bags-2025/          301
-/articles/3-tote-bags-funcionales-universidad-2025/   /articles/3-functional-university-tote-bags-2025/   301
-/articles/3-tote-bags-reutilizables-compras-2025/ /articles/3-reusable-shopping-tote-bags-2025/       301
-/articles/3-bolsos-panales-funcionales-mamas-2025/   /articles/3-functional-diaper-bags-moms-2025/     301
-/articles/3-carteras-wristlet-mujeres-2025/       /articles/3-wristlet-wallets-women-2025/            301
-/articles/3-carteras-rfid-seguridad-2025/         /articles/3-rfid-security-wallets-2025/             301
-/articles/top-5-carteras-mujeres-profesionales-2025/   /articles/top-5-professional-women-wallets-2025/   301
+/articulos/como-elegir-bolso-mano-perfecto-2025/   /articles/how-to-choose-perfect-handbag-2025/        301
+/articulos/bolso-minimalista-dia-dia-2025/         /articles/minimalist-daily-bag-2025/                 301
+/articulos/las-mejores-mochilas-mano-viajar-ligero-2025/   /articles/best-lightweight-travel-backpacks-2025/   301
+/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/   /articles/best-durable-stylish-backpacks-2025/   301
+/articulos/mejores-bolsos-mano-bodas-2025/         /articles/best-wedding-handbags-2025/               301
+/articulos/mochilas-para-laptop-proteccion-estilo-2025/   /articles/laptop-backpacks-protection-style-2025/   301
+/articulos/viajar-ligera-bolsos-aventureras-2025/  /articles/travel-light-adventure-bags-2025/          301
+/articulos/3-mochilas-profesionales-estilosas-2025/   /articles/3-stylish-professional-backpacks-2025/  301
+/articulos/3-tote-bags-populares-amazon-2025/      /articles/3-popular-amazon-tote-bags-2025/          301
+/articulos/3-tote-bags-funcionales-universidad-2025/   /articles/3-functional-university-tote-bags-2025/   301
+/articulos/3-tote-bags-reutilizables-compras-2025/ /articles/3-reusable-shopping-tote-bags-2025/       301
+/articulos/3-bolsos-panales-funcionales-mamas-2025/   /articles/3-functional-diaper-bags-moms-2025/     301
+/articulos/3-carteras-wristlet-mujeres-2025/       /articles/3-wristlet-wallets-women-2025/            301
+/articulos/3-carteras-rfid-seguridad-2025/         /articles/3-rfid-security-wallets-2025/             301
+/articulos/top-5-carteras-mujeres-profesionales-2025/   /articles/top-5-professional-women-wallets-2025/   301
 
 # Spanish categories and articles (clean trailing slashes)
 /es/categorias/:splat/     /es/categorias/:splat.html     200
 
 # Serve /articulos/ from the Spanish articles directory
-/articulos/:splat/          /es/articles/:splat.html       200
-/articulos/                 /es/articles/index.html        200
+/articulos/:splat/          /es/articulos/:splat.html       200
+/articulos/                 /es/articulos/index.html        200
 
 # Index pages for Spanish sections
 /es/categorias/            /es/categorias/index.html       200
 
 # Legacy Spanish slug in English articles → canonical English
-/articles/bolsos-de-mano/   /articles/handbags/             301
+/articulos/bolsos-de-mano/   /articles/handbags/             301
 
 # English articles
 /articles/:splat/          /articles/:splat.html          200
