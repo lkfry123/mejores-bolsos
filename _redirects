@@ -11,6 +11,9 @@ https://affordable-handbags.netlify.app/*   https://affordable-handbags.com/:spl
 /articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025   /articles/best-durable-stylish-backpacks-2025   301
 /articulos/*   /articles/:splat   301
 
+# Redirect mistakenly crawled English Spanish-path URLs
+/en/articulos/*   /articles/:splat   301
+
 # Redirect Spanish article slugs to English equivalents
 /articles/3-bolsos-panales-funcionales-mamas-2025.html   /articles/3-functional-diaper-bags-moms-2025.html   301
 /articles/3-carteras-rfid-seguridad-2025.html   /articles/3-rfid-security-wallets-2025.html   301
