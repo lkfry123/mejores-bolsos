@@ -19,6 +19,12 @@ https://affordable-handbags.netlify.app/*   https://affordable-handbags.com/:spl
 /en/articulos/  /articles/   301
 /en/articulos/index.html   /articles/   301
 
+# Redirect legacy Spanish /es/articulos paths to canonical /es/articles
+/es/articulos/*   /es/articles/:splat   301
+/es/articulos     /es/articles/         301
+/es/articulos/    /es/articles/         301
+/es/articulos/index.html   /es/articles/ 301
+
 # Redirect Spanish article slugs to English equivalents
 /articles/3-bolsos-panales-funcionales-mamas-2025.html   /articles/3-functional-diaper-bags-moms-2025.html   301
 /articles/3-carteras-rfid-seguridad-2025.html   /articles/3-rfid-security-wallets-2025.html   301
