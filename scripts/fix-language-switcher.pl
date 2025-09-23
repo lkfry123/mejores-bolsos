@@ -47,6 +47,13 @@ for my $file (@files) {
     $upd =~ s/(href=(["'])[^"']+)\.html(\2)/$1\/$3/gi;
     # remove any target attribute so links open in same tab
     $upd =~ s/\s+target=(["'])[a-zA-Z_\-]+\1//gi;
+    # reorder to EN / ES
+    my ($enA) = $upd =~ /(<a\b[^>]*>\s*EN\s*<\/a>)/i;
+    my ($esA) = $upd =~ /(<a\b[^>]*>\s*ES\s*<\/a>)/i;
+    if ($enA && $esA) {
+      $upd =~ s/<a\b[^>]*>\s*(?:EN|ES)\s*<\/a>//ig;
+      $upd = $enA . "\n" . $esA;
+    }
     $html =~ s/(<!--\s*Language Switcher\s*-->[\s\S]*?<div\s+class=\"language-switcher\"[\s\S]*?>)[\s\S]*?(<\/div>)/$1$upd$2/i;
   }
 
