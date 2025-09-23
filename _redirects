@@ -21,6 +21,9 @@
 # Index pages for Spanish sections
 /es/categorias/            /es/categorias/index.html       200
 
+# Legacy Spanish slug in English articles → canonical English
+/articles/bolsos-de-mano/   /articles/handbags/             301
+
 # English articles
 /articles/:splat/          /articles/:splat.html          200
 
