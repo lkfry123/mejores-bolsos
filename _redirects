@@ -71,6 +71,10 @@ https://affordable-handbags.netlify.app/*   https://affordable-handbags.com/:spl
 /articles/:splat/        /articles/:splat.html        200
 /es/articles/:splat/     /es/articles/:splat.html     200
 
+# Serve homepages from their index files to avoid any generic trailing-slash 301 side-effects
+/               /index.html              200
+/es/            /es/index.html           200
+
 # Ensure static assets are served directly
 /photos/*   /photos/:splat   200
 /assets/*   /assets/:splat   200
