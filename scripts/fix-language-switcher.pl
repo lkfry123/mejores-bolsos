@@ -45,6 +45,8 @@ for my $file (@files) {
     }
     # also remove .html to trailing slash for any remaining hrefs within the switcher (no eval)
     $upd =~ s/(href=(["'])[^"']+)\.html(\2)/$1\/$3/gi;
+    # remove any target attribute so links open in same tab
+    $upd =~ s/\s+target=(["'])[a-zA-Z_\-]+\1//gi;
     $html =~ s/(<!--\s*Language Switcher\s*-->[\s\S]*?<div\s+class=\"language-switcher\"[\s\S]*?>)[\s\S]*?(<\/div>)/$1$upd$2/i;
   }
 
