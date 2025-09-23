@@ -1,13 +1,13 @@
-# Trailing slash canonicalization (sitewide)
-/*/index.html   /:splat/   301!
-/*.html         /:splat/   301!
+# Trailing slash canonicalization (sitewide) — Netlify-compatible patterns
+/:splat/index.html   /:splat/   301!
+/:splat.html         /:splat/   301!
 
 # Extra top-priority scoping (belt-and-suspenders)
-/index.html      /         301!
-/es/index.html   /es/      301!
-/articles/*.html        /articles/:splat/        301!
-/es/articles/*.html     /es/articles/:splat/     301!
-/es/*/index.html        /es/:splat/              301!
+/index.html           /              301!
+/es/index.html        /es/           301!
+/articles/:splat.html     /articles/:splat/     301!
+/es/articles/:splat.html  /es/articles/:splat/  301!
+/es/:splat/index.html     /es/:splat/           301!
 
 # Domain redirects - redirect to non-www HTTPS version
 http://affordable-handbags.com/*   https://affordable-handbags.com/:splat   301!
