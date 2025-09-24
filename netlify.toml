@@ -572,6 +572,43 @@
   status = 301
   force = true
 
+# Add redirects for category pages
+[[redirects]]
+  from = "/categories.html"
+  to = "/categories/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/categorias/index.html"
+  to = "/es/categorias/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/categorias/bolsos-de-mano/index.html"
+  to = "/es/categorias/bolsos-de-mano/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/categorias/mochilas/index.html"
+  to = "/es/categorias/mochilas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/categorias/carteras/index.html"
+  to = "/es/categorias/carteras/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/categorias/tote-bags/index.html"
+  to = "/es/categorias/tote-bags/"
+  status = 301
+  force = true
+
 # Homepage serving rules
 [[redirects]]
   from = "/"
