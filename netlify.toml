@@ -85,7 +85,7 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Redirect rules
+# Redirect rules (MUST be first to take precedence)
 [[redirects]]
   from = "/articles/*.html"
   to = "/articles/:splat/"
@@ -261,7 +261,7 @@
   to = "/articles/handbags/"
   status = 301
 
-# Index page serving
+# Index page serving (MUST be after redirect rules)
 [[redirects]]
   from = "/es/categorias/*"
   to = "/es/categorias/:splat.html"
@@ -272,6 +272,7 @@
   to = "/es/categorias/index.html"
   status = 200
 
+# Serve articles with trailing slash (MUST be after redirect rules)
 [[redirects]]
   from = "/articles/*"
   to = "/articles/:splat.html"
