@@ -586,6 +586,12 @@
   force = true
 
 [[redirects]]
+  from = "/es.html"
+  to = "/es/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/es/categorias/index.html"
   to = "/es/categorias/"
   status = 301
