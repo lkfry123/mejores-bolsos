@@ -592,6 +592,18 @@
   force = true
 
 [[redirects]]
+  from = "/articles.html"
+  to = "/articles/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos.html"
+  to = "/es/articulos/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/es/categorias/index.html"
   to = "/es/categorias/"
   status = 301
