@@ -525,6 +525,34 @@
   status = 301
   force = true
 
+# Add missing redirect for Spanish index article
+[[redirects]]
+  from = "/es/articulos/index.html"
+  to = "/es/articulos/"
+  status = 301
+  force = true
+
+# Add redirect for Spanish privacy policy
+[[redirects]]
+  from = "/es/politica-privacidad.html"
+  to = "/es/politica-privacidad/"
+  status = 301
+  force = true
+
+# Add redirect for Spanish affiliate disclosure
+[[redirects]]
+  from = "/es/aviso-afiliados.html"
+  to = "/es/aviso-afiliados/"
+  status = 301
+  force = true
+
+# Add redirect for Spanish homepage
+[[redirects]]
+  from = "/es/index.html"
+  to = "/es/"
+  status = 301
+  force = true
+
 # Homepage serving rules
 [[redirects]]
   from = "/"
