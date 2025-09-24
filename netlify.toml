@@ -423,7 +423,7 @@
 
 [[redirects]]
   from = "/es/articulos/best-durable-stylish-backpacks-2025.html"
-  to = "/es/articulos/best-durable-stylish-backpacks-2025/"
+  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
   status = 301
   force = true
 
@@ -514,6 +514,13 @@
 
 [[redirects]]
   from = "/es/articulos/best-durable-stylish-backpacks-2025.html"
+  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
+  status = 301
+  force = true
+
+# Add redirect for the new Spanish slug
+[[redirects]]
+  from = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025.html"
   to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
   status = 301
   force = true
