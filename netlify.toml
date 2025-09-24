@@ -106,6 +106,12 @@
   force = true
 
 [[redirects]]
+  from = "/articles/best-durable-stylish-backpacks-2025.html"
+  to = "/articles/best-durable-stylish-backpacks-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html"
   to = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025/"
   status = 301
