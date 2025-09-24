@@ -603,22 +603,47 @@
   status = 301
   force = true
 
+# Redirect English categories to articles pages
+[[redirects]]
+  from = "/categories/wallets/"
+  to = "/articles/wallets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/backpacks/"
+  to = "/articles/backpacks/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/handbags/"
+  to = "/articles/handbags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/tote-bags/"
+  to = "/articles/tote-bags/"
+  status = 301
+  force = true
+
 # Redirect old Spanish slug category URLs to English slug URLs
 [[redirects]]
   from = "/categories/carteras/"
-  to = "/categories/wallets/"
+  to = "/articles/wallets/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/categories/mochilas/"
-  to = "/categories/backpacks/"
+  to = "/articles/backpacks/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/categories/bolsos-de-mano/"
-  to = "/categories/handbags/"
+  to = "/articles/handbags/"
   status = 301
   force = true
 
