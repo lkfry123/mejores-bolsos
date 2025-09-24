@@ -603,6 +603,25 @@
   status = 301
   force = true
 
+# Redirect old Spanish slug category URLs to English slug URLs
+[[redirects]]
+  from = "/categories/carteras/"
+  to = "/categories/wallets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/mochilas/"
+  to = "/categories/backpacks/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/bolsos-de-mano/"
+  to = "/categories/handbags/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/es/categorias/index.html"
   to = "/es/categorias/"
