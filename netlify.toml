@@ -272,12 +272,13 @@
   to = "/es/categorias/index.html"
   status = 200
 
-# Serve articles with trailing slash (MUST be after redirect rules)
+# Serve articles with trailing slash URLs
 [[redirects]]
-  from = "/articles/*"
+  from = "/articles/*/"
   to = "/articles/:splat.html"
   status = 200
 
+# Serve articles index
 [[redirects]]
   from = "/articles/"
   to = "/articles/index.html"
