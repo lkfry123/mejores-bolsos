@@ -85,3 +85,34 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Redirect rules
+[[redirects]]
+  from = "/articles/*.html"
+  to = "/articles/:splat/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html"
+  to = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-rfid-security-wallets-2025.html"
+  to = "/articles/3-rfid-security-wallets-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articulos/*.html"
+  to = "/articulos/:splat/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/*.html"
+  to = "/es/articulos/:splat/"
+  status = 301
+  force = true
+
