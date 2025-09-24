@@ -1,7 +1,10 @@
+# Test simple redirect first
+/test-redirect  /test-destination  301!
+
 # Redirect .html to trailing slash for English articles (MUST be first)
-/articles/*.html           /articles/:splat/              301
-/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html  /articles/affordable-elegant-casual-handbags-wedding-guest-2025/  301
-/articles/3-rfid-security-wallets-2025.html  /articles/3-rfid-security-wallets-2025/  301
+/articles/*.html           /articles/:splat/              301!
+/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html  /articles/affordable-elegant-casual-handbags-wedding-guest-2025/  301!
+/articles/3-rfid-security-wallets-2025.html  /articles/3-rfid-security-wallets-2025/  301!
 
 # Serve homepages from their index files (MUST be first to avoid conflicts)
 /               /index.html              200
