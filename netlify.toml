@@ -622,6 +622,37 @@
   status = 301
   force = true
 
+# Redirect incorrect /en/categorias/ URLs to proper English categories
+[[redirects]]
+  from = "/en/categorias/"
+  to = "/categories/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/categorias/carteras/"
+  to = "/categories/wallets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/categorias/mochilas/"
+  to = "/categories/backpacks/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/categorias/bolsos-de-mano/"
+  to = "/categories/handbags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/categorias/tote-bags/"
+  to = "/categories/tote-bags/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/es/categorias/index.html"
   to = "/es/categorias/"
