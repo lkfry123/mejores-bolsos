@@ -553,6 +553,25 @@
   status = 301
   force = true
 
+# Add redirects for English pages
+[[redirects]]
+  from = "/privacy-policy.html"
+  to = "/privacy-policy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/affiliate-disclosure.html"
+  to = "/affiliate-disclosure/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
 # Homepage serving rules
 [[redirects]]
   from = "/"
