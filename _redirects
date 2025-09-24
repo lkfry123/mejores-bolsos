@@ -46,14 +46,7 @@
 # Legacy Spanish slug in English articles → canonical English (MUST be before general /articulos/ rules)
 /articulos/bolsos-de-mano/   /articles/handbags/             301
 
-# Serve /articulos/ from the Spanish articles directory - serve with trailing slash
-/articulos/:splat/          /es/articulos/:splat.html       200
-/articulos/:splat.html      /articulos/:splat/              301!
-/articulos/                 /es/articulos/index.html        200
-
-# Spanish articles with /es/ prefix - serve with trailing slash
-/es/articulos/:splat/      /es/articulos/:splat.html       200
-/es/articulos/:splat.html  /es/articulos/:splat/            301!
+# Spanish articles redirects moved to netlify.toml
 
 # Index pages for Spanish sections
 /es/categorias/            /es/categorias/index.html       200

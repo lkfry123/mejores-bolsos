@@ -116,3 +116,28 @@
   status = 301
   force = true
 
+# Additional Spanish article redirects
+[[redirects]]
+  from = "/articulos/3-carteras-rfid-seguridad-2025.html"
+  to = "/articulos/3-carteras-rfid-seguridad-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articulos/3-bolsos-panales-funcionales-mamas-2025.html"
+  to = "/articulos/3-bolsos-panales-funcionales-mamas-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-carteras-rfid-seguridad-2025.html"
+  to = "/es/articulos/3-carteras-rfid-seguridad-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-bolsos-panales-funcionales-mamas-2025.html"
+  to = "/es/articulos/3-bolsos-panales-funcionales-mamas-2025/"
+  status = 301
+  force = true
+
