@@ -505,6 +505,19 @@
   status = 301
   force = true
 
+# Redirect English slug to proper Spanish slug
+[[redirects]]
+  from = "/es/articulos/best-durable-stylish-backpacks-2025/"
+  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/best-durable-stylish-backpacks-2025.html"
+  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
+  status = 301
+  force = true
+
 # Homepage serving rules
 [[redirects]]
   from = "/"
