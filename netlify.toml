@@ -34,6 +34,22 @@
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
+# Exclude redirect rules from cache headers
+[[headers]]
+  for = "/articles/*.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/articulos/*.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/es/articulos/*.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
 [[headers]]
   for = "/photos/*"
   [headers.values]
