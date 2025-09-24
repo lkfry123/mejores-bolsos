@@ -92,6 +92,19 @@
   status = 301
   force = true
 
+# Additional specific redirects for articles that aren't redirecting
+[[redirects]]
+  from = "/articles/how-to-choose-perfect-handbag-2025.html"
+  to = "/articles/how-to-choose-perfect-handbag-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-functional-diaper-bags-moms-2025.html"
+  to = "/articles/3-functional-diaper-bags-moms-2025/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html"
   to = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025/"
