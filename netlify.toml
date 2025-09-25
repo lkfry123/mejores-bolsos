@@ -35,6 +35,12 @@
     Cache-Control = "public, max-age=3600"
 
 # Exclude redirect rules from cache headers
+# Quiz page redirect - must be first
+[[redirects]]
+  from = "/quiz/bag-personality/"
+  to = "/quiz/bag-personality/index.html"
+  status = 200
+
 [[headers]]
   for = "/articles/*.html"
   [headers.values]
@@ -837,12 +843,6 @@
 [[redirects]]
   from = "/es/categorias/"
   to = "/es/categorias/index.html"
-  status = 200
-
-# Serve quiz page
-[[redirects]]
-  from = "/quiz/bag-personality/"
-  to = "/quiz/bag-personality/index.html"
   status = 200
 
 # Serve articles index
