@@ -839,6 +839,12 @@
   to = "/es/categorias/index.html"
   status = 200
 
+# Serve quiz page
+[[redirects]]
+  from = "/quiz/bag-personality/"
+  to = "/quiz/bag-personality/index.html"
+  status = 200
+
 # Serve articles index
 [[redirects]]
   from = "/articles/"
