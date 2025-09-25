@@ -839,22 +839,17 @@
   to = "/es/categorias/index.html"
   status = 200
 
-# Serve articles with trailing slash URLs
-[[redirects]]
-  from = "/articles/*/"
-  to = "/articles/:splat.html"
-  status = 200
-
 # Serve articles index
 [[redirects]]
   from = "/articles/"
   to = "/articles/index.html"
   status = 200
 
-# General .html to slash redirect for any remaining files
+# Serve individual articles with trailing slash URLs
 [[redirects]]
-  from = "/*.html"
-  to = "/:splat/"
-  status = 301
-  force = true
+  from = "/articles/*/"
+  to = "/articles/:splat.html"
+  status = 200
+
+# Note: Specific .html to slash redirects are handled individually above
 
