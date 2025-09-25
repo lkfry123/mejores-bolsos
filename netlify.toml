@@ -851,3 +851,10 @@
   to = "/articles/index.html"
   status = 200
 
+# General .html to slash redirect for any remaining files
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat/"
+  status = 301
+  force = true
+
