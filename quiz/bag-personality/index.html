@@ -7,6 +7,10 @@
   <meta name="description" content="Take this fun quiz to discover your bag personality: Crossbody, Tote, Backpack, Clutch, or Rolling.">
   <style>
     .bagquiz{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:2rem auto;max-width:760px;padding:1rem}
+    .bagquiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #eee}
+    .bagquiz-logo{font-size:1.2rem;font-weight:600;text-decoration:none;color:#111}
+    .bagquiz-home{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border:1px solid #ddd;border-radius:8px;text-decoration:none;color:#111;font-size:.9rem;transition:all .2s}
+    .bagquiz-home:hover{background:#f5f5f5;border-color:#999}
     .bagquiz h1{font-size:1.8rem;margin-bottom:.25rem}
     .bagquiz p.lead{color:#555;margin:.25rem 0 1rem}
     .bagquiz fieldset{border:1px solid #e6e6e6;border-radius:12px;padding:1rem;margin-bottom:1rem}
@@ -23,6 +27,12 @@
 </head>
 <body>
 <main class="bagquiz">
+  <!-- Header with logo and home button -->
+  <header class="bagquiz-header">
+    <a href="/" class="bagquiz-logo">Bags & Fashion</a>
+    <a href="/" class="bagquiz-home">← Back to Home</a>
+  </header>
+  
   <h1>What's Your Bag Personality?</h1>
   <p class="lead">Answer a few quick questions and get your silly result 😉</p>
 
