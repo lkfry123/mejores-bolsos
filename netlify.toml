@@ -35,7 +35,13 @@
     Cache-Control = "public, max-age=3600"
 
 # Exclude redirect rules from cache headers
-# Quiz page redirect - must be first
+# Quiz page redirects
+[[redirects]]
+  from = "/quiz/bag-personality.html"
+  to = "/quiz/bag-personality/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/quiz/bag-personality/"
   to = "/quiz/bag-personality/index.html"
