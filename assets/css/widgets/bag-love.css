@@ -1,0 +1,69 @@
+.ah-love-wrap {
+--accent: #ff6a00;
+--fg: #fff; --muted:#b8b8b8; --pos:60;
+display:block; width:100%;
+margin: 1rem 0 1.25rem;
+border-radius: 1rem; padding: .9rem 1rem 1rem;
+background:#1a1a1a; color:var(--fg);
+box-shadow:0 6px 22px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.04);
+min-height: 92px;
+}
+.ah-love-header{font-size:.95rem;font-weight:700;letter-spacing:.2px;margin-bottom:.55rem;display:flex;align-items:center;gap:.5rem}
+.ah-love-control{display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:center}
+
+.ah-love-wrap input[type="range"]{
+-webkit-appearance:none;width:100%;height:12px;border-radius:999px;outline:0;cursor:pointer;
+background:linear-gradient(currentColor 0 0) 0/0% 100% no-repeat, rgba(255,255,255,.12);
+color:var(--accent); transition:filter .2s ease;
+}
+.ah-love-wrap input[type="range"]:focus{filter: drop-shadow(0 0 6px rgba(255,255,255,.18))}
+.ah-love-wrap input[type="range"]::-webkit-slider-thumb{
+-webkit-appearance:none;width:28px;height:28px;border-radius:50%;
+background:
+radial-gradient(circle at 50% 45%, #ff2d55 28%, #c71736 29% 52%, transparent 53%),
+radial-gradient(circle at 50% 55%, #ff2d55 28%, #c71736 29% 52%, transparent 53%),
+radial-gradient(circle at 50% 50%, #ff2d55 62%, transparent 63%);
+border:2px solid rgba(255,255,255,.85); box-shadow:0 4px 10px rgba(0,0,0,.35);
+}
+.ah-love-wrap input[type="range"]::-moz-range-thumb{
+width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgba(255,255,255,.85);box-shadow:0 4px 10px rgba(0,0,0,.35)
+}
+
+.ah-love-value{font-variant-numeric:tabular-nums;font-weight:700;min-width:3ch;text-align:right}
+.ah-love-caption{margin-top:.45rem;font-size:.95rem;color:var(--muted);min-height:1.75rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.ah-love-icon{width:20px;height:20px;display:inline-block;vertical-align:-3px}
+.ah-love-remark{font-weight:600;color:#e7e7e7}
+
+.ah-love-wrap input[type="range"]{background-size:calc(var(--pos)*1%) 100%,100% 100%}
+
+/* Badge */
+.ah-love-badge{margin:1rem auto;padding:1rem;text-align:center;border-radius:1rem;background:#1e1e1e;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:320px}
+.ah-badge-title{font-size:1rem;font-weight:600}
+.ah-badge-score{font-size:2.2rem;margin:.4rem 0;font-weight:700}
+.ah-badge-remark{margin-top:.25rem;font-size:.95rem;color:#ddd;display:flex;justify-content:center;align-items:center;gap:.4rem}
+.ah-badge-remark .ah-badge-icon{width:22px;height:22px}
+.ah-badge-footer{font-size:.8rem;color:#aaa;margin-top:.35rem}
+
+/* Share button */
+.ah-love-share{margin-top:1rem;text-align:center}
+.ah-share-btn{
+background:linear-gradient(135deg, #ff6a00 0%, #ff8c00 100%);
+color:#fff;border:none;padding:.75rem 1.5rem;border-radius:.5rem;
+font-weight:600;cursor:pointer;transition:all .2s ease;
+box-shadow:0 4px 12px rgba(255,106,0,.3);
+}
+.ah-share-btn:hover{
+transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,106,0,.4);
+}
+
+/* Halloween accents only during active window */
+html.is-halloween-window .ah-love-wrap{
+--accent:#ff7518;
+background: radial-gradient(130% 100% at 100% 0%, rgba(255,117,24,.08), transparent 60%), #0f0f12;
+border:1px solid rgba(255,117,24,.22);
+}
+.ah-love-wrap.is-halloween::after{
+content:"🦇"; position:absolute; right:12px; top:-10px; font-size:20px; filter:drop-shadow(0 0 6px rgba(255,117,24,.35));
+}
+
+@media (max-width:640px){.ah-love-wrap{padding:.85rem .8rem .9rem}}
