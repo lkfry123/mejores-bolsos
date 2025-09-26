@@ -959,24 +959,32 @@ function initScrollEffects() {
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
     
+    // Optimized scroll handler with requestAnimationFrame
+    let ticking = false;
     window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Agregar/remover clase para efecto de transparencia
-        if (scrollTop > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Agregar/remover clase para efecto de transparencia
+                if (scrollTop > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Ocultar/mostrar navbar al hacer scroll (opcional)
+                if (scrollTop > lastScrollTop && scrollTop > 200) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+                ticking = false;
+            });
+            ticking = true;
         }
-        
-        // Ocultar/mostrar navbar al hacer scroll (opcional)
-        if (scrollTop > lastScrollTop && scrollTop > 200) {
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop;
     });
     
     // Animación de elementos al hacer scroll
