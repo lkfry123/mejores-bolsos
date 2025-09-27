@@ -59,6 +59,20 @@ if (location.pathname !== '/') return;
 
     <div class="ah-love-share">
       <button type="button" class="ah-share-btn">Save & Share</button>
+      <div class="ah-share-buttons">
+        <button type="button" class="ah-social-btn instagram" data-platform="instagram">
+          📷 Instagram
+        </button>
+        <button type="button" class="ah-social-btn facebook" data-platform="facebook">
+          📘 Facebook
+        </button>
+        <button type="button" class="ah-social-btn pinterest" data-platform="pinterest">
+          📌 Pinterest
+        </button>
+        <button type="button" class="ah-social-btn download" data-platform="download">
+          💾 Download
+        </button>
+      </div>
     </div>
 
     <noscript>Tell us how much you love bags.</noscript>
@@ -108,16 +122,86 @@ if (location.pathname !== '/') return;
     localStorage.setItem(pageKey, String(input.value));
   });
 
-  // Shareable badge
-  const shareBtn = wrap.querySelector('.ah-share-btn');
-  shareBtn?.addEventListener('click', async () => {
+  // Shareable badge functions
+  async function generateBadgeImage() {
     const badge = wrap.querySelector('.ah-love-badge');
-    if (!badge || typeof html2canvas === 'undefined') return;
-    const canvas = await html2canvas(badge, { backgroundColor: null, scale: 2 });
+    if (!badge || typeof html2canvas === 'undefined') return null;
+    return await html2canvas(badge, { backgroundColor: null, scale: 2 });
+  }
+
+  async function downloadBadge() {
+    const canvas = await generateBadgeImage();
+    if (!canvas) return;
     const link = document.createElement('a');
     link.download = 'handbag-love.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
+  }
+
+  async function shareToInstagram() {
+    const canvas = await generateBadgeImage();
+    if (!canvas) return;
+    
+    // For Instagram, we'll provide the image data URL
+    // Users can save and upload manually since Instagram doesn't allow direct sharing from web
+    const dataUrl = canvas.toDataURL('image/png');
+    
+    // Create a temporary link to download the image
+    const link = document.createElement('a');
+    link.download = 'handbag-love-for-instagram.png';
+    link.href = dataUrl;
+    link.click();
+    
+    // Show instructions
+    alert('Image downloaded! Upload it to Instagram Stories or Feed with hashtag #HandbagLove 🎃');
+  }
+
+  async function shareToFacebook() {
+    const canvas = await generateBadgeImage();
+    if (!canvas) return;
+    
+    // Facebook sharing with image
+    const dataUrl = canvas.toDataURL('image/png');
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent('Check out my handbag love score! 🎃')}`;
+    
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  }
+
+  async function shareToPinterest() {
+    const canvas = await generateBadgeImage();
+    if (!canvas) return;
+    
+    // Pinterest sharing
+    const dataUrl = canvas.toDataURL('image/png');
+    const shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(dataUrl)}&description=${encodeURIComponent('My handbag love score! 🎃')}`;
+    
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  }
+
+  // Event listeners for share buttons
+  const shareBtn = wrap.querySelector('.ah-share-btn');
+  shareBtn?.addEventListener('click', downloadBadge);
+
+  const socialBtns = wrap.querySelectorAll('.ah-social-btn');
+  socialBtns.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const platform = btn.dataset.platform;
+      
+      switch(platform) {
+        case 'instagram':
+          await shareToInstagram();
+          break;
+        case 'facebook':
+          await shareToFacebook();
+          break;
+        case 'pinterest':
+          await shareToPinterest();
+          break;
+        case 'download':
+          await downloadBadge();
+          break;
+      }
+    });
   });
 
   // initial sync
