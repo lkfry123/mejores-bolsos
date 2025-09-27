@@ -138,42 +138,30 @@ if (location.pathname !== '/') return;
     link.click();
   }
 
-  async function shareToInstagram() {
-    const canvas = await generateBadgeImage();
-    if (!canvas) return;
+  function shareToInstagram() {
+    // Instagram doesn't support direct web sharing, so we'll open Instagram app/web
+    const shareText = `Check out my handbag love score! 🎃 ${window.location.href} #HandbagLove #BagsAndFashion`;
+    const shareUrl = `https://www.instagram.com/`;
     
-    // For Instagram, we'll provide the image data URL
-    // Users can save and upload manually since Instagram doesn't allow direct sharing from web
-    const dataUrl = canvas.toDataURL('image/png');
+    // Try to open Instagram app first, fallback to web
+    window.open(shareUrl, '_blank');
     
-    // Create a temporary link to download the image
-    const link = document.createElement('a');
-    link.download = 'handbag-love-for-instagram.png';
-    link.href = dataUrl;
-    link.click();
-    
-    // Show instructions
-    alert('Image downloaded! Upload it to Instagram Stories or Feed with hashtag #HandbagLove 🎃');
+    // Show instructions for user
+    setTimeout(() => {
+      alert('Instagram opened! Copy this text to share:\n\n' + shareText);
+    }, 500);
   }
 
-  async function shareToFacebook() {
-    const canvas = await generateBadgeImage();
-    if (!canvas) return;
-    
-    // Facebook sharing with image
-    const dataUrl = canvas.toDataURL('image/png');
-    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent('Check out my handbag love score! 🎃')}`;
+  function shareToFacebook() {
+    const shareText = 'Check out my handbag love score! 🎃';
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(shareText)}`;
     
     window.open(shareUrl, '_blank', 'width=600,height=400');
   }
 
-  async function shareToPinterest() {
-    const canvas = await generateBadgeImage();
-    if (!canvas) return;
-    
-    // Pinterest sharing
-    const dataUrl = canvas.toDataURL('image/png');
-    const shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(dataUrl)}&description=${encodeURIComponent('My handbag love score! 🎃')}`;
+  function shareToPinterest() {
+    const shareText = 'My handbag love score! 🎃';
+    const shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&description=${encodeURIComponent(shareText)}`;
     
     window.open(shareUrl, '_blank', 'width=600,height=400');
   }
@@ -184,21 +172,21 @@ if (location.pathname !== '/') return;
 
   const socialBtns = wrap.querySelectorAll('.ah-social-btn');
   socialBtns.forEach(btn => {
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', () => {
       const platform = btn.dataset.platform;
       
       switch(platform) {
         case 'instagram':
-          await shareToInstagram();
+          shareToInstagram();
           break;
         case 'facebook':
-          await shareToFacebook();
+          shareToFacebook();
           break;
         case 'pinterest':
-          await shareToPinterest();
+          shareToPinterest();
           break;
         case 'download':
-          await downloadBadge();
+          downloadBadge();
           break;
       }
     });
