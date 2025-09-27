@@ -31,7 +31,6 @@ width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgb
 
 .ah-love-value{font-variant-numeric:tabular-nums;font-weight:700;min-width:3ch;text-align:right}
 .ah-love-caption{margin-top:.35rem;font-size:.9rem;color:var(--muted);min-height:1.5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
-.ah-love-icon{width:20px;height:20px;display:inline-block;vertical-align:-3px}
 .ah-love-remark{font-weight:600;color:#e7e7e7}
 
 .ah-love-wrap input[type="range"]{background-size:calc(var(--pos)*1%) 100%,100% 100%}

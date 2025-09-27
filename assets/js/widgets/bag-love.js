@@ -43,7 +43,6 @@ if (location.pathname !== '/') return;
     </div>
 
     <div class="ah-love-caption">
-      <img class="ah-love-icon" alt="" aria-hidden="true" />
       <span class="ah-love-remark" aria-live="polite"></span>
     </div>
 
@@ -80,7 +79,6 @@ if (location.pathname !== '/') return;
   const valueEl = wrap.querySelector('.ah-love-value');
 
   const remarkEl = wrap.querySelector('.ah-love-remark');
-  const iconEl   = wrap.querySelector('.ah-love-icon');
   const bScore   = wrap.querySelector('.ah-badge-score');
   const bRemarkT = wrap.querySelector('.ah-badge-remark-text');
   const bIcon    = wrap.querySelector('.ah-badge-icon');
@@ -97,14 +95,11 @@ if (location.pathname !== '/') return;
     if (isHalloweenWindow){
       const { text, icon, alt } = getHalloweenRemark(v);
       remarkEl.textContent = text;
-      if (icon){ iconEl.src = icon; iconEl.alt = alt || ''; }
-      else { iconEl.removeAttribute('src'); iconEl.alt=''; }
       if (bScore) bScore.textContent = `${v}% 🎃`;
       if (bRemarkT) bRemarkT.textContent = text;
       if (bIcon && icon){ bIcon.src = icon; bIcon.alt = alt || ''; }
     } else {
       remarkEl.textContent = 'Show your bag-lover energy!';
-      iconEl.removeAttribute('src'); iconEl.alt='';
       if (bScore) bScore.textContent = `${v}% 👜`;
       if (bRemarkT) bRemarkT.textContent = '';
       if (bIcon){ bIcon.removeAttribute('src'); bIcon.alt=''; }
