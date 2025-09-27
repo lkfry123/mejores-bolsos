@@ -46,26 +46,18 @@ width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgb
 
 /* Share buttons */
 .ah-love-share{margin-top:1rem;text-align:center}
-.ah-share-buttons{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
-.ah-share-btn{
-background:linear-gradient(135deg, #ff6a00 0%, #ff8c00 100%);
-color:#fff;border:none;padding:.75rem 1.5rem;border-radius:.5rem;
-font-weight:600;cursor:pointer;transition:all .2s ease;
-box-shadow:0 4px 12px rgba(255,106,0,.3);
-}
-.ah-share-btn:hover{
-transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,106,0,.4);
-}
+.ah-share-buttons{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
 .ah-social-btn{
-display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1rem;
-border-radius:.4rem;text-decoration:none;font-weight:500;font-size:.9rem;
+display:inline-flex;align-items:center;justify-content:center;
+width:44px;height:44px;border-radius:50%;
+text-decoration:none;font-weight:500;font-size:1.2rem;
 transition:all .2s ease;border:none;cursor:pointer;
+background:#fff;color:#333;box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
-.ah-social-btn:hover{transform:translateY(-1px);opacity:.9}
+.ah-social-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15);opacity:.9}
 .ah-social-btn.instagram{background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);color:#fff}
 .ah-social-btn.facebook{background:#1877f2;color:#fff}
 .ah-social-btn.pinterest{background:#e60023;color:#fff}
-.ah-social-btn.download{background:#28a745;color:#fff}
 
 /* Halloween accents only during active window */
 html.is-halloween-window .ah-love-wrap{

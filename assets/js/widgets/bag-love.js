@@ -58,19 +58,15 @@ if (location.pathname !== '/') return;
     </div>
 
     <div class="ah-love-share">
-      <button type="button" class="ah-share-btn">Save & Share</button>
       <div class="ah-share-buttons">
-        <button type="button" class="ah-social-btn instagram" data-platform="instagram">
-          📷 Instagram
+        <button type="button" class="ah-social-btn instagram" data-platform="instagram" title="Share on Instagram">
+          📷
         </button>
-        <button type="button" class="ah-social-btn facebook" data-platform="facebook">
-          📘 Facebook
+        <button type="button" class="ah-social-btn facebook" data-platform="facebook" title="Share on Facebook">
+          📘
         </button>
-        <button type="button" class="ah-social-btn pinterest" data-platform="pinterest">
-          📌 Pinterest
-        </button>
-        <button type="button" class="ah-social-btn download" data-platform="download">
-          💾 Download
+        <button type="button" class="ah-social-btn pinterest" data-platform="pinterest" title="Share on Pinterest">
+          📌
         </button>
       </div>
     </div>
@@ -167,9 +163,6 @@ if (location.pathname !== '/') return;
   }
 
   // Event listeners for share buttons
-  const shareBtn = wrap.querySelector('.ah-share-btn');
-  shareBtn?.addEventListener('click', downloadBadge);
-
   const socialBtns = wrap.querySelectorAll('.ah-social-btn');
   socialBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -184,9 +177,6 @@ if (location.pathname !== '/') return;
           break;
         case 'pinterest':
           shareToPinterest();
-          break;
-        case 'download':
-          downloadBadge();
           break;
       }
     });
