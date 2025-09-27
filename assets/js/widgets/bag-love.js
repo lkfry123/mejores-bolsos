@@ -1,9 +1,12 @@
 (function(){
 document.addEventListener('DOMContentLoaded', () => {
 try {
-if (location.pathname !== '/') return;
+console.log('[bag-love] Widget script loaded');
+console.log('[bag-love] Current pathname:', location.pathname);
+if (location.pathname !== '/') { console.log('[bag-love] Not on homepage, skipping'); return; }
   const TARGET_TEXT = 'Best Bags and Backpacks 2025: Expert Reviews & Shopping Guides';
   const h1 = Array.from(document.querySelectorAll('h1')).find(h => h.textContent.trim() === TARGET_TEXT);
+  console.log('[bag-love] Found H1:', h1);
   if (!h1) { console.warn('[bag-love] Target H1 not found on /'); return; }
 
   // Seasonal window: from NOW through Oct 31 inclusive, every year (browser time).
@@ -14,7 +17,10 @@ if (location.pathname !== '/') return;
     return now >= start && now <= end;
   }
   // Activate from today's date to Oct 31 (inclusive)
-  const isHalloweenWindow = inRange(new Date().getMonth(), new Date().getDate(), 9, 31);
+  const now = new Date();
+  const isHalloweenWindow = inRange(now.getMonth(), now.getDate(), 9, 31);
+  console.log('[bag-love] Current date:', now);
+  console.log('[bag-love] Is Halloween window:', isHalloweenWindow);
   document.documentElement.classList.toggle('is-halloween-window', isHalloweenWindow);
 
   const ICONS = {
@@ -75,7 +81,9 @@ if (location.pathname !== '/') return;
 
     <noscript>Tell us how much you love bags.</noscript>
   `;
+  console.log('[bag-love] Inserting widget before H1');
   h1.parentNode.insertBefore(wrap, h1);
+  console.log('[bag-love] Widget inserted successfully');
 
   const pageKey = 'ah_bag_love:' + location.pathname;
   const input   = wrap.querySelector('input[type="range"]');
