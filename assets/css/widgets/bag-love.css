@@ -46,7 +46,7 @@ width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgb
 
 /* Share buttons */
 .ah-love-share{margin-top:1rem;text-align:center}
-.ah-share-buttons{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
+.ah-share-buttons{display:flex;gap:.25rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
 .ah-social-btn{
 display:inline-flex;align-items:center;justify-content:center;
 width:44px;height:44px;border-radius:50%;
