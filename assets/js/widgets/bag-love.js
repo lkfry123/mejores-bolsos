@@ -56,6 +56,10 @@ if (location.pathname !== '/') return;
     </div>
 
     <div class="ah-love-share">
+      <div class="ah-share-label">
+        <span class="ah-share-text">Share</span>
+        <span class="ah-share-arrow">↗</span>
+      </div>
       <div class="ah-share-buttons">
         <button type="button" class="ah-social-btn instagram" data-platform="instagram" title="Share on Instagram">
           📷
