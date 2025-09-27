@@ -52,12 +52,9 @@ display:inline-flex;align-items:center;justify-content:center;
 width:44px;height:44px;border-radius:50%;
 text-decoration:none;font-weight:500;font-size:1.2rem;
 transition:all .2s ease;border:none;cursor:pointer;
-background:#fff;color:#333;box-shadow:0 2px 8px rgba(0,0,0,.1);
+background:transparent;color:#333;
 }
-.ah-social-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15);opacity:.9}
-.ah-social-btn.instagram{background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);color:#fff}
-.ah-social-btn.facebook{background:#1877f2;color:#fff}
-.ah-social-btn.pinterest{background:#e60023;color:#fff}
+.ah-social-btn:hover{transform:translateY(-2px);opacity:.7}
 
 /* Halloween accents only during active window */
 html.is-halloween-window .ah-love-wrap{

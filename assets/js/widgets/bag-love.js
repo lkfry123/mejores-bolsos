@@ -63,7 +63,7 @@ if (location.pathname !== '/') return;
           📷
         </button>
         <button type="button" class="ah-social-btn facebook" data-platform="facebook" title="Share on Facebook">
-          📘
+          f
         </button>
         <button type="button" class="ah-social-btn pinterest" data-platform="pinterest" title="Share on Pinterest">
           📌
