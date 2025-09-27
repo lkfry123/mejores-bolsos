@@ -126,17 +126,9 @@ if (location.pathname !== '/') return;
   }
 
   function shareToInstagram() {
-    // Instagram doesn't support direct web sharing, so we'll open Instagram app/web
-    const shareText = `Check out my handbag love score! 🎃 ${window.location.href} #HandbagLove #BagsAndFashion`;
+    // Open Instagram app directly
     const shareUrl = `https://www.instagram.com/`;
-    
-    // Try to open Instagram app first, fallback to web
     window.open(shareUrl, '_blank');
-    
-    // Show instructions for user
-    setTimeout(() => {
-      alert('Instagram opened! Copy this text to share:\n\n' + shareText);
-    }, 500);
   }
 
   function shareToFacebook() {
