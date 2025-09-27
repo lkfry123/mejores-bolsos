@@ -56,14 +56,89 @@ background:transparent;color:#333;
 }
 .ah-social-btn:hover{transform:translateY(-2px);opacity:.7}
 
-/* Halloween accents only during active window */
-html.is-halloween-window .ah-love-wrap{
---accent:#ff7518;
-background: radial-gradient(130% 100% at 100% 0%, rgba(255,117,24,.08), transparent 60%), #0f0f12;
-border:1px solid rgba(255,117,24,.22);
+/* === Soft Burnt-Orange Halloween Theme === */
+html.is-halloween-window .ah-love-wrap,
+.ah-love-wrap.is-halloween {
+  /* Tokens */
+  --accent:       #E07A3F;  /* Burnt Orange 500 */
+  --accent-tint:  #EEA370;  /* Burnt Orange 300 */
+  --wash:         #FFE7D1;  /* Peach 100 */
+  --card:         #FFF5EC;  /* Cream 50 */
+  --fg:           #2C1A12;  /* Raisin 900 (text) */
+  --muted:        #6B4A3A;  /* Cocoa 700 */
+
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(224,122,63,0.09), transparent 60%),
+    radial-gradient(140% 140% at 0% 100%, rgba(122,95,163,0.06), transparent 55%),
+    var(--card);
+  color: var(--fg);
+  border: 1px solid #F2C4A4;                     /* Hairline */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
-.ah-love-wrap.is-halloween::after{
-content:"🦇"; position:absolute; right:12px; top:-10px; font-size:20px; filter:drop-shadow(0 0 6px rgba(255,117,24,.35));
+
+/* Range track on light card */
+html.is-halloween-window .ah-love-wrap input[type="range"],
+.ah-love-wrap.is-halloween input[type="range"] {
+  color: var(--accent);
+  background:
+    linear-gradient(currentColor 0 0) 0/0% 100% no-repeat,
+    rgba(224,122,63,0.18); /* soft fill rail */
+}
+
+/* Focus ring: soft, visible on light bg */
+html.is-halloween-window .ah-love-wrap input[type="range"]:focus,
+.ah-love-wrap.is-halloween input[type="range"]:focus {
+  outline: 2px solid rgba(238,163,112,0.65);   /* Burnt Orange 300 @ 65% */
+  outline-offset: 2px;
+  filter: drop-shadow(0 0 6px rgba(191,168,230,0.18)); /* Plum halo */
+}
+
+/* Heart thumb keeps readable edge on light bg */
+html.is-halloween-window .ah-love-wrap input[type="range"]::-webkit-slider-thumb,
+.ah-love-wrap.is-halloween input[type="range"]::-webkit-slider-thumb {
+  border: 2px solid rgba(224,122,63,0.35);     /* subtle orange edge */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+html.is-halloween-window .ah-love-wrap input[type="range"]::-moz-range-thumb,
+.ah-love-wrap.is-halloween input[type="range"]::-moz-range-thumb {
+  border: 2px solid rgba(224,122,63,0.35);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+/* Caption + remark on light card */
+html.is-halloween-window .ah-love-wrap .ah-love-caption,
+.ah-love-wrap.is-halloween .ah-love-caption { color: var(--muted); }
+html.is-halloween-window .ah-love-wrap .ah-love-remark,
+.ah-love-wrap.is-halloween .ah-love-remark { color: var(--fg); font-weight: 600; }
+
+/* Badge adopts the same soft card look */
+html.is-halloween-window .ah-love-badge,
+.ah-love-wrap.is-halloween .ah-love-badge {
+  background: linear-gradient(180deg, rgba(255,231,209,0.55), rgba(255,245,236,0.55)), var(--card);
+  border: 1px solid #F2C4A4;
+  color: var(--fg);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+}
+html.is-halloween-window .ah-badge-title,
+.ah-love-wrap.is-halloween .ah-badge-title { color: var(--fg); }
+html.is-halloween-window .ah-badge-score,
+.ah-love-wrap.is-halloween .ah-badge-score { color: #7B3E18; } /* deeper orange ink */
+html.is-halloween-window .ah-badge-remark,
+.ah-love-wrap.is-halloween .ah-badge-remark { color: var(--fg); }
+html.is-halloween-window .ah-badge-remark .ah-badge-icon,
+.ah-love-wrap.is-halloween .ah-badge-remark .ah-badge-icon { filter: drop-shadow(0 0 2px rgba(224,122,63,0.20)); }
+
+/* Decorative marker (softer than black theme) */
+.ah-love-wrap.is-halloween::after {
+  content: "🦇";
+  position: absolute; right: 12px; top: -10px; font-size: 18px;
+  filter: drop-shadow(0 0 3px rgba(224,122,63,0.20));
+}
+
+/* Ensure track fill respects --pos on light bg */
+html.is-halloween-window .ah-love-wrap input[type="range"],
+.ah-love-wrap.is-halloween input[type="range"] {
+  background-size: calc(var(--pos) * 1%) 100%, 100% 100%;
 }
 
 @media (max-width:640px){.ah-love-wrap{padding:.85rem .8rem .9rem}}
