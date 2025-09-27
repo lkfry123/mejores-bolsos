@@ -2,13 +2,13 @@
 --accent: #ff6a00;
 --fg: #fff; --muted:#b8b8b8; --pos:60;
 display:block; width:100%;
-margin: 1rem 0 1.25rem;
-border-radius: 1rem; padding: .9rem 1rem 1rem;
+margin: .75rem 0 1rem;
+border-radius: .75rem; padding: .75rem .85rem .85rem;
 background:#1a1a1a; color:var(--fg);
 box-shadow:0 6px 22px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.04);
-min-height: 92px;
+min-height: 78px;
 }
-.ah-love-header{font-size:.95rem;font-weight:700;letter-spacing:.2px;margin-bottom:.55rem;display:flex;align-items:center;gap:.5rem}
+.ah-love-header{font-size:.9rem;font-weight:700;letter-spacing:.2px;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
 .ah-love-control{display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:center}
 
 .ah-love-wrap input[type="range"]{
@@ -30,14 +30,14 @@ width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgb
 }
 
 .ah-love-value{font-variant-numeric:tabular-nums;font-weight:700;min-width:3ch;text-align:right}
-.ah-love-caption{margin-top:.45rem;font-size:.95rem;color:var(--muted);min-height:1.75rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.ah-love-caption{margin-top:.35rem;font-size:.9rem;color:var(--muted);min-height:1.5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
 .ah-love-icon{width:20px;height:20px;display:inline-block;vertical-align:-3px}
 .ah-love-remark{font-weight:600;color:#e7e7e7}
 
 .ah-love-wrap input[type="range"]{background-size:calc(var(--pos)*1%) 100%,100% 100%}
 
 /* Badge */
-.ah-love-badge{margin:1rem auto;padding:1rem;text-align:center;border-radius:1rem;background:#1e1e1e;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:320px}
+.ah-love-badge{margin:.75rem auto;padding:.75rem;text-align:center;border-radius:.75rem;background:#1e1e1e;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:300px}
 .ah-badge-title{font-size:1rem;font-weight:600}
 .ah-badge-score{font-size:2.2rem;margin:.4rem 0;font-weight:700}
 .ah-badge-remark{margin-top:.25rem;font-size:.95rem;color:#ddd;display:flex;justify-content:center;align-items:center;gap:.4rem}
@@ -45,7 +45,7 @@ width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgb
 .ah-badge-footer{font-size:.8rem;color:#aaa;margin-top:.35rem}
 
 /* Share buttons */
-.ah-love-share{margin-top:1rem;text-align:center}
+.ah-love-share{margin-top:.75rem;text-align:center}
 .ah-share-buttons{display:flex;gap:.25rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
 .ah-social-btn{
 display:inline-flex;align-items:center;justify-content:center;
@@ -141,4 +141,4 @@ html.is-halloween-window .ah-love-wrap input[type="range"],
   background-size: calc(var(--pos) * 1%) 100%, 100% 100%;
 }
 
-@media (max-width:640px){.ah-love-wrap{padding:.85rem .8rem .9rem}}
+@media (max-width:640px){.ah-love-wrap{padding:.7rem .75rem .8rem}}
