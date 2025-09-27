@@ -50,7 +50,6 @@ if (location.pathname !== '/') return;
       <div class="ah-badge-title">Handbag Love</div>
       <div class="ah-badge-score">60% ${isHalloweenWindow ? '🎃' : '👜'}</div>
       <div class="ah-badge-remark">
-        <img class="ah-badge-icon" alt="" aria-hidden="true" />
         <span class="ah-badge-remark-text"></span>
       </div>
       <div class="ah-badge-footer">Affordable-Handbags.com</div>
@@ -81,7 +80,6 @@ if (location.pathname !== '/') return;
   const remarkEl = wrap.querySelector('.ah-love-remark');
   const bScore   = wrap.querySelector('.ah-badge-score');
   const bRemarkT = wrap.querySelector('.ah-badge-remark-text');
-  const bIcon    = wrap.querySelector('.ah-badge-icon');
 
   // Init from localStorage
   const saved = localStorage.getItem(pageKey);
@@ -93,16 +91,14 @@ if (location.pathname !== '/') return;
     valueEl.textContent = `${v}%`;
 
     if (isHalloweenWindow){
-      const { text, icon, alt } = getHalloweenRemark(v);
+      const { text } = getHalloweenRemark(v);
       remarkEl.textContent = text;
       if (bScore) bScore.textContent = `${v}% 🎃`;
       if (bRemarkT) bRemarkT.textContent = text;
-      if (bIcon && icon){ bIcon.src = icon; bIcon.alt = alt || ''; }
     } else {
       remarkEl.textContent = 'Show your bag-lover energy!';
       if (bScore) bScore.textContent = `${v}% 👜`;
       if (bRemarkT) bRemarkT.textContent = '';
-      if (bIcon){ bIcon.removeAttribute('src'); bIcon.alt=''; }
     }
 
     window.dispatchEvent(new CustomEvent('AH_BAG_LOVE', { detail:{ value:v, page:location.pathname }}));

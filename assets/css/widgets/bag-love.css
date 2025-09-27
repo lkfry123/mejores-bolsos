@@ -40,7 +40,6 @@ width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgb
 .ah-badge-title{font-size:1rem;font-weight:600}
 .ah-badge-score{font-size:2.2rem;margin:.4rem 0;font-weight:700}
 .ah-badge-remark{margin-top:.25rem;font-size:.95rem;color:#ddd;display:flex;justify-content:center;align-items:center;gap:.4rem}
-.ah-badge-remark .ah-badge-icon{width:22px;height:22px}
 .ah-badge-footer{font-size:.8rem;color:#aaa;margin-top:.35rem}
 
 /* Share buttons */
@@ -124,8 +123,6 @@ html.is-halloween-window .ah-badge-score,
 .ah-love-wrap.is-halloween .ah-badge-score { color: #7B3E18; } /* deeper orange ink */
 html.is-halloween-window .ah-badge-remark,
 .ah-love-wrap.is-halloween .ah-badge-remark { color: var(--fg); }
-html.is-halloween-window .ah-badge-remark .ah-badge-icon,
-.ah-love-wrap.is-halloween .ah-badge-remark .ah-badge-icon { filter: drop-shadow(0 0 2px rgba(224,122,63,0.20)); }
 
 /* Decorative marker (softer than black theme) */
 .ah-love-wrap.is-halloween::after {
