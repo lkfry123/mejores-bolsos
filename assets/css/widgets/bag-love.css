@@ -2,14 +2,14 @@
 --accent: #ff6a00;
 --fg: #fff; --muted:#b8b8b8; --pos:60;
 display:block; width:100%;
-margin: .75rem 0 1rem;
-border-radius: .75rem; padding: .75rem .85rem .85rem;
+margin: .5rem 0 .75rem;
+border-radius: .5rem; padding: .6rem .7rem .7rem;
 background:#1a1a1a; color:var(--fg);
 box-shadow:0 6px 22px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.04);
-min-height: 78px;
+min-height: 65px;
 }
-.ah-love-header{font-size:.9rem;font-weight:700;letter-spacing:.2px;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
-.ah-love-control{display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:center}
+.ah-love-header{font-size:.85rem;font-weight:700;letter-spacing:.2px;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem}
+.ah-love-control{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:center}
 
 .ah-love-wrap input[type="range"]{
 -webkit-appearance:none;width:100%;height:12px;border-radius:999px;outline:0;cursor:pointer;
@@ -30,25 +30,25 @@ width:28px;height:28px;border-radius:50%;background:#ff2d55;border:2px solid rgb
 }
 
 .ah-love-value{font-variant-numeric:tabular-nums;font-weight:700;min-width:3ch;text-align:right}
-.ah-love-caption{margin-top:.35rem;font-size:.9rem;color:var(--muted);min-height:1.5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.ah-love-caption{margin-top:.25rem;font-size:.8rem;color:var(--muted);min-height:1.2rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .ah-love-remark{font-weight:600;color:#e7e7e7}
 
 .ah-love-wrap input[type="range"]{background-size:calc(var(--pos)*1%) 100%,100% 100%}
 
 /* Badge */
-.ah-love-badge{margin:.75rem auto;padding:.75rem;text-align:center;border-radius:.75rem;background:#1e1e1e;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:300px}
-.ah-badge-title{font-size:1rem;font-weight:600}
-.ah-badge-score{font-size:2.2rem;margin:.4rem 0;font-weight:700}
-.ah-badge-remark{margin-top:.25rem;font-size:.95rem;color:#ddd;display:flex;justify-content:center;align-items:center;gap:.4rem}
-.ah-badge-footer{font-size:.8rem;color:#aaa;margin-top:.35rem}
+.ah-love-badge{margin:.6rem auto;padding:.6rem;text-align:center;border-radius:.5rem;background:#1e1e1e;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:280px}
+.ah-badge-title{font-size:.9rem;font-weight:600}
+.ah-badge-score{font-size:1.8rem;margin:.3rem 0;font-weight:700}
+.ah-badge-remark{margin-top:.2rem;font-size:.85rem;color:#ddd;display:flex;justify-content:center;align-items:center;gap:.3rem}
+.ah-badge-footer{font-size:.75rem;color:#aaa;margin-top:.25rem}
 
 /* Share buttons */
-.ah-love-share{margin-top:.75rem;text-align:center}
-.ah-share-buttons{display:flex;gap:.25rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
+.ah-love-share{margin-top:.6rem;text-align:center}
+.ah-share-buttons{display:flex;gap:.25rem;justify-content:center;flex-wrap:wrap;margin-top:.6rem}
 .ah-social-btn{
 display:inline-flex;align-items:center;justify-content:center;
-width:44px;height:44px;border-radius:50%;
-text-decoration:none;font-weight:500;font-size:1.2rem;
+width:36px;height:36px;border-radius:50%;
+text-decoration:none;font-weight:500;font-size:1rem;
 transition:all .2s ease;border:none;cursor:pointer;
 background:transparent;color:#333;
 }
@@ -137,4 +137,4 @@ html.is-halloween-window .ah-love-wrap input[type="range"],
   background-size: calc(var(--pos) * 1%) 100%, 100% 100%;
 }
 
-@media (max-width:640px){.ah-love-wrap{padding:.7rem .75rem .8rem}}
+@media (max-width:640px){.ah-love-wrap{padding:.5rem .6rem .6rem}}
