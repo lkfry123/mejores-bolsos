@@ -37,16 +37,53 @@
 
 # Note: Cache exclusions removed to allow redirects to work properly
 
-# PRIORITY 1: Specific HTML to slash redirects (must be first to take precedence)
+# PRIORITY 1: Individual Article Redirects (English)
+# ==================================================
 [[redirects]]
-  from = "/articles/wallets.html"
-  to = "/articles/wallets/"
+  from = "/articles/3-functional-diaper-bags-moms-2025.html"
+  to = "/articles/3-functional-diaper-bags-moms-2025/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/articles/handbags.html"
-  to = "/articles/handbags/"
+  from = "/articles/3-functional-university-tote-bags-2025.html"
+  to = "/articles/3-functional-university-tote-bags-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-popular-amazon-tote-bags-2025.html"
+  to = "/articles/3-popular-amazon-tote-bags-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-reusable-shopping-tote-bags-2025.html"
+  to = "/articles/3-reusable-shopping-tote-bags-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-rfid-security-wallets-2025.html"
+  to = "/articles/3-rfid-security-wallets-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-stylish-professional-backpacks-2025.html"
+  to = "/articles/3-stylish-professional-backpacks-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-wristlet-wallets-women-2025.html"
+  to = "/articles/3-wristlet-wallets-women-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html"
+  to = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025/"
   status = 301
   force = true
 
@@ -57,14 +94,136 @@
   force = true
 
 [[redirects]]
+  from = "/articles/best-durable-stylish-backpacks-2025.html"
+  to = "/articles/best-durable-stylish-backpacks-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/best-lightweight-travel-backpacks-2025.html"
+  to = "/articles/best-lightweight-travel-backpacks-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/best-wedding-handbags-2025.html"
+  to = "/articles/best-wedding-handbags-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/fun-unique-gift-wallets-2025.html"
+  to = "/articles/fun-unique-gift-wallets-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/handbags.html"
+  to = "/articles/handbags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/how-to-choose-perfect-handbag-2025.html"
+  to = "/articles/how-to-choose-perfect-handbag-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/laptop-backpacks-protection-style-2025.html"
+  to = "/articles/laptop-backpacks-protection-style-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/minimalist-daily-bag-2025.html"
+  to = "/articles/minimalist-daily-bag-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/top-5-professional-women-wallets-2025.html"
+  to = "/articles/top-5-professional-women-wallets-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/articles/tote-bags.html"
   to = "/articles/tote-bags/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/es/articulos/carteras.html"
-  to = "/es/articulos/carteras/"
+  from = "/articles/travel-light-adventure-bags-2025.html"
+  to = "/articles/travel-light-adventure-bags-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/wallets.html"
+  to = "/articles/wallets/"
+  status = 301
+  force = true
+
+# PRIORITY 2: Individual Article Redirects (Spanish)
+# ==================================================
+[[redirects]]
+  from = "/es/articulos/3-bolsos-panales-funcionales-mamas-2025.html"
+  to = "/es/articulos/3-bolsos-panales-funcionales-mamas-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-carteras-rfid-seguridad-2025.html"
+  to = "/es/articulos/3-carteras-rfid-seguridad-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-carteras-wristlet-mujeres-2025.html"
+  to = "/es/articulos/3-carteras-wristlet-mujeres-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-mochilas-profesionales-estilosas-2025.html"
+  to = "/es/articulos/3-mochilas-profesionales-estilosas-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-tote-bags-funcionales-universidad-2025.html"
+  to = "/es/articulos/3-tote-bags-funcionales-universidad-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-tote-bags-populares-amazon-2025.html"
+  to = "/es/articulos/3-tote-bags-populares-amazon-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/3-tote-bags-reutilizables-compras-2025.html"
+  to = "/es/articulos/3-tote-bags-reutilizables-compras-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/best-durable-stylish-backpacks-2025.html"
+  to = "/es/articulos/best-durable-stylish-backpacks-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/bolso-minimalista-dia-dia-2025.html"
+  to = "/es/articulos/bolso-minimalista-dia-dia-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/bolsos-casual-elegantes-asequibles-invitadas-bodas-2025.html"
+  to = "/es/articulos/bolsos-casual-elegantes-asequibles-invitadas-bodas-2025/"
   status = 301
   force = true
 
@@ -75,14 +234,68 @@
   force = true
 
 [[redirects]]
+  from = "/es/articulos/carteras-divertidas-unicas-regalo-2025.html"
+  to = "/es/articulos/carteras-divertidas-unicas-regalo-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/carteras.html"
+  to = "/es/articulos/carteras/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/como-elegir-bolso-mano-perfecto-2025.html"
+  to = "/es/articulos/como-elegir-bolso-mano-perfecto-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/las-mejores-mochilas-mano-viajar-ligero-2025.html"
+  to = "/es/articulos/las-mejores-mochilas-mano-viajar-ligero-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/mejores-bolsos-mano-bodas-2025.html"
+  to = "/es/articulos/mejores-bolsos-mano-bodas-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/mochilas-para-laptop-proteccion-estilo-2025.html"
+  to = "/es/articulos/mochilas-para-laptop-proteccion-estilo-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/es/articulos/mochilas.html"
   to = "/es/articulos/mochilas/"
   status = 301
   force = true
 
 [[redirects]]
+  from = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025.html"
+  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/top-5-carteras-mujeres-profesionales-2025.html"
+  to = "/es/articulos/top-5-carteras-mujeres-profesionales-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/es/articulos/tote-bags.html"
   to = "/es/articulos/tote-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/viajar-ligera-bolsos-aventureras-2025.html"
+  to = "/es/articulos/viajar-ligera-bolsos-aventureras-2025/"
   status = 301
   force = true
 
