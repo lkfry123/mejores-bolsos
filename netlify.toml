@@ -37,7 +37,56 @@
 
 # Note: Cache exclusions removed to allow redirects to work properly
 
-# PRIORITY 1: HTML to slash redirects (must be first to take precedence)
+# PRIORITY 1: Specific HTML to slash redirects (must be first to take precedence)
+[[redirects]]
+  from = "/articles/wallets.html"
+  to = "/articles/wallets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/handbags.html"
+  to = "/articles/handbags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/backpacks.html"
+  to = "/articles/backpacks/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/tote-bags.html"
+  to = "/articles/tote-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/carteras.html"
+  to = "/es/articulos/carteras/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/bolsos-de-mano.html"
+  to = "/es/articulos/bolsos-de-mano/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/mochilas.html"
+  to = "/es/articulos/mochilas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/tote-bags.html"
+  to = "/es/articulos/tote-bags/"
+  status = 301
+  force = true
+
+# PRIORITY 2: General HTML to slash redirects
 [[redirects]]
   from = "/articles/*.html"
   to = "/articles/:splat/"
