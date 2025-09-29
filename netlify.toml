@@ -165,8 +165,14 @@
   status = 301
   force = true
 
-# PRIORITY 2: Main Categories Pages Redirects
-# ===========================================
+# PRIORITY 2: Main Pages Redirects
+# =================================
+[[redirects]]
+  from = "/es.html"
+  to = "/es/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/categories.html"
   to = "/categories/"
