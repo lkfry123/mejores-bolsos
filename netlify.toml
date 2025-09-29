@@ -858,10 +858,7 @@
   status = 200
 
 # Serve individual articles with trailing slash URLs
-[[redirects]]
-  from = "/articles/*/"
-  to = "/articles/:splat.html"
-  status = 200
+# Removed conflicting rule - handled by _redirects file
 
 # Note: Specific .html to slash redirects are handled individually above
 
