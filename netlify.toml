@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Headers for security and performance
 [[headers]]
   for = "/*"
   [headers.values]
@@ -34,19 +35,7 @@
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
-# Exclude redirect rules from cache headers
-# Quiz page redirects
-[[redirects]]
-  from = "/quiz/bag-personality.html"
-  to = "/quiz/bag-personality/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/quiz/bag-personality/"
-  to = "/quiz/bag-personality/index.html"
-  status = 200
-
+# Cache exclusions for pages that need redirects
 [[headers]]
   for = "/articles/*.html"
   [headers.values]
@@ -62,510 +51,66 @@
   [headers.values]
     Cache-Control = "no-cache"
 
-[[headers]]
-  for = "/photos/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# PRIORITY 1: Quiz page redirects (must be first)
+[[redirects]]
+  from = "/quiz/bag-personality.html"
+  to = "/quiz/bag-personality/"
+  status = 301
+  force = true
 
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[redirects]]
+  from = "/quiz/bag-personality/"
+  to = "/quiz/bag-personality/index.html"
+  status = 200
 
-[[headers]]
-  for = "*.jpg"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# PRIORITY 2: Main page serves
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
 
-[[headers]]
-  for = "*.jpeg"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[redirects]]
+  from = "/es/"
+  to = "/es/index.html"
+  status = 200
 
-[[headers]]
-  for = "*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# PRIORITY 3: Article index serves
+[[redirects]]
+  from = "/articles/"
+  to = "/articles/index.html"
+  status = 200
 
-[[headers]]
-  for = "*.gif"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[redirects]]
+  from = "/es/articulos/"
+  to = "/es/articulos/index.html"
+  status = 200
 
-[[headers]]
-  for = "*.webp"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# PRIORITY 4: Category index serves
+[[redirects]]
+  from = "/categories/"
+  to = "/categories/index.html"
+  status = 200
 
-# Redirect rules (MUST be first to take precedence)
+[[redirects]]
+  from = "/es/categorias/"
+  to = "/es/categorias/index.html"
+  status = 200
+
+# PRIORITY 5: HTML to slash redirects for English articles
 [[redirects]]
   from = "/articles/*.html"
   to = "/articles/:splat/"
   status = 301
   force = true
 
-# Additional specific redirects for articles that aren't redirecting
-[[redirects]]
-  from = "/articles/how-to-choose-perfect-handbag-2025.html"
-  to = "/articles/how-to-choose-perfect-handbag-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/3-functional-diaper-bags-moms-2025.html"
-  to = "/articles/3-functional-diaper-bags-moms-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/best-durable-stylish-backpacks-2025.html"
-  to = "/articles/best-durable-stylish-backpacks-2025/"
-  status = 301
-  force = true
-
-# Additional English article redirects
-[[redirects]]
-  from = "/articles/3-functional-university-tote-bags-2025.html"
-  to = "/articles/3-functional-university-tote-bags-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/3-popular-amazon-tote-bags-2025.html"
-  to = "/articles/3-popular-amazon-tote-bags-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/3-reusable-shopping-tote-bags-2025.html"
-  to = "/articles/3-reusable-shopping-tote-bags-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/3-stylish-professional-backpacks-2025.html"
-  to = "/articles/3-stylish-professional-backpacks-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/3-wristlet-wallets-women-2025.html"
-  to = "/articles/3-wristlet-wallets-women-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/backpacks.html"
-  to = "/articles/backpacks/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/best-lightweight-travel-backpacks-2025.html"
-  to = "/articles/best-lightweight-travel-backpacks-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/best-wedding-handbags-2025.html"
-  to = "/articles/best-wedding-handbags-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/fun-unique-gift-wallets-2025.html"
-  to = "/articles/fun-unique-gift-wallets-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/handbags.html"
-  to = "/articles/handbags/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/laptop-backpacks-protection-style-2025.html"
-  to = "/articles/laptop-backpacks-protection-style-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/minimalist-daily-bag-2025.html"
-  to = "/articles/minimalist-daily-bag-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/top-5-professional-women-wallets-2025.html"
-  to = "/articles/top-5-professional-women-wallets-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/tote-bags.html"
-  to = "/articles/tote-bags/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/travel-light-adventure-bags-2025.html"
-  to = "/articles/travel-light-adventure-bags-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/wallets.html"
-  to = "/articles/wallets/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025.html"
-  to = "/articles/affordable-elegant-casual-handbags-wedding-guest-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/3-rfid-security-wallets-2025.html"
-  to = "/articles/3-rfid-security-wallets-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/*.html"
-  to = "/articulos/:splat/"
-  status = 301
-  force = true
-
+# PRIORITY 6: HTML to slash redirects for Spanish articles
 [[redirects]]
   from = "/es/articulos/*.html"
   to = "/es/articulos/:splat/"
   status = 301
   force = true
 
-# Additional Spanish article redirects
-[[redirects]]
-  from = "/articulos/3-carteras-rfid-seguridad-2025.html"
-  to = "/articulos/3-carteras-rfid-seguridad-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/3-bolsos-panales-funcionales-mamas-2025.html"
-  to = "/articulos/3-bolsos-panales-funcionales-mamas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/3-carteras-rfid-seguridad-2025.html"
-  to = "/es/articulos/3-carteras-rfid-seguridad-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/3-bolsos-panales-funcionales-mamas-2025.html"
-  to = "/es/articulos/3-bolsos-panales-funcionales-mamas-2025/"
-  status = 301
-  force = true
-
-# Additional Spanish article redirects
-[[redirects]]
-  from = "/articulos/3-bolsos-panales-funcionales-mamas-2025.html"
-  to = "/articulos/3-bolsos-panales-funcionales-mamas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/3-carteras-rfid-seguridad-2025.html"
-  to = "/articulos/3-carteras-rfid-seguridad-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/3-carteras-wristlet-mujeres-2025.html"
-  to = "/articulos/3-carteras-wristlet-mujeres-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/3-mochilas-profesionales-estilosas-2025.html"
-  to = "/articulos/3-mochilas-profesionales-estilosas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/3-tote-bags-funcionales-universidad-2025.html"
-  to = "/articulos/3-tote-bags-funcionales-universidad-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/3-tote-bags-populares-amazon-2025.html"
-  to = "/articulos/3-tote-bags-populares-amazon-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/3-tote-bags-reutilizables-compras-2025.html"
-  to = "/articulos/3-tote-bags-reutilizables-compras-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/best-durable-stylish-backpacks-2025.html"
-  to = "/articulos/best-durable-stylish-backpacks-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/bolso-minimalista-dia-dia-2025.html"
-  to = "/articulos/bolso-minimalista-dia-dia-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/bolsos-casual-elegantes-asequibles-invitadas-bodas-2025.html"
-  to = "/articulos/bolsos-casual-elegantes-asequibles-invitadas-bodas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/bolsos-de-mano.html"
-  to = "/articulos/bolsos-de-mano/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/carteras-divertidas-unicas-regalo-2025.html"
-  to = "/articulos/carteras-divertidas-unicas-regalo-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/carteras.html"
-  to = "/articulos/carteras/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/como-elegir-bolso-mano-perfecto-2025.html"
-  to = "/articulos/como-elegir-bolso-mano-perfecto-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/las-mejores-mochilas-mano-viajar-ligero-2025.html"
-  to = "/articulos/las-mejores-mochilas-mano-viajar-ligero-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/mejores-bolsos-mano-bodas-2025.html"
-  to = "/articulos/mejores-bolsos-mano-bodas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/mochilas-para-laptop-proteccion-estilo-2025.html"
-  to = "/articulos/mochilas-para-laptop-proteccion-estilo-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/mochilas.html"
-  to = "/articulos/mochilas/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/top-5-carteras-mujeres-profesionales-2025.html"
-  to = "/articulos/top-5-carteras-mujeres-profesionales-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/tote-bags.html"
-  to = "/articulos/tote-bags/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articulos/viajar-ligera-bolsos-aventureras-2025.html"
-  to = "/articulos/viajar-ligera-bolsos-aventureras-2025/"
-  status = 301
-  force = true
-
-# Spanish articles with /es/ prefix
-[[redirects]]
-  from = "/es/articulos/3-carteras-rfid-seguridad-2025.html"
-  to = "/es/articulos/3-carteras-rfid-seguridad-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/3-carteras-wristlet-mujeres-2025.html"
-  to = "/es/articulos/3-carteras-wristlet-mujeres-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/3-mochilas-profesionales-estilosas-2025.html"
-  to = "/es/articulos/3-mochilas-profesionales-estilosas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/3-tote-bags-funcionales-universidad-2025.html"
-  to = "/es/articulos/3-tote-bags-funcionales-universidad-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/3-tote-bags-populares-amazon-2025.html"
-  to = "/es/articulos/3-tote-bags-populares-amazon-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/3-tote-bags-reutilizables-compras-2025.html"
-  to = "/es/articulos/3-tote-bags-reutilizables-compras-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/best-durable-stylish-backpacks-2025.html"
-  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/bolso-minimalista-dia-dia-2025.html"
-  to = "/es/articulos/bolso-minimalista-dia-dia-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/bolsos-casual-elegantes-asequibles-invitadas-bodas-2025.html"
-  to = "/es/articulos/bolsos-casual-elegantes-asequibles-invitadas-bodas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/bolsos-de-mano.html"
-  to = "/es/articulos/bolsos-de-mano/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/carteras-divertidas-unicas-regalo-2025.html"
-  to = "/es/articulos/carteras-divertidas-unicas-regalo-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/carteras.html"
-  to = "/es/articulos/carteras/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/como-elegir-bolso-mano-perfecto-2025.html"
-  to = "/es/articulos/como-elegir-bolso-mano-perfecto-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/las-mejores-mochilas-mano-viajar-ligero-2025.html"
-  to = "/es/articulos/las-mejores-mochilas-mano-viajar-ligero-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/mejores-bolsos-mano-bodas-2025.html"
-  to = "/es/articulos/mejores-bolsos-mano-bodas-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/mochilas-para-laptop-proteccion-estilo-2025.html"
-  to = "/es/articulos/mochilas-para-laptop-proteccion-estilo-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/mochilas.html"
-  to = "/es/articulos/mochilas/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/top-5-carteras-mujeres-profesionales-2025.html"
-  to = "/es/articulos/top-5-carteras-mujeres-profesionales-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/tote-bags.html"
-  to = "/es/articulos/tote-bags/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/viajar-ligera-bolsos-aventureras-2025.html"
-  to = "/es/articulos/viajar-ligera-bolsos-aventureras-2025/"
-  status = 301
-  force = true
-
-# Redirect English slug to proper Spanish slug
-[[redirects]]
-  from = "/es/articulos/best-durable-stylish-backpacks-2025/"
-  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos/best-durable-stylish-backpacks-2025.html"
-  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
-  status = 301
-  force = true
-
-# Add redirect for the new Spanish slug
-[[redirects]]
-  from = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025.html"
-  to = "/es/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
-  status = 301
-  force = true
-
-# Add missing redirect for Spanish index article
-[[redirects]]
-  from = "/es/articulos/index.html"
-  to = "/es/articulos/"
-  status = 301
-  force = true
-
-# Add redirect for Spanish privacy policy
-[[redirects]]
-  from = "/es/politica-privacidad.html"
-  to = "/es/politica-privacidad/"
-  status = 301
-  force = true
-
-# Add redirect for Spanish affiliate disclosure
-[[redirects]]
-  from = "/es/aviso-afiliados.html"
-  to = "/es/aviso-afiliados/"
-  status = 301
-  force = true
-
-# Add redirect for Spanish homepage
-[[redirects]]
-  from = "/es/index.html"
-  to = "/es/"
-  status = 301
-  force = true
-
-# Add redirects for English pages
+# PRIORITY 7: Main page redirects
 [[redirects]]
   from = "/privacy-policy.html"
   to = "/privacy-policy/"
@@ -579,286 +124,69 @@
   force = true
 
 [[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
-  force = true
-
-# Add redirects for category pages
-[[redirects]]
-  from = "/categories.html"
-  to = "/categories/"
+  from = "/es/politica-privacidad.html"
+  to = "/es/politica-privacidad/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/es/categorias.html"
-  to = "/es/categorias/"
+  from = "/es/aviso-afiliados.html"
+  to = "/es/aviso-afiliados/"
+  status = 301
+  force = true
+
+# PRIORITY 8: Category redirects
+[[redirects]]
+  from = "/categories/*.html"
+  to = "/categories/:splat/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/es.html"
-  to = "/es/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles.html"
-  to = "/articles/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/articulos.html"
-  to = "/es/articulos/"
-  status = 301
-  force = true
-
-# Redirect English categories to articles pages
-[[redirects]]
-  from = "/categories/wallets/"
-  to = "/articles/wallets/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/backpacks/"
-  to = "/articles/backpacks/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/handbags/"
-  to = "/articles/handbags/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/tote-bags/"
-  to = "/articles/tote-bags/"
-  status = 301
-  force = true
-
-# Redirect old Spanish slug category URLs to English slug URLs
-[[redirects]]
-  from = "/categories/carteras/"
-  to = "/articles/wallets/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/mochilas/"
-  to = "/articles/backpacks/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/bolsos-de-mano/"
-  to = "/articles/handbags/"
-  status = 301
-  force = true
-
-# Redirect incorrect /en/categorias/ URLs to proper English categories
-[[redirects]]
-  from = "/en/categorias/"
-  to = "/categories/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/en/categorias/carteras/"
-  to = "/categories/wallets/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/en/categorias/mochilas/"
-  to = "/categories/backpacks/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/en/categorias/bolsos-de-mano/"
-  to = "/categories/handbags/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/en/categorias/tote-bags/"
-  to = "/categories/tote-bags/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/categorias/index.html"
-  to = "/es/categorias/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/categorias/bolsos-de-mano/index.html"
-  to = "/es/categorias/bolsos-de-mano/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/categorias/mochilas/index.html"
-  to = "/es/categorias/mochilas/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/categorias/carteras/index.html"
-  to = "/es/categorias/carteras/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/categorias/tote-bags/index.html"
-  to = "/es/categorias/tote-bags/"
-  status = 301
-  force = true
-
-# Homepage serving rules
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/es/"
-  to = "/es/index.html"
-  status = 200
-
-# Legacy Spanish articles path redirects
-[[redirects]]
-  from = "/es/articles/*"
-  to = "/articulos/:splat/"
-  status = 301
-
-[[redirects]]
-  from = "/es/articles"
-  to = "/articulos/"
-  status = 301
-
-[[redirects]]
-  from = "/es/articles/"
-  to = "/articulos/"
-  status = 301
-
-# Spanish slug mappings to English equivalents
-[[redirects]]
-  from = "/articulos/como-elegir-bolso-mano-perfecto-2025/"
-  to = "/articles/how-to-choose-perfect-handbag-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/bolso-minimalista-dia-dia-2025/"
-  to = "/articles/minimalist-daily-bag-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/las-mejores-mochilas-mano-viajar-ligero-2025/"
-  to = "/articles/best-lightweight-travel-backpacks-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/resistentes-estilo-mejores-mochilas-dia-dia-2025/"
-  to = "/articles/best-durable-stylish-backpacks-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/mejores-bolsos-mano-bodas-2025/"
-  to = "/articles/best-wedding-handbags-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/mochilas-para-laptop-proteccion-estilo-2025/"
-  to = "/articles/laptop-backpacks-protection-style-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/viajar-ligera-bolsos-aventureras-2025/"
-  to = "/articles/travel-light-adventure-bags-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/3-mochilas-profesionales-estilosas-2025/"
-  to = "/articles/3-stylish-professional-backpacks-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/3-tote-bags-populares-amazon-2025/"
-  to = "/articles/3-popular-amazon-tote-bags-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/3-tote-bags-funcionales-universidad-2025/"
-  to = "/articles/3-functional-university-tote-bags-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/3-tote-bags-reutilizables-compras-2025/"
-  to = "/articles/3-reusable-shopping-tote-bags-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/3-bolsos-panales-funcionales-mamas-2025/"
-  to = "/articles/3-functional-diaper-bags-moms-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/3-carteras-wristlet-mujeres-2025/"
-  to = "/articles/3-wristlet-wallets-women-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/3-carteras-rfid-seguridad-2025/"
-  to = "/articles/3-rfid-security-wallets-2025/"
-  status = 301
-
-[[redirects]]
-  from = "/articulos/top-5-carteras-mujeres-profesionales-2025/"
-  to = "/articles/top-5-professional-women-wallets-2025/"
-  status = 301
-
-# Category redirects
-[[redirects]]
-  from = "/categorias/*"
+  from = "/es/categorias/*.html"
   to = "/es/categorias/:splat/"
   status = 301
+  force = true
 
+# PRIORITY 9: Category serves (after redirects)
 [[redirects]]
-  from = "/categorias/"
-  to = "/es/categorias/"
-  status = 301
-
-# Legacy Spanish slug redirect
-[[redirects]]
-  from = "/articulos/bolsos-de-mano/"
-  to = "/articles/handbags/"
-  status = 301
-
-# Index page serving (MUST be after redirect rules)
-[[redirects]]
-  from = "/es/categorias/*"
-  to = "/es/categorias/:splat.html"
+  from = "/categories/*/"
+  to = "/categories/:splat/index.html"
   status = 200
 
 [[redirects]]
-  from = "/es/categorias/"
-  to = "/es/categorias/index.html"
+  from = "/es/categorias/*/"
+  to = "/es/categorias/:splat/index.html"
   status = 200
 
-# Serve articles index
+# PRIORITY 10: Article serves (after redirects)
 [[redirects]]
-  from = "/articles/"
-  to = "/articles/index.html"
+  from = "/articles/*/"
+  to = "/articles/:splat.html"
   status = 200
 
-# Serve individual articles with trailing slash URLs
-# Removed conflicting rule - handled by _redirects file
+[[redirects]]
+  from = "/es/articulos/*/"
+  to = "/es/articulos/:splat.html"
+  status = 200
 
-# Note: Specific .html to slash redirects are handled individually above
+# PRIORITY 11: Main page serves (after redirects)
+[[redirects]]
+  from = "/privacy-policy/"
+  to = "/privacy-policy.html"
+  status = 200
 
+[[redirects]]
+  from = "/affiliate-disclosure/"
+  to = "/affiliate-disclosure.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/politica-privacidad/"
+  to = "/es/politica-privacidad.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/aviso-afiliados/"
+  to = "/es/aviso-afiliados.html"
+  status = 200
