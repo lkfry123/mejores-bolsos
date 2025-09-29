@@ -35,23 +35,22 @@
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
-# Cache exclusions for pages that need redirects
-[[headers]]
-  for = "/articles/*.html"
-  [headers.values]
-    Cache-Control = "no-cache"
+# Note: Cache exclusions removed to allow redirects to work properly
 
-[[headers]]
-  for = "/articulos/*.html"
-  [headers.values]
-    Cache-Control = "no-cache"
+# PRIORITY 1: HTML to slash redirects (must be first to take precedence)
+[[redirects]]
+  from = "/articles/*.html"
+  to = "/articles/:splat/"
+  status = 301
+  force = true
 
-[[headers]]
-  for = "/es/articulos/*.html"
-  [headers.values]
-    Cache-Control = "no-cache"
+[[redirects]]
+  from = "/es/articulos/*.html"
+  to = "/es/articulos/:splat/"
+  status = 301
+  force = true
 
-# PRIORITY 1: Quiz page redirects (must be first)
+# PRIORITY 2: Quiz page redirects
 [[redirects]]
   from = "/quiz/bag-personality.html"
   to = "/quiz/bag-personality/"
@@ -63,7 +62,7 @@
   to = "/quiz/bag-personality/index.html"
   status = 200
 
-# PRIORITY 2: Main page serves
+# PRIORITY 3: Main page serves
 [[redirects]]
   from = "/"
   to = "/index.html"
@@ -74,7 +73,7 @@
   to = "/es/index.html"
   status = 200
 
-# PRIORITY 3: Article index serves
+# PRIORITY 4: Article index serves
 [[redirects]]
   from = "/articles/"
   to = "/articles/index.html"
@@ -85,7 +84,7 @@
   to = "/es/articulos/index.html"
   status = 200
 
-# PRIORITY 4: Category index serves
+# PRIORITY 5: Category index serves
 [[redirects]]
   from = "/categories/"
   to = "/categories/index.html"
@@ -95,20 +94,6 @@
   from = "/es/categorias/"
   to = "/es/categorias/index.html"
   status = 200
-
-# PRIORITY 5: HTML to slash redirects for English articles
-[[redirects]]
-  from = "/articles/*.html"
-  to = "/articles/:splat/"
-  status = 301
-  force = true
-
-# PRIORITY 6: HTML to slash redirects for Spanish articles
-[[redirects]]
-  from = "/es/articulos/*.html"
-  to = "/es/articulos/:splat/"
-  status = 301
-  force = true
 
 # PRIORITY 7: Main page redirects
 [[redirects]]
