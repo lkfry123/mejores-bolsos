@@ -165,7 +165,21 @@
   status = 301
   force = true
 
-# PRIORITY 2: Individual Article Redirects (Spanish)
+# PRIORITY 2: Main Categories Pages Redirects
+# ===========================================
+[[redirects]]
+  from = "/categories.html"
+  to = "/categories/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/categorias.html"
+  to = "/es/categorias/"
+  status = 301
+  force = true
+
+# PRIORITY 3: Individual Article Redirects (Spanish)
 # ==================================================
 [[redirects]]
   from = "/es/articulos/3-bolsos-panales-funcionales-mamas-2025.html"
