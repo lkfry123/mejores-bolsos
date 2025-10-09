@@ -132,8 +132,8 @@ if (location.pathname !== '/') { console.log('[bag-love] Not on homepage, skippi
   function shareToFacebook() {
     const canonicalEl = document.querySelector('link[rel="canonical"]');
     const pageUrl = canonicalEl && canonicalEl.href ? canonicalEl.href : window.location.href;
-    // Use mobile sharer endpoint; omit quote for maximum compatibility
-    const shareUrl = `https://m.facebook.com/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+    // Use standard sharer endpoint on www; more reliable than m. on iOS Safari
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
     const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
     if (isMobile) {
       window.location.href = shareUrl; // same-tab navigation avoids popup blockers on mobile
