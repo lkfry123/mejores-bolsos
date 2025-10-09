@@ -121,21 +121,7 @@ if (location.pathname !== '/') { console.log('[bag-love] Not on homepage, skippi
     localStorage.setItem(pageKey, String(input.value));
   });
 
-  // Shareable badge functions
-  async function generateBadgeImage() {
-    const badge = wrap.querySelector('.ah-love-badge');
-    if (!badge || typeof html2canvas === 'undefined') return null;
-    return await html2canvas(badge, { backgroundColor: null, scale: 2 });
-  }
-
-  async function downloadBadge() {
-    const canvas = await generateBadgeImage();
-    if (!canvas) return;
-    const link = document.createElement('a');
-    link.download = 'handbag-love.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  }
+  // Shareable badge image generation removed to avoid iOS download prompts
 
   function shareToInstagram() {
     // Open Instagram app directly
@@ -143,76 +129,44 @@ if (location.pathname !== '/') { console.log('[bag-love] Not on homepage, skippi
     window.open(shareUrl, '_blank');
   }
 
-  async function shareToFacebook() {
-    const shareText = 'Check out my handbag love score! 🎃';
-    
-    // Generate the badge image
-    const badge = wrap.querySelector('.ah-love-badge');
-    if (!badge || typeof html2canvas === 'undefined') {
-      // Fallback to text-only sharing
-      const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(shareText)}`;
-      window.open(shareUrl, '_blank', 'width=600,height=400');
+  function shareToFacebook() {
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    const pageUrl = canonicalEl && canonicalEl.href ? canonicalEl.href : window.location.href;
+    // Use mobile sharer endpoint; omit quote for maximum compatibility
+    const shareUrl = `https://m.facebook.com/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = shareUrl; // same-tab navigation avoids popup blockers on mobile
       return;
     }
-    
-    try {
-      const canvas = await html2canvas(badge, { backgroundColor: null, scale: 2 });
-      const dataUrl = canvas.toDataURL('image/png');
-      
-      // Download the image first
-      const link = document.createElement('a');
-      link.download = 'handbag-love-score.png';
-      link.href = dataUrl;
-      link.click();
-      
-      // Then open Facebook with the message
-      setTimeout(() => {
-        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(shareText + ' - Check out my score image!')}`;
-        window.open(shareUrl, '_blank', 'width=600,height=400');
-      }, 500);
-      
-    } catch (error) {
-      console.error('Error generating image for Facebook:', error);
-      // Fallback to text-only sharing
-      const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(shareText)}`;
-      window.open(shareUrl, '_blank', 'width=600,height=400');
-    }
+    const a = document.createElement('a');
+    a.href = shareUrl;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   }
 
-  async function shareToPinterest() {
-    const shareText = 'My handbag love score! 🎃';
-    
-    // Generate the badge image
-    const badge = wrap.querySelector('.ah-love-badge');
-    if (!badge || typeof html2canvas === 'undefined') {
-      // Fallback to text-only sharing
-      const shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&description=${encodeURIComponent(shareText)}`;
-      window.open(shareUrl, '_blank', 'width=600,height=400');
+  function shareToPinterest() {
+    const v = Number(input.value);
+    const shareText = `My handbag love score: ${v}% ${isHalloweenWindow ? '🎃' : '👜'}`;
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    const pageUrl = canonicalEl && canonicalEl.href ? canonicalEl.href : window.location.href;
+    // Use standard create endpoint and let Pinterest scrape OG image; more stable across iOS Safari
+    const shareUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(pageUrl)}&description=${encodeURIComponent(shareText)}`;
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = shareUrl; // same-tab navigation for iOS Safari
       return;
     }
-    
-    try {
-      const canvas = await html2canvas(badge, { backgroundColor: null, scale: 2 });
-      const dataUrl = canvas.toDataURL('image/png');
-      
-      // Download the image first
-      const link = document.createElement('a');
-      link.download = 'handbag-love-score.png';
-      link.href = dataUrl;
-      link.click();
-      
-      // Then open Pinterest with the image
-      setTimeout(() => {
-        const shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(dataUrl)}&description=${encodeURIComponent(shareText)}`;
-        window.open(shareUrl, '_blank', 'width=600,height=400');
-      }, 500);
-      
-    } catch (error) {
-      console.error('Error generating image for Pinterest:', error);
-      // Fallback to text-only sharing
-      const shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&description=${encodeURIComponent(shareText)}`;
-      window.open(shareUrl, '_blank', 'width=600,height=400');
-    }
+    const a = document.createElement('a');
+    a.href = shareUrl;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   }
 
   // Event listeners for share buttons
