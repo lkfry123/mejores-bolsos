@@ -124,9 +124,41 @@ if (location.pathname !== '/') { console.log('[bag-love] Not on homepage, skippi
   // Shareable badge image generation removed to avoid iOS download prompts
 
   function shareToInstagram() {
-    // Open Instagram app directly
-    const shareUrl = `https://www.instagram.com/`;
-    window.open(shareUrl, '_blank');
+    const v = Number(input.value);
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    const pageUrl = canonicalEl && canonicalEl.href ? canonicalEl.href : window.location.href;
+    const shareText = `My handbag love score: ${v}% ${isHalloweenWindow ? '🎃' : '👜'} — check yours!`;
+    const urlWithUtm = pageUrl + (pageUrl.includes('?') ? '&' : '?') + 'utm_source=instagram&utm_medium=share_button&utm_campaign=bag_love_widget';
+
+    // Prefer native share sheet when available (mobile browsers)
+    if (navigator.share) {
+      navigator.share({ title: 'Bags & Fashion', text: shareText, url: urlWithUtm }).catch(() => {});
+      return;
+    }
+
+    // Fallback: copy link to clipboard, then open Instagram
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(urlWithUtm);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = urlWithUtm; document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); ta.remove();
+      }
+    } catch (e) { /* noop */ }
+
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = 'https://www.instagram.com/'; // same-tab; user can paste from clipboard
+      return;
+    }
+    const a = document.createElement('a');
+    a.href = 'https://www.instagram.com/';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   }
 
   function shareToFacebook() {
