@@ -1164,19 +1164,22 @@ mark {
     outline-offset: 2px;
 }
 
+/* Explore by Category cards: big, full-image fit */
 .category-image {
-    height: 200px;
+    height: 260px; /* larger visual emphasis */
     overflow: hidden;
 }
 
 @media (min-width: 768px) {
-    .category-image { height: 240px; }
+    .category-image { height: 320px; }
 }
 
 .category-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* ensure full image visible */
+    background: #fff;
+    padding: 6px;
     transition: var(--transition);
 }
 
