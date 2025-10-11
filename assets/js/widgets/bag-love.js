@@ -147,18 +147,17 @@ if (location.pathname !== '/') { console.log('[bag-love] Not on homepage, skippi
       }
     } catch (e) { /* noop */ }
 
-    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = 'https://www.instagram.com/'; // same-tab; user can paste from clipboard
-      return;
-    }
-    const a = document.createElement('a');
-    a.href = 'https://www.instagram.com/';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+    // Show a short toast so the user knows the link is ready
+    try {
+      const toast = document.createElement('div');
+      toast.textContent = 'Link copied. Paste in Instagram.';
+      toast.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);background:#111;color:#fff;padding:.5rem .75rem;border-radius:999px;font:500 14px system-ui;z-index:99999;opacity:.95';
+      document.body.appendChild(toast);
+      setTimeout(()=>{ toast.remove(); }, 1800);
+    } catch (_) {}
+
+    const win = window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer');
+    if (!win) window.location.href = 'https://www.instagram.com/';
   }
 
   function shareToFacebook() {
@@ -166,18 +165,8 @@ if (location.pathname !== '/') { console.log('[bag-love] Not on homepage, skippi
     const pageUrl = canonicalEl && canonicalEl.href ? canonicalEl.href : window.location.href;
     // Use standard sharer endpoint on www; more reliable than m. on iOS Safari
     const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
-    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = shareUrl; // same-tab navigation avoids popup blockers on mobile
-      return;
-    }
-    const a = document.createElement('a');
-    a.href = shareUrl;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+    const win = window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    if (!win) window.location.href = shareUrl;
   }
 
   function shareToPinterest() {
