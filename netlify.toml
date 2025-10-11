@@ -41,6 +41,12 @@
 # ==================================================
 [[redirects]]
   from = "/articles/10-buzzy-it-bags-fall-2025.html"
+  to = "/articles/10-buzzy-it-bags-fall-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/10-buzzy-it-bags-fall-2025/"
   to = "/"
   status = 301
   force = true
