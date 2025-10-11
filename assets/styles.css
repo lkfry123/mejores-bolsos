@@ -1245,14 +1245,16 @@ mark {
 }
 
 .article-image {
-    height: 200px;
+    aspect-ratio: 4 / 3; /* keep cards consistent */
+    height: auto;
     overflow: hidden;
 }
 
 .article-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* avoid cropping */
+    background: #fff; /* clean letterbox */
     transition: var(--transition);
 }
 
