@@ -39,17 +39,6 @@
 
 # PRIORITY 1: Individual Article Redirects (English)
 # ==================================================
-[[redirects]]
-  from = "/articles/10-buzzy-it-bags-fall-2025.html"
-  to = "/articles/10-buzzy-it-bags-fall-2025/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/articles/10-buzzy-it-bags-fall-2025/"
-  to = "/"
-  status = 301
-  force = true
 
 [[redirects]]
   from = "/articles/3-functional-diaper-bags-moms-2025.html"
