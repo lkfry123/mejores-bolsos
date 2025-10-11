@@ -1248,14 +1248,15 @@ mark {
     outline-offset: 2px;
 }
 
+
+/* Featured article cards: keep LARGE frames but show full image */
 .article-image {
-    aspect-ratio: 1 / 1; /* larger visual area on phones */
-    height: auto;
+    height: 300px; /* large on phones */
     overflow: hidden;
 }
 
 @media (min-width: 768px) {
-    .article-image { aspect-ratio: 3 / 2; } /* roomier on desktop */
+    .article-image { height: 360px; } /* larger on desktop */
 }
 
 .article-image img {
@@ -1264,7 +1265,7 @@ mark {
     object-fit: contain; /* avoid cropping */
     object-position: center;
     background: #fff; /* clean letterbox */
-    padding: 6px; /* subtle breathing room */
+    padding: 4px; /* subtle breathing room */
     transition: var(--transition);
 }
 
