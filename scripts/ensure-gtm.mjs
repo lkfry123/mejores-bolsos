@@ -8,16 +8,16 @@ import fs from 'fs';
 import path from 'path';
 
 const ROOT = process.cwd();
-const VALID_GTM = 'GT-MR24WCXH';
+const VALID_GTM = 'GTM-TCG7SMDD';
 const VALID_GA4 = 'G-H1Q1KL01RP';
 
-const HEAD_SNIPPET = `<!-- Google Tag Manager -->\n<script>\n(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});\nvar f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';\nj.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;\nf.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-MR24WCXH');\n</script>\n<!-- End Google Tag Manager -->`;
+const HEAD_SNIPPET = `<!-- Google Tag Manager -->\n<script>\n(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});\nvar f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';\nj.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;\nf.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TCG7SMDD');\n</script>\n<!-- End Google Tag Manager -->`;
 
-const BODY_SNIPPET = `<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-MR24WCXH"\nheight="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n<!-- End Google Tag Manager (noscript) -->`;
+const BODY_SNIPPET = `<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-TCG7SMDD\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n<!-- End Google Tag Manager (noscript) -->`;
 
 /** Regexes for removal of conflicting tags */
-const reGtmWrongScript = /https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=(GT-[A-Z0-9_-]+)/g;
-const reGtmWrongNoscript = /https:\/\/www\.googletagmanager\.com\/ns\.html\?id=(GT-[A-Z0-9_-]+)/g;
+const reGtmWrongScript = /https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=((?:GTM|GT)-[A-Z0-9_-]+)/g;
+const reGtmWrongNoscript = /https:\/\/www\.googletagmanager\.com\/ns\.html\?id=((?:GTM|GT)-[A-Z0-9_-]+)/g;
 const reGa4Loader = /<script[^>]*src=["']https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-[A-Z0-9_-]+["'][^>]*><\/script>/gi;
 const reUaAnalytics = /https:\/\/www\.google-analytics\.com\/analytics\.js/gi;
 const reGa4ConfigAny = /gtag\(\s*'config'\s*,\s*'G-[A-Z0-9_-]+'\s*\);/gi;

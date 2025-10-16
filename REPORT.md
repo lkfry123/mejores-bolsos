@@ -69,127 +69,70 @@
   - quiz/bag-personality/index.html
   - test-flicker.html
 - Removed snippets:
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
-  - gtag.js loader
-  - gtag config
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
+  - GTM noscript GT-MR24WCXH
