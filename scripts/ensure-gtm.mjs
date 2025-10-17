@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ensure-gtm.mjs
- * Inserts Google Tag Manager (GT-MR24WCXH) snippets and removes conflicting GA/legacy tags
+ * Inserts Google Tag Manager (GTM-TCG7SMDD) snippets and removes conflicting GA/legacy tags
  * across all HTML files. Safe to run repeatedly (idempotent).
  */
 import fs from 'fs';
@@ -16,8 +16,17 @@ const HEAD_SNIPPET = `<!-- Google Tag Manager -->\n<script>\n(function(w,d,s,l,i
 const BODY_SNIPPET = `<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-TCG7SMDD\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n<!-- End Google Tag Manager (noscript) -->`;
 
 /** Regexes for removal of conflicting tags */
-const reGtmWrongScript = /https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=((?:GTM|GT)-[A-Z0-9_-]+)/g;
-const reGtmWrongNoscript = /https:\/\/www\.googletagmanager\.com\/ns\.html\?id=((?:GTM|GT)-[A-Z0-9_-]+)/g;
+// Generic block matchers for any GTM markers (we will remove ALL, then re-insert the valid one)
+const reGtmHeadBlockAny = /<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->/gi;
+const reGtmNoScriptBlockAny = /<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/gi;
+// Fallback: any <script> that loads gtm.js and any noscript iframe that loads ns.html
+const reAnyGtmScriptTag = /<script[\s\S]*?googletagmanager\.com\/gtm\.js[\s\S]*?<\/script>/gi;
+const reAnyGtmNoScriptTag = /<noscript>\s*<iframe[\s\S]*?googletagmanager\.com\/ns\.html[\s\S]*?<\/iframe>\s*<\/noscript>/gi;
+// Remove any empty/placeholder noscript iframes (e.g., src="")
+const reEmptyNoScriptBlock = /<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<noscript><iframe src=["']{1}\s*["']{1}[\s\S]*?<\/noscript>[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/gi;
+// Remove any leftover inline comment lines that reference the old container
+const reOldGtmComment = new RegExp(`Container (?:GTM|GT)-[A-Z0-9_-]+`, 'gi');
+// Remove any direct GA4 loaders/configs (we rely on GTM only)
 const reGa4Loader = /<script[^>]*src=["']https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-[A-Z0-9_-]+["'][^>]*><\/script>/gi;
 const reUaAnalytics = /https:\/\/www\.google-analytics\.com\/analytics\.js/gi;
 const reGa4ConfigAny = /gtag\(\s*'config'\s*,\s*'G-[A-Z0-9_-]+'\s*\);/gi;
@@ -38,15 +47,17 @@ function walk(dir){
 
 function removeConflicts(html){
   let out = html;
-  // Remove wrong GTM loaders
-  out = out.replace(reGtmWrongScript, (m, id)=>{
-    if (id !== VALID_GTM) { removed.push(`GTM script ${id}`); return ''; }
-    return m;
-  });
-  // Remove wrong GTM noscripts
-  out = out.replace(reGtmWrongNoscript, (m, id)=>{
-    if (id !== VALID_GTM) { removed.push(`GTM noscript ${id}`); return ''; }
-    return m;
+  // Remove ALL GTM head and noscript blocks (we will re-insert the correct ones)
+  if (reGtmHeadBlockAny.test(out)) { out = out.replace(reGtmHeadBlockAny, ()=>{ removed.push('GTM head (purged)'); return ''; }); }
+  if (reGtmNoScriptBlockAny.test(out)) { out = out.replace(reGtmNoScriptBlockAny, ()=>{ removed.push('GTM noscript (purged)'); return ''; }); }
+  // Also remove any stray gtm.js loader scripts or ns.html iframes
+  if (reAnyGtmScriptTag.test(out)) { out = out.replace(reAnyGtmScriptTag, ()=>{ removed.push('GTM script tag (purged)'); return ''; }); }
+  if (reAnyGtmNoScriptTag.test(out)) { out = out.replace(reAnyGtmNoScriptTag, ()=>{ removed.push('GTM noscript tag (purged)'); return ''; }); }
+  // Remove any empty placeholder noscript blocks
+  out = out.replace(reEmptyNoScriptBlock, (m)=>{ removed.push('empty GTM noscript'); return ''; });
+  // Remove old inline comments that mention a non-VALID container
+  out = out.replace(reOldGtmComment, (text)=>{
+    return text.includes(VALID_GTM) ? text : '';
   });
   // Remove all GA4 loaders (we will rely on GTM). Safe because GTM owns GA4.
   out = out.replace(reGa4Loader, (m)=>{ removed.push('gtag.js loader'); return ''; });
@@ -54,6 +65,9 @@ function removeConflicts(html){
   out = out.replace(reUaAnalytics, (m)=>{ removed.push('UA analytics.js'); return ''; });
   // Remove GA4 config calls
   out = out.replace(reGa4ConfigAny, (m)=>{ removed.push('gtag config'); return ''; });
+
+  // After purge, no dedupe needed; insertion happens in ensureGtm
+
   return out;
 }
 
