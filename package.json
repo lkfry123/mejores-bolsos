@@ -4,7 +4,9 @@
   "description": "Affordable handbags website with sitemap generation",
   "type": "module",
   "scripts": {
-    "generate:sitemap": "node scripts/generate-sitemap.mjs"
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "tags:dry": "node scripts/fix-tags.mjs --dry",
+    "tags:apply": "node scripts/fix-tags.mjs"
   },
   "keywords": ["handbags", "bags", "sitemap", "seo"],
   "author": "",
