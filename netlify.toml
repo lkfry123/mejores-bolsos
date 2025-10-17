@@ -463,3 +463,45 @@
   from = "/es/aviso-afiliados/"
   to = "/es/aviso-afiliados.html"
   status = 200
+
+
+[[redirects]]
+from = "/about.html"
+to = "/about/"
+status = 301
+force = true
+
+
+[[redirects]]
+from = "/contact.html"
+to = "/contact/"
+status = 301
+force = true
+
+
+[[redirects]]
+from = "/terms.html"
+to = "/terms/"
+status = 301
+force = true
+
+
+[[redirects]]
+from = "/es/sobre-nosotros.html"
+to = "/es/sobre-nosotros/"
+status = 301
+force = true
+
+
+[[redirects]]
+from = "/es/contacto.html"
+to = "/es/contacto/"
+status = 301
+force = true
+
+
+[[redirects]]
+from = "/es/terminos.html"
+to = "/es/terminos/"
+status = 301
+force = true

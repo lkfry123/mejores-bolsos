@@ -6,7 +6,9 @@
   "scripts": {
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "tags:dry": "node scripts/fix-tags.mjs --dry",
-    "tags:apply": "node scripts/fix-tags.mjs"
+    "tags:apply": "node scripts/fix-tags.mjs",
+    "pages:dry": "node scripts/add-basic-pages.mjs --dry",
+    "pages:apply": "node scripts/add-basic-pages.mjs"
   },
   "keywords": ["handbags", "bags", "sitemap", "seo"],
   "author": "",
