@@ -513,8 +513,5 @@ force = true
   status = 301
   force = true
 
-[[redirects]]
-  from = "/es/articulos/osprey-mochilas-inclusivas-mujeres.html"
-  to = "/es/articulos/osprey-mochilas-inclusivas-mujeres/"
-  status = 301
-  force = true
+# Spanish Osprey article is handled by wildcard /es/articulos/*.html -> /es/articulos/:splat/
+# and served by /es/articulos/*/ -> /es/articulos/*/index.html (see below)
