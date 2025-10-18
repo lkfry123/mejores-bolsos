@@ -505,3 +505,16 @@ from = "/es/terminos.html"
 to = "/es/terminos/"
 status = 301
 force = true
+
+# APPEND: Osprey inclusive women article redirects (EN + ES) — added 2025-10-17
+[[redirects]]
+  from = "/backpacks/osprey-inclusive-womens-backpack.html"
+  to = "/backpacks/osprey-inclusive-womens-backpack/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/osprey-mochilas-inclusivas-mujeres.html"
+  to = "/es/articulos/osprey-mochilas-inclusivas-mujeres/"
+  status = 301
+  force = true
