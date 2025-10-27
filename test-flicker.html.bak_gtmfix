@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TCG7SMDD');</script>
+<!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TCG7SMDD');
+</script>
+<!-- End Google Tag Manager -->
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM () using Measurement ID G-H1Q1KL01RP -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Flicker Test - Affordable Handbags</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        /* Test page specific styles */
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .test-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .test-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .test-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .performance-indicator {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCG7SMDD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    
+
+    
+
+    <!-- Performance indicator -->
+    <div class="performance-indicator" id="perf-indicator">
+        FPS: <span id="fps">60</span> | 
+        Paint: <span id="paint-count">0</span> | 
+        Layout: <span id="layout-count">0</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/">Bags & Fashion</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/categories/" class="nav-link">Categories</a></li>
+                <li><a href="/articles/" class="nav-link">Articles</a></li>
+                <li><a href="/quiz/bag-personality/" class="nav-link">Take the Quiz</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="test-container">
+        <h1>Scroll Flicker Test Page</h1>
+        <p>This page is designed to test scroll performance. Scroll up and down to check for flicker issues.</p>
+        
+        <div class="test-section">
+            <h2>Test Section 1 - Article Cards</h2>
+            <div class="test-cards">
+                <div class="test-card article-card">
+                    <h3>Test Article 1</h3>
+                    <p>This is a test article card to check for flicker during scroll.</p>
+                </div>
+                <div class="test-card article-card">
+                    <h3>Test Article 2</h3>
+                    <p>This is a test article card to check for flicker during scroll.</p>
+                </div>
+                <div class="test-card article-card">
+                    <h3>Test Article 3</h3>
+                    <p>This is a test article card to check for flicker during scroll.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Test Section 2 - Category Cards</h2>
+            <div class="test-cards">
+                <div class="test-card category-card">
+                    <h3>Test Category 1</h3>
+                    <p>This is a test category card to check for flicker during scroll.</p>
+                </div>
+                <div class="test-card category-card">
+                    <h3>Test Category 2</h3>
+                    <p>This is a test category card to check for flicker during scroll.</p>
+                </div>
+                <div class="test-card category-card">
+                    <h3>Test Category 3</h3>
+                    <p>This is a test category card to check for flicker during scroll.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more content to enable scrolling -->
+        <div class="test-section">
+            <h2>Test Section 3 - More Content</h2>
+            <div class="test-cards">
+                <div class="test-card">
+                    <h3>Content Block 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="test-card">
+                    <h3>Content Block 2</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="test-card">
+                    <h3>Content Block 3</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Test Section 4 - Even More Content</h2>
+            <div class="test-cards">
+                <div class="test-card">
+                    <h3>Content Block 4</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="test-card">
+                    <h3>Content Block 5</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                </div>
+                <div class="test-card">
+                    <h3>Content Block 6</h3>
+                    <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+    <script>
+        // Performance monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+        let paintCount = 0;
+        let layoutCount = 0;
+
+        function updatePerformance() {
+            frameCount++;
+            const now = performance.now();
+            const fps = Math.round(1000 / (now - lastTime));
+            
+            document.getElementById('fps').textContent = fps;
+            document.getElementById('paint-count').textContent = paintCount;
+            document.getElementById('layout-count').textContent = layoutCount;
+            
+            lastTime = now;
+            requestAnimationFrame(updatePerformance);
+        }
+
+        // Monitor paint and layout events
+        if (window.PerformanceObserver) {
+            const observer = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.entryType === 'paint') {
+                        paintCount++;
+                    } else if (entry.entryType === 'measure' && entry.name.includes('layout')) {
+                        layoutCount++;
+                    }
+                }
+            });
+            
+            observer.observe({ entryTypes: ['paint', 'measure'] });
+        }
+
+        // Start performance monitoring
+        requestAnimationFrame(updatePerformance);
+    </script>
+</body>
+</html>
