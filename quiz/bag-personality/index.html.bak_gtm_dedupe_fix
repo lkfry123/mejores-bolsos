@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TCG7SMDD');</script>
+<!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TCG7SMDD');
+</script>
+<!-- End Google Tag Manager -->
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
+
+    
+    <!-- GA4 is configured in GTM () using Measurement ID G-H1Q1KL01RP -->
+
+  <!-- GA4 is configured in GTM () using Measurement ID G-H1Q1KL01RP -->
+  <meta charset="utf-8">
+  <title>What's Your Bag Personality? | Affordable-Handbags</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Take this fun quiz to discover your bag personality: Crossbody, Tote, Backpack, Clutch, or Rolling.">
+  <link rel="canonical" href="https://affordable-handbags.com/quiz/bag-personality/">
+  <style>
+    .bagquiz{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:2rem auto;max-width:760px;padding:1rem}
+    .bagquiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #eee}
+    .bagquiz-logo{font-size:1.2rem;font-weight:600;text-decoration:none;color:#111}
+    .bagquiz-home{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border:1px solid #ddd;border-radius:8px;text-decoration:none;color:#111;font-size:.9rem;transition:all .2s}
+    .bagquiz-home:hover{background:#f5f5f5;border-color:#999}
+    .bagquiz h1{font-size:1.8rem;margin-bottom:.25rem}
+    .bagquiz p.lead{color:#555;margin:.25rem 0 1rem}
+    .bagquiz fieldset{border:1px solid #e6e6e6;border-radius:12px;padding:1rem;margin-bottom:1rem}
+    .bagquiz legend{font-weight:600}
+    .bagquiz label{display:flex;gap:.5rem;border:1px solid #ddd;border-radius:8px;padding:.6rem;margin-top:.5rem;cursor:pointer}
+    .bagquiz input[type=radio]{margin-top:.2rem}
+    .bagquiz .nav{display:flex;justify-content:space-between;gap:.5rem}
+    .bagquiz button{padding:.7rem 1rem;border-radius:8px;cursor:pointer}
+    .bagquiz .outline{border:1px solid #ddd;background:#fff}
+    .bagquiz .primary{border:1px solid #111;background:#111;color:#fff}
+    .bagquiz .result{display:none;margin-top:1rem;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .bagquiz .cta a{display:inline-block;margin:.3rem .3rem 0 0;padding:.5rem .8rem;border:1px solid #ddd;border-radius:999px;text-decoration:none;color:#111}
+  </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCG7SMDD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    
+
+    
+<main class="bagquiz">
+  <!-- Header with logo and home button -->
+  <header class="bagquiz-header">
+    <a href="/" class="bagquiz-logo">Bags & Fashion</a>
+    <a href="/" class="bagquiz-home">← Back to Home</a>
+  </header>
+  
+  <h1>What's Your Bag Personality?</h1>
+  <p class="lead">Answer a few quick questions and get your silly result 😉</p>
+
+  <form id="quizform" onsubmit="return false">
+    <fieldset id="q1">
+      <legend>1. Which best describes your day-to-day?</legend>
+      <label><input type="radio" name="q1" value="tote,backpack"> Commuter / office / classes</label>
+      <label><input type="radio" name="q1" value="backpack,crossbody,rolling"> Traveler / on the go</label>
+      <label><input type="radio" name="q1" value="backpack,tote"> Parent / caregiver</label>
+      <label><input type="radio" name="q1" value="clutch,crossbody"> Fashion-first / nights out</label>
+      <label><input type="radio" name="q1" value="rolling"> Frequent flyer with heavy loads</label>
+    </fieldset>
+
+    <fieldset id="q2">
+      <legend>2. What do you usually carry?</legend>
+      <label><input type="radio" name="q2" value="crossbody,clutch"> Just the essentials</label>
+      <label><input type="radio" name="q2" value="tote,backpack"> Laptop + charger + notebook</label>
+      <label><input type="radio" name="q2" value="backpack,tote"> Water bottle + snacks</label>
+      <label><input type="radio" name="q2" value="clutch"> Party minimalism</label>
+      <label><input type="radio" name="q2" value="rolling"> Heavy luggage</label>
+    </fieldset>
+
+    <div class="nav">
+      <button type="button" id="prev" class="outline" disabled>Back</button>
+      <button type="button" id="next" class="primary">Next</button>
+    </div>
+  </form>
+
+  <div class="result" id="resultbox">
+    <div id="summary"></div>
+    <div class="cta" id="ctabox"></div>
+    <p style="color:#666;margin-top:.5rem">Share your result and tag us—smiles welcome 😄</p>
+  </div>
+</main>
+
+<script>
+const questions = ["q1","q2"];
+let step = 0;
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const resultBox = document.getElementById("resultbox");
+
+const blurbs = {
+  crossbody:"Congrats, you've chosen freedom: one strap, no stress. Basically, you're Batman… if Batman carried lip balm and receipts instead of batarangs.",
+  tote:"You like big bags and you cannot lie. Honestly, Mary Poppins would be jealous of the random stuff you manage to fit in there.",
+  backpack:"You're the pack mule of the friend group. Everyone's water bottle, sweater, and charger somehow ends up in YOUR bag. Hero status: unlocked.",
+  clutch:"Tiny but mighty. Sure, it only fits a phone and a breath mint, but hey—you're serving *red carpet vibes* at the grocery store.",
+  rolling:"You've mastered the art of traveling heavy without breaking a sweat. Basically, you're an airport runway model… minus the paparazzi chasing you through TSA."
+};
+
+const links = {
+  crossbody:[{text:"Best crossbodies",url:"/articles/handbags/"}],
+  tote:[{text:"Top totes",url:"/articles/tote-bags/"}],
+  backpack:[{text:"Everyday backpacks",url:"/articles/backpacks/"}],
+  clutch:[{text:"Evening clutches",url:"/articles/best-wedding-handbags-2025/"}],
+  rolling:[{text:"Travel backpacks",url:"/articles/travel-light-adventure-bags-2025/"}]
+};
+
+function showStep(){
+  questions.forEach((id,i)=>{
+    document.getElementById(id).style.display = (i===step)?"block":"none";
+  });
+  prevBtn.disabled = step===0;
+  nextBtn.textContent = step===questions.length-1?"See Result":"Next";
+}
+showStep();
+
+prevBtn.onclick=()=>{if(step>0){step--;showStep();}};
+nextBtn.onclick=()=>{
+  const name=questions[step];
+  if(!document.querySelector(`input[name="${name}"]:checked`)) return;
+  if(step<questions.length-1){step++;showStep();}else{calculate();}
+};
+
+function calculate(){
+  const scores={crossbody:0,tote:0,backpack:0,clutch:0,rolling:0};
+  questions.forEach(q=>{
+    const ans=document.querySelector(`input[name="${q}"]:checked`);
+    if(ans){
+      ans.value.split(",").forEach(type=>{scores[type.trim()]++;});
+    }
+  });
+  const best=Object.keys(scores).sort((a,b)=>scores[b]-scores[a])[0];
+  document.getElementById("summary").innerHTML=`<h2>${best.toUpperCase()}</h2><p>${blurbs[best]}</p>`;
+  document.getElementById("ctabox").innerHTML=(links[best]||[]).map(l=>`<a href="${l.url}">${l.text}</a>`).join("");
+  resultBox.style.display="block";
+}
+</script>
+</body>
+</html>
