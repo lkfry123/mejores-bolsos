@@ -4,24 +4,6 @@
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TCG7SMDD');</script>
 <!-- End Google Tag Manager -->
-
-
-
-    
-    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
-
-    
-    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
-
-    
-    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
-
-    
-    <!-- GA4 is configured in GTM (Container GTM-TCG7SMDD) using Measurement ID G-H1Q1KL01RP -->
-
-    
-    <!-- GA4 is configured in GTM () using Measurement ID G-H1Q1KL01RP -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Flicker Test - Affordable Handbags</title>
@@ -33,21 +15,18 @@
             margin: 0 auto;
             padding: 2rem;
         }
-        
         .test-section {
             margin: 4rem 0;
             padding: 2rem;
             background: #f8f9fa;
             border-radius: 12px;
         }
-        
         .test-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
-        
         .test-card {
             background: white;
             padding: 2rem;
@@ -55,12 +34,10 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
         .test-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
-        
         .performance-indicator {
             position: fixed;
             top: 10px;
@@ -79,18 +56,12 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCG7SMDD"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-    
-
-    
-
     <!-- Performance indicator -->
     <div class="performance-indicator" id="perf-indicator">
         FPS: <span id="fps">60</span> | 
         Paint: <span id="paint-count">0</span> | 
         Layout: <span id="layout-count">0</span>
     </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -105,11 +76,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
         </div>
     </nav>
-
     <div class="test-container">
         <h1>Scroll Flicker Test Page</h1>
         <p>This page is designed to test scroll performance. Scroll up and down to check for flicker issues.</p>
-        
         <div class="test-section">
             <h2>Test Section 1 - Article Cards</h2>
             <div class="test-cards">
@@ -127,7 +96,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-
         <div class="test-section">
             <h2>Test Section 2 - Category Cards</h2>
             <div class="test-cards">
@@ -145,7 +113,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-
         <!-- Add more content to enable scrolling -->
         <div class="test-section">
             <h2>Test Section 3 - More Content</h2>
@@ -164,7 +131,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-
         <div class="test-section">
             <h2>Test Section 4 - Even More Content</h2>
             <div class="test-cards">
@@ -183,7 +149,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </div>
-
     <script src="assets/script.js"></script>
     <script>
         // Performance monitoring
@@ -191,20 +156,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         let lastTime = performance.now();
         let paintCount = 0;
         let layoutCount = 0;
-
         function updatePerformance() {
             frameCount++;
             const now = performance.now();
             const fps = Math.round(1000 / (now - lastTime));
-            
             document.getElementById('fps').textContent = fps;
             document.getElementById('paint-count').textContent = paintCount;
             document.getElementById('layout-count').textContent = layoutCount;
-            
             lastTime = now;
             requestAnimationFrame(updatePerformance);
         }
-
         // Monitor paint and layout events
         if (window.PerformanceObserver) {
             const observer = new PerformanceObserver((list) => {
@@ -216,10 +177,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     }
                 }
             });
-            
             observer.observe({ entryTypes: ['paint', 'measure'] });
         }
-
         // Start performance monitoring
         requestAnimationFrame(updatePerformance);
     </script>
