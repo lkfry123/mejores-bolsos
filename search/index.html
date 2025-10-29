@@ -308,21 +308,58 @@
 
         if (!q) return [];
 
-        const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+        const query = q.toLowerCase().trim();
+        const terms = query.split(/\s+/).filter(Boolean);
+        
+        if (terms.length === 0) return [];
 
-        return items.filter(it => {
-
-          const hay = [
-
-            it.title, it.url, it.category,
-
-            ...(it.tags || []), (it.excerpt || '')
-
+        // Enhanced search with scoring
+        const results = items.map(item => {
+          const content = [
+            item.title || '',
+            item.category || '',
+            ...(item.tags || []),
+            item.excerpt || ''
           ].join(' ').toLowerCase();
-
-          return terms.every(t => hay.includes(t));
-
-        });
+          
+          let score = 0;
+          
+          // Exact phrase match (highest priority)
+          if (content.includes(query)) {
+            score += 100;
+          }
+          
+          // Title match (high priority)
+          const title = (item.title || '').toLowerCase();
+          if (title.includes(query)) {
+            score += 50;
+          }
+          
+          // Individual term matches
+          let termMatches = 0;
+          for (const term of terms) {
+            if (content.includes(term)) {
+              termMatches++;
+              if (title.includes(term)) {
+                score += 20;
+              } else {
+                score += 10;
+              }
+            }
+          }
+          
+          // All terms must be present
+          if (termMatches === terms.length) {
+            score += 30;
+          }
+          
+          return { item, score };
+        }).filter(result => result.score > 0);
+        
+        // Sort by score (highest first)
+        results.sort((a, b) => b.score - a.score);
+        
+        return results.map(result => result.item);
 
       }
 

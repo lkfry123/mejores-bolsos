@@ -115,25 +115,14 @@ def find_article_files():
     """Find all article and category HTML files."""
     files = []
     
-    # Articles directory
-    articles_dir = Path("articles")
-    if articles_dir.exists():
-        for file_path in articles_dir.rglob("*.html"):
-            if not file_path.name.startswith('.') and '.bak_' not in str(file_path):
-                files.append(file_path)
-    
-    # Categories directory
-    categories_dir = Path("categories")
-    if categories_dir.exists():
-        for file_path in categories_dir.rglob("*.html"):
-            if not file_path.name.startswith('.') and '.bak_' not in str(file_path):
-                files.append(file_path)
-    
-    # Main pages
-    main_pages = ["index.html", "privacy-policy.html", "affiliate-disclosure.html"]
-    for page in main_pages:
-        if os.path.exists(page):
-            files.append(Path(page))
+    # Scan all HTML files recursively, excluding backup files and tools
+    for file_path in Path(".").rglob("*.html"):
+        if (not file_path.name.startswith('.') and 
+            '.bak_' not in str(file_path) and
+            'tools' not in str(file_path) and
+            'scripts' not in str(file_path) and
+            'node_modules' not in str(file_path)):
+            files.append(file_path)
     
     return files
 
