@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initExternalLinks();
     initScrollEffects();
+    initLanguageSwitcherReveal();
 });
 
 // ===== MENÚ MÓVIL =====
@@ -1066,6 +1067,27 @@ function initScrollEffects() {
     // Observar elementos para animación
     const animateElements = document.querySelectorAll('.category-card, .article-card, .section-title');
     animateElements.forEach(el => observer.observe(el));
+}
+
+// Mostrar el conmutador de idioma solo al hacer scroll
+function initLanguageSwitcherReveal() {
+    const switcher = document.querySelector('.language-switcher');
+    if (!switcher) return;
+    // oculto inicialmente
+    switcher.classList.add('hidden');
+    const threshold = 140; // px desde el top
+
+    const onScroll = () => {
+        const y = window.pageYOffset || document.documentElement.scrollTop;
+        if (y > threshold) {
+            switcher.classList.remove('hidden');
+        } else {
+            switcher.classList.add('hidden');
+        }
+    };
+    // primer chequeo
+    onScroll();
+    window.addEventListener('scroll', throttle(onScroll, 50));
 }
 
 // ===== UTILIDADES ADICIONALES =====
