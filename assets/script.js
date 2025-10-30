@@ -800,6 +800,10 @@ function initCategoryFiltering() {
                 
                 // Filtrar artículos en la misma página
                 filterArticlesByCategory(category, articleCards);
+                // Forzar actualización de paginación tras el filtrado
+                if (window.updatePaginationAfterFilter) {
+                    window.updatePaginationAfterFilter();
+                }
                 
                 return false;
             });
@@ -900,8 +904,13 @@ function filterArticlesByCategory(category, articleCards) {
     // Actualizar la variable global para paginación
     window.currentFilteredArticles = filteredCards;
     
-    // ACTUALIZAR PAGINACIÓN DIRECTAMENTE AQUÍ
-    updatePaginationAfterFilter();
+    // ACTUALIZAR PAGINACIÓN DIRECTAMENTE AQUÍ (vía global expuesta por initPagination)
+    if (window.updatePaginationAfterFilter) {
+        window.updatePaginationAfterFilter();
+    }
+
+    // Guardar categoría seleccionada para la paginación basada en categoría
+    window.currentCategory = category;
 }
 
 function showNoCategoryResults(category) {
@@ -1211,12 +1220,12 @@ window.addEventListener('scroll', throttle(function() {
 // ===== PAGINACIÓN =====
 function initPagination() {
     const articlesPerPage = 10;
-    const articleCards = document.querySelectorAll('.article-card');
-    const totalArticles = articleCards.length;
-    const totalPages = Math.ceil(totalArticles / articlesPerPage);
+    let articleCards = Array.from(document.querySelectorAll('.article-card'));
+    let totalPages = Math.ceil(articleCards.length / articlesPerPage);
     
     let currentPage = 1;
     let currentCategory = 'todos';
+    window.currentCategory = currentCategory;
     
     // Crear elementos de paginación dinámicamente
     createPaginationControls(totalPages);
@@ -1324,24 +1333,19 @@ function initPagination() {
     // The pagination update is now called directly from filterArticlesByCategory
     
     function updatePaginationAfterFilter() {
-        // Obtener artículos visibles del DOM
-        const allCards = document.querySelectorAll('.article-card');
-        const visibleCards = [];
-        
-        allCards.forEach(card => {
-            const style = window.getComputedStyle(card);
-            if (style.display !== 'none' && card.offsetParent !== null) {
-                visibleCards.push(card);
-            }
-        });
+        // Recalcular artículos a partir de la categoría seleccionada, no del estilo visual
+        const allCards = Array.from(document.querySelectorAll('.article-card'));
+        const selectedCategory = window.currentCategory || currentCategory || 'todos';
+        const visibleCards = selectedCategory === 'todos'
+            ? allCards
+            : allCards.filter(card => card.getAttribute('data-category') === selectedCategory);
         
         // Actualizar array de artículos
-        articleCards.length = 0;
-        visibleCards.forEach(card => articleCards.push(card));
+        articleCards = visibleCards;
         
         // Recalcular paginación
         const totalArticles = articleCards.length;
-        const totalPages = Math.ceil(totalArticles / articlesPerPage);
+        totalPages = Math.ceil(totalArticles / articlesPerPage);
         
         // Actualizar controles de paginación
         updatePaginationControls(totalPages);
@@ -1352,6 +1356,10 @@ function initPagination() {
         // Mostrar primera página
         showPage(1);
     }
+
+    // Exponer el actualizador de paginación de forma global para que
+    // pueda ser invocado desde el filtrado de categorías
+    window.updatePaginationAfterFilter = updatePaginationAfterFilter;
     
     function updatePaginationControls(totalPages) {
         const paginationNumbers = document.querySelector('.pagination-numbers');
