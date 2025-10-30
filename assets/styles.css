@@ -1343,7 +1343,7 @@ mark {
 
 .footer-section h3,
 .footer-section h4 {
-    color: var(--color-negro);
+    color: #0e7a6d;
     margin-bottom: var(--spacing-md);
     font-weight: 600;
 }
@@ -1362,13 +1362,13 @@ mark {
 }
 
 .footer-section ul li a {
-    color: var(--color-gris-medio);
+    color: #0e7a6d;
     text-decoration: none;
     transition: var(--transition);
 }
 
 .footer-section ul li a:hover {
-    color: var(--color-terracota);
+    color: #0a5f54;
 }
 
 .footer-bottom {
@@ -1579,13 +1579,13 @@ input:focus-visible {
 
 /* Tabla de contenido */
 .table-of-contents {
-    position: sticky;
-    top: 100px;
+    position: static;
     background-color: var(--color-blanco);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     height: fit-content;
+    margin-bottom: var(--spacing-lg);
 }
 
 .table-of-contents h3 {
@@ -2124,7 +2124,7 @@ input:focus-visible {
     left: 0;
     width: 30px;
     height: 2px;
-    background-color: var(--color-terracota);
+    background-color: #0e7a6d;
     transition: width 0.3s ease;
 }
 
