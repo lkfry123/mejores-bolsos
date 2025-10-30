@@ -808,31 +808,23 @@ function initCategoryFiltering() {
 }
 
 function filterArticlesByCategory(category, articleCards) {
+    console.log('Filtering by category:', category);
     let hasResults = false;
     const filteredCards = [];
     
     // Función para mostrar animación de fade in
     function showCard(card) {
         card.style.display = 'block';
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 10);
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     }
 
     // Función para ocultar tarjeta
     function hideCard(card) {
-        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.display = 'none';
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            card.style.display = 'none';
-        }, 300);
     }
     
     // Función para extraer fecha del artículo
@@ -849,6 +841,7 @@ function filterArticlesByCategory(category, articleCards) {
     // Primero, filtrar artículos por categoría
     articleCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
+        console.log('Article category:', cardCategory, 'Filter category:', category);
         
         if (category === 'todos' || cardCategory === category) {
             filteredCards.push(card);
@@ -857,6 +850,9 @@ function filterArticlesByCategory(category, articleCards) {
             hideCard(card);
         }
     });
+    
+    console.log('Filtered cards:', filteredCards.length);
+    console.log('Has results:', hasResults);
     
     // Si hay resultados, ordenar por fecha (más reciente primero)
     if (hasResults && filteredCards.length > 0) {
@@ -889,12 +885,23 @@ function filterArticlesByCategory(category, articleCards) {
     }
     
     // Mostrar mensaje si no hay resultados para la categoría
-    if (!hasResults && category !== 'todos') {
+    if (!hasResults && category !== 'todos' && filteredCards.length === 0) {
+        console.log('No results found, showing no-results message');
         showNoCategoryResults(category);
+    } else if (hasResults && filteredCards.length > 0) {
+        console.log('Results found, hiding any existing no-results message');
+        // Hide any existing no-results message
+        const existingMsg = document.getElementById('no-category-results');
+        if (existingMsg) {
+            existingMsg.remove();
+        }
     }
     
     // Actualizar la variable global para paginación
     window.currentFilteredArticles = filteredCards;
+    
+    // ACTUALIZAR PAGINACIÓN DIRECTAMENTE AQUÍ
+    updatePaginationAfterFilter();
 }
 
 function showNoCategoryResults(category) {
@@ -1259,7 +1266,7 @@ function initPagination() {
         
         // Calcular qué artículos mostrar
         const startIndex = (page - 1) * articlesPerPage;
-        const endIndex = Math.min(startIndex + articlesPerPage, totalArticles);
+        const endIndex = Math.min(startIndex + articlesPerPage, articleCards.length);
         
         // Mostrar solo los artículos de la página actual
         for (let i = startIndex; i < endIndex; i++) {
@@ -1272,7 +1279,7 @@ function initPagination() {
         updatePaginationButtons();
         
         // Actualizar información de paginación
-        updatePaginationInfo(startIndex + 1, endIndex, totalArticles);
+        updatePaginationText(startIndex + 1, endIndex, articleCards.length);
         
         // Scroll hacia arriba
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1307,54 +1314,84 @@ function initPagination() {
         if (showingRange) {
             showingRange.textContent = `${start}-${end}`;
         }
+        
         if (totalArticles) {
             totalArticles.textContent = total;
         }
     }
     
-    // Integrar con el filtrado existente
-    const originalFilterFunction = window.filterArticlesByCategory;
-    if (originalFilterFunction) {
-        window.filterArticlesByCategory = function(category, cards) {
-            currentCategory = category;
-            // Aplicar filtro
-            originalFilterFunction(category, cards);
-            // Actualizar paginación con los artículos filtrados
-            setTimeout(() => {
-                updatePaginationWithFilteredArticles();
-            }, 100); // Pequeño delay para que el filtro se complete
-        };
-    }
+    // PAGINATION INTEGRATION - SIMPLIFIED
+    // The pagination update is now called directly from filterArticlesByCategory
     
-    function updatePaginationWithFilteredArticles() {
-        // Usar los artículos filtrados si están disponibles
-        if (window.currentFilteredArticles && window.currentFilteredArticles.length > 0) {
-            // Actualizar la lista de artículos para paginación
-            articleCards.length = 0;
-            window.currentFilteredArticles.forEach(card => articleCards.push(card));
-        } else {
-            // Fallback: obtener artículos visibles
-            const allCards = document.querySelectorAll('.article-card');
-            const visibleCards = Array.from(allCards).filter(card => {
-                const computedStyle = window.getComputedStyle(card);
-                return computedStyle.display !== 'none' && 
-                       computedStyle.visibility !== 'hidden' &&
-                       card.offsetParent !== null;
-            });
-            
-            articleCards.length = 0;
-            visibleCards.forEach(card => articleCards.push(card));
-        }
+    function updatePaginationAfterFilter() {
+        // Obtener artículos visibles del DOM
+        const allCards = document.querySelectorAll('.article-card');
+        const visibleCards = [];
+        
+        allCards.forEach(card => {
+            const style = window.getComputedStyle(card);
+            if (style.display !== 'none' && card.offsetParent !== null) {
+                visibleCards.push(card);
+            }
+        });
+        
+        // Actualizar array de artículos
+        articleCards.length = 0;
+        visibleCards.forEach(card => articleCards.push(card));
         
         // Recalcular paginación
-        const newTotalArticles = articleCards.length;
-        const newTotalPages = Math.ceil(newTotalArticles / articlesPerPage);
+        const totalArticles = articleCards.length;
+        const totalPages = Math.ceil(totalArticles / articlesPerPage);
         
         // Actualizar controles de paginación
-        createPaginationControls(newTotalPages);
+        updatePaginationControls(totalPages);
+        
+        // Actualizar información de paginación
+        updatePaginationText(1, Math.min(articlesPerPage, totalArticles), totalArticles);
         
         // Mostrar primera página
         showPage(1);
+    }
+    
+    function updatePaginationControls(totalPages) {
+        const paginationNumbers = document.querySelector('.pagination-numbers');
+        if (!paginationNumbers) return;
+        
+        // Limpiar botones existentes
+        paginationNumbers.innerHTML = '';
+        
+        // Crear botones de página
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = 'pagination-btn page-btn';
+            pageBtn.dataset.page = i;
+            pageBtn.textContent = i;
+            if (i === 1) pageBtn.classList.add('active');
+            paginationNumbers.appendChild(pageBtn);
+        }
+        
+        // Actualizar botones prev/next
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = totalPages <= 1;
+    }
+    
+    function updatePaginationText(start, end, total) {
+        const showingRange = document.getElementById('showing-range');
+        const totalArticles = document.getElementById('total-articles');
+        
+        if (showingRange) {
+            showingRange.textContent = `${start}-${end}`;
+            showingRange.setAttribute('data-start', start);
+            showingRange.setAttribute('data-end', end);
+        }
+        
+        if (totalArticles) {
+            totalArticles.textContent = total;
+            totalArticles.setAttribute('data-total', total);
+        }
     }
 }
 
