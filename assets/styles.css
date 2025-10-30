@@ -2341,3 +2341,99 @@ input:focus-visible {
 .ah-search__btn{background:var(--brand,#0e7a6d);color:#fff;border:0;padding:6px 10px;border-radius:6px;cursor:pointer;flex-shrink:0}
 @media (max-width:992px){.nav-menu{gap:var(--spacing-xs)}.nav-link{font-size:13px;padding:var(--spacing-xs) 6px}.ah-search-container{margin-left:8px}.ah-search__input{min-width:150px}}
 @media (max-width:768px){.ah-search-container{margin-left:0;align-items:stretch}.ah-search-title{text-align:left}.ah-search{width:100%}.ah-search__input{flex:1;min-width:auto}}
+
+/* ===== Pagination Styles ===== */
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #f8f9fa;
+    border-color: #0e7a6d;
+    color: #0e7a6d;
+}
+
+.pagination-btn.active {
+    background: #0e7a6d;
+    border-color: #0e7a6d;
+    color: #fff;
+}
+
+.pagination-btn:disabled {
+    background: #f8f9fa;
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #e9ecef;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 4px;
+}
+
+.pagination-info {
+    text-align: center;
+}
+
+.pagination-text {
+    color: #666;
+    font-size: 14px;
+}
+
+#showing-range,
+#total-articles {
+    font-weight: 600;
+    color: #0e7a6d;
+}
+
+/* Mobile pagination */
+@media (max-width: 768px) {
+    .pagination-container {
+        margin-top: 30px;
+        padding: 16px 0;
+    }
+    
+    .pagination {
+        gap: 4px;
+    }
+    
+    .pagination-btn {
+        min-width: 36px;
+        height: 36px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+    
+    .pagination-text {
+        font-size: 13px;
+    }
+}
