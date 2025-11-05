@@ -8,9 +8,19 @@
     "tags:dry": "node scripts/fix-tags.mjs --dry",
     "tags:apply": "node scripts/fix-tags.mjs",
     "pages:dry": "node scripts/add-basic-pages.mjs --dry",
-    "pages:apply": "node scripts/add-basic-pages.mjs"
+    "pages:apply": "node scripts/add-basic-pages.mjs",
+    "fix:canon": "node tools/fix-canonicals.mjs",
+    "propose:redirects": "node tools/propose-redirects.mjs"
   },
-  "keywords": ["handbags", "bags", "sitemap", "seo"],
+  "keywords": [
+    "handbags",
+    "bags",
+    "sitemap",
+    "seo"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^1.1.2"
+  }
 }
