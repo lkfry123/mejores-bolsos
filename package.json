@@ -10,7 +10,9 @@
     "pages:dry": "node scripts/add-basic-pages.mjs --dry",
     "pages:apply": "node scripts/add-basic-pages.mjs",
     "fix:canon": "node tools/fix-canonicals.mjs",
-    "propose:redirects": "node tools/propose-redirects.mjs"
+    "propose:redirects": "node tools/propose-redirects.mjs",
+    "report:canon": "node tools/report-canonicals.mjs",
+    "check:sitemap": "node tools/check-sitemap.mjs"
   },
   "keywords": [
     "handbags",

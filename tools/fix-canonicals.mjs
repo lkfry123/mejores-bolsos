@@ -21,7 +21,23 @@ function ensureSlashPathname(pn) {
 function fileToPathname(file) {
   // /dist/about/index.html -> /about/
   // /dist/bag.html        -> /bag/
-  let rel = file.replace(new RegExp(`^${OUT}`), '');
+  // about/index.html      -> /about/
+  let rel = file;
+  
+  // If OUT is ".", make path relative to current working directory
+  if (OUT === '.') {
+    const cwd = process.cwd();
+    if (file.startsWith(cwd)) {
+      rel = file.slice(cwd.length);
+    } else {
+      // Try path.relative approach
+      rel = path.relative(OUT, file);
+    }
+  } else {
+    // For other OUT directories, use regex replacement
+    rel = file.replace(new RegExp(`^${OUT}`), '');
+  }
+  
   rel = rel.replace(/\\/g, '/');
   if (!rel.startsWith('/')) rel = '/' + rel;
   rel = rel.replace(/\/index\.html$/i, '/');
