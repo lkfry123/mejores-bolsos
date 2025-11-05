@@ -518,3 +518,103 @@ force = true
   to = "/backpacks/osprey-inclusive-womens-backpack/"
   status = 301
   force = true
+
+# APPEND: Clean up 404 redirects — Safety net for broken links
+# Spanish article categories that don't exist → redirect to main Spanish categories
+[[redirects]]
+  from = "/es/articulos/handbags"
+  to = "/es/categorias/bolsos-de-mano/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/handbags/"
+  to = "/es/categorias/bolsos-de-mano/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/backpacks"
+  to = "/es/categorias/mochilas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/backpacks/"
+  to = "/es/categorias/mochilas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/wallets"
+  to = "/es/categorias/carteras/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/wallets/"
+  to = "/es/categorias/carteras/"
+  status = 301
+  force = true
+
+# Wrong path for Spanish article → redirect to correct Spanish path
+[[redirects]]
+  from = "/articles/3-tote-bags-reutilizables-compras-2025"
+  to = "/es/articulos/3-tote-bags-reutilizables-compras-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/3-tote-bags-reutilizables-compras-2025/"
+  to = "/es/articulos/3-tote-bags-reutilizables-compras-2025/"
+  status = 301
+  force = true
+
+# English categories under wrong /categorias/ path → redirect to correct /categories/
+[[redirects]]
+  from = "/categorias/bolsos-de-mano"
+  to = "/categories/handbags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categorias/bolsos-de-mano/"
+  to = "/categories/handbags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categorias/mochilas"
+  to = "/categories/backpacks/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categorias/mochilas/"
+  to = "/categories/backpacks/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categorias/carteras"
+  to = "/categories/wallets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categorias/carteras/"
+  to = "/categories/wallets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categorias/tote-bags"
+  to = "/categories/tote-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categorias/tote-bags/"
+  to = "/categories/tote-bags/"
+  status = 301
+  force = true
