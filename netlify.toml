@@ -618,3 +618,28 @@ force = true
   to = "/categories/tote-bags/"
   status = 301
   force = true
+
+## --- Trader Joe's mini tote (EN/ES) redirects ---
+[[redirects]]
+  from = "/articles/trader-joes-mini-tote-bag"
+  to = "/articles/trader-joes-mini-tote-bag/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/trader-joes-mini-tote-bag.html"
+  to = "/articles/trader-joes-mini-tote-bag/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/trader-joes-mini-tote-bag"
+  to = "/es/articulos/trader-joes-mini-tote-bag/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/trader-joes-mini-tote-bag.html"
+  to = "/es/articulos/trader-joes-mini-tote-bag/"
+  status = 301
+  force = true
