@@ -32,6 +32,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <style>
+        .social-share {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f4e4bc 100%);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            border: 1px solid rgba(232, 180, 160, 0.3);
+        }
+        .social-share span {
+            font-size: 13px;
+            color: #6c757d;
+            font-weight: 600;
+        }
+        .social-share .share-btn {
+            background: white;
+            border: 1px solid rgba(232, 180, 160, 0.4);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            color: #495057;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .social-share .share-btn:hover {
+            transform: translateY(-1px);
+            border-color: #e8b4a0;
+            background: linear-gradient(135deg, #e8b4a0 0%, #d4a574 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(232, 180, 160, 0.3);
+        }
+    </style>
+    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -126,6 +163,26 @@
             <article class="main-content">
                 <div class="article-image-container">
                     <img src="/photos/TraderJoesminibag.png.avif" alt="Trader Joe's mini canvas tote in pastel colors" class="article-featured-image" loading="eager">
+                </div>
+
+                <!-- Social Share -->
+                <div class="social-share" style="margin-bottom: 2.5rem;">
+                    <span>Share this article:</span>
+                    <a id="pin-share" class="share-btn" target="_blank" rel="noopener" href="#" aria-label="Share on Pinterest">
+                        📌 Pinterest
+                    </a>
+                    <a id="fb-share" class="share-btn" target="_blank" rel="noopener" href="#" aria-label="Share on Facebook">
+                        👍 Facebook
+                    </a>
+                    <button id="insta-share" class="share-btn" type="button" aria-label="Share on Instagram">
+                        📷 Share
+                    </button>
+                    <a id="email-share" class="share-btn" href="#" aria-label="Share via Email">
+                        ✉️ Email
+                    </a>
+                    <button id="copy-link" class="share-btn" type="button" aria-label="Copy link">
+                        🔗 Copy Link
+                    </button>
                 </div>
 
                 <p class="article-intro">It sounds unlikely: a plain canvas tote from a grocery chain becomes a must-have accessory. But that's what happened with the Trader Joe's mini tote—moving from checkout line to cultural moment overnight.</p>
@@ -274,5 +331,58 @@
     </footer>
 
     <script src="/assets/script.js"></script>
+    
+    <!-- Social Share Script -->
+    <script>
+      (function(){
+        const url = "https://affordable-handbags.com/articles/trader-joes-mini-tote-bag/";
+        const img = "https://affordable-handbags.com/photos/TraderJoesminibag.png.avif";
+        const title = "How the Trader Joe's Mini Tote Became the Grocery Store \"It-Bag\"";
+        const desc = "The $3 Trader Joe's mini tote sold out nationwide—and proved that hype doesn't need a luxury label. Here's how a grocery bag became a fashion moment.";
+        // Pinterest
+        const pin = document.getElementById('pin-share');
+        if (pin) {
+          pin.href = "https://www.pinterest.com/pin/create/button/?url="
+            + encodeURIComponent(url) + "&media=" + encodeURIComponent(img)
+            + "&description=" + encodeURIComponent(desc);
+        }
+        // Facebook
+        const fb = document.getElementById('fb-share');
+        if (fb) {
+          fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+        }
+        // Email
+        const email = document.getElementById('email-share');
+        if (email) {
+          email.href = "mailto:?subject=" + encodeURIComponent(title)
+            + "&body=" + encodeURIComponent(desc + "\n\n" + url);
+        }
+        // Web Share API (Instagram/Apps)
+        const btn = document.getElementById('insta-share');
+        if (btn && navigator.share) {
+          btn.addEventListener('click', async () => {
+            try { 
+              await navigator.share({ title: title, text: desc, url: url }); 
+            } catch (e) {}
+          });
+        } else if (btn) { 
+          btn.style.display = 'none'; 
+        }
+        // Copy link
+        const copyBtn = document.getElementById('copy-link');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', async () => {
+            try { 
+              await navigator.clipboard.writeText(url); 
+              const originalText = copyBtn.textContent;
+              copyBtn.textContent = '✓ Copied!';
+              setTimeout(() => {
+                copyBtn.textContent = originalText;
+              }, 2000);
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
 </body></html>
 
