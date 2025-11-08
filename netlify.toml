@@ -646,25 +646,37 @@ force = true
 
 ## --- Bearista cup article redirects (EN/ES) ---
 [[redirects]]
-  from = "/articles/tote-bags/starbucks-bearista-cup-trend.html"
-  to = "/articles/tote-bags/starbucks-bearista-cup-trend/"
+  from = "/articles/starbucks-bearista-cup-trend"
+  to = "/articles/starbucks-bearista-cup-trend/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/starbucks-bearista-cup-trend"
+  to = "/es/articulos/starbucks-bearista-cup-trend/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/articles/tote-bags/starbucks-bearista-cup-trend"
-  to = "/articles/tote-bags/starbucks-bearista-cup-trend/"
+  to = "/articles/starbucks-bearista-cup-trend/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/es/articulos/tote-bags/starbucks-bearista-cup-trend.html"
-  to = "/es/articulos/tote-bags/starbucks-bearista-cup-trend/"
+  from = "/articles/tote-bags/starbucks-bearista-cup-trend.html"
+  to = "/articles/starbucks-bearista-cup-trend/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/articulos/tote-bags/starbucks-bearista-cup-trend"
-  to = "/es/articulos/tote-bags/starbucks-bearista-cup-trend/"
+  to = "/es/articulos/starbucks-bearista-cup-trend/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/tote-bags/starbucks-bearista-cup-trend.html"
+  to = "/es/articulos/starbucks-bearista-cup-trend/"
   status = 301
   force = true
