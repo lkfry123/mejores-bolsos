@@ -643,3 +643,28 @@ force = true
   to = "/es/articulos/trader-joes-mini-tote-bag/"
   status = 301
   force = true
+
+## --- Bearista cup article redirects (EN/ES) ---
+[[redirects]]
+  from = "/articles/tote-bags/starbucks-bearista-cup-trend.html"
+  to = "/articles/tote-bags/starbucks-bearista-cup-trend/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/tote-bags/starbucks-bearista-cup-trend"
+  to = "/articles/tote-bags/starbucks-bearista-cup-trend/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/tote-bags/starbucks-bearista-cup-trend.html"
+  to = "/es/articulos/tote-bags/starbucks-bearista-cup-trend/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/articulos/tote-bags/starbucks-bearista-cup-trend"
+  to = "/es/articulos/tote-bags/starbucks-bearista-cup-trend/"
+  status = 301
+  force = true
