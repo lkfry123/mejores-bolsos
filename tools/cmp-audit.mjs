@@ -18,7 +18,7 @@ function hasKeys(jsonTxt, keys){
   const report = [];
 
   // 1) CMP hints (static scan)
-  const tcfapiRefs = findAll(/__tcfapi|tcfapi|iabeurope|consentmanager|oneTrust|quantcast|didomi|fundingchoices/ig, html);
+  const tcfapiRefs = findAll(/__tcfapi|tcfapi|iabeurope|consentmanager|oneTrust|quantcast|didomi|fundingchoices|googlefc|admob/ig, html);
   report.push(`CMP hints found: ${tcfapiRefs.length} (${tcfapiRefs.slice(0,5).map(x=>x.m[0]).join(', ') || 'none'})`);
 
   // 2) GTM present?
@@ -42,7 +42,7 @@ function hasKeys(jsonTxt, keys){
 
   // 4) Heuristic: CMP before GTM?
   const cmpIdx = Math.min(
-    ...[ '__tcfapi', 'tcfapi', 'FundingChoices', 'OneTrust', 'Didomi', 'Quantcast' ]
+    ...[ '__tcfapi', 'tcfapi', 'FundingChoices', 'googlefc', 'OneTrust', 'Didomi', 'Quantcast' ]
       .map(k => idx(html, k))
       .filter(v => v !== null)
   );

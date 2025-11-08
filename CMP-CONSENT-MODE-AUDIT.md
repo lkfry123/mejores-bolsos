@@ -58,12 +58,21 @@ The static HTML audit has been completed. The site currently **DOES NOT** have C
 
 ## ✅ Recommended Solution: Implement Consent Mode v2
 
-### Option 1: Google Funding Choices (Free, Easy)
+### Option 1: Google AdMob CMP (Free, Easy) - Formerly "Funding Choices"
 
 **Best for:** Sites already using AdSense
 
+**Setup via Google AdMob:**
+1. Go to https://apps.admob.com/
+2. Navigate to Privacy & messaging → EU consent
+3. Create a consent message for GDPR compliance
+4. Get your implementation code
+
+**Implementation code structure:**
+
 ```html
 <!-- Add BEFORE GTM snippet -->
+<!-- Google AdMob CMP will automatically handle Consent Mode v2 -->
 <script async src="https://fundingchoicesmessages.google.com/i/pub-8379967738924229?ers=1" nonce="YOUR_NONCE"></script>
 <script nonce="YOUR_NONCE">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
 
@@ -91,6 +100,8 @@ The static HTML audit has been completed. The site currently **DOES NOT** have C
 
 <!-- THEN load GTM -->
 ```
+
+**Note:** Google AdMob's consent solution integrates with the IAB Transparency & Consent Framework (TCF) and automatically updates consent signals.
 
 ### Option 2: Third-Party CMP
 
@@ -134,7 +145,7 @@ cp tools/cmp-test.html cmp-test.html
 
 ## 📝 Implementation Checklist
 
-- [ ] Choose a CMP solution (Funding Choices recommended)
+- [ ] Choose a CMP solution (Google AdMob CMP recommended)
 - [ ] Add Consent Mode v2 initialization BEFORE GTM
 - [ ] Configure GTM tags to respect consent:
   - [ ] GA4 tag: Set "Consent Settings" → Require consent for ad_storage, analytics_storage
@@ -151,8 +162,9 @@ cp tools/cmp-test.html cmp-test.html
 
 - [Google Consent Mode v2 Guide](https://support.google.com/tagmanager/answer/10718549)
 - [AdSense GDPR Compliance](https://support.google.com/adsense/answer/9803371)
-- [Funding Choices Setup](https://support.google.com/fundingchoices/answer/9180084)
+- [Google AdMob Privacy & Messaging](https://support.google.com/admob/answer/10113207) (formerly Funding Choices)
 - [GTM Consent Mode Implementation](https://developers.google.com/tag-platform/security/guides/consent)
+- [IAB TCF v2.2 Framework](https://iabeurope.eu/tcf-2-0/)
 
 ---
 
