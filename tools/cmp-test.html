@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CMP Test — EEA/UK/CH (Consent Mode v2)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Consent Mode default (simulate EEA/UK/CH via region param) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  // DEFAULT: deny everything for EEA/UK/CH
+  gtag('consent', 'default', {
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','CH','GB'] // EEA + UK + CH
+  });
+
+  // Helper UI feedback
+  function logConsent(state){
+    const out = document.getElementById('cm-log');
+    out.textContent = JSON.stringify(state, null, 2);
+  }
+</script>
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id=GTM-TCG7SMDD'+dl; f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer');
+</script>
+<!-- End Google Tag Manager -->
+
+<style>
+  body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:0 auto;padding:1rem}
+  pre{background:#f6f6f6;border:1px solid #eee;padding:1rem;border-radius:8px}
+  button{padding:.6rem 1rem;border:1px solid #ccc;border-radius:8px;background:#fff;cursor:pointer;margin-right:.5rem}
+  button:hover{background:#f0f0f0}
+</style>
+</head>
+<body>
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCG7SMDD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<h1>Consent Mode v2 – Test Harness (EEA/UK/CH)</h1>
+<p>Use the buttons to simulate <strong>DENY</strong> or <strong>GRANT</strong>. Open <em>GTM Preview</em> and Browser DevTools → Network to verify behavior.</p>
+
+<div style="margin:.75rem 0;">
+  <button onclick="
+    gtag('consent','update', {
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+    logConsent({ad_user_data:'denied',ad_personalization:'denied',ad_storage:'denied',analytics_storage:'denied'});
+  ">Deny all</button>
+
+  <button onclick="
+    gtag('consent','update', {
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted'
+    });
+    logConsent({ad_user_data:'granted',ad_personalization:'granted',ad_storage:'granted',analytics_storage:'granted'});
+  ">Grant all</button>
+
+  <button onclick="
+    gtag('consent','update', {
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+    logConsent({reset:'EEA default denied'});
+  ">Reset to EEA default</button>
+</div>
+
+<h2>Current state (last action)</h2>
+<pre id="cm-log">{}</pre>
+
+<h2>What to verify</h2>
+<ol>
+  <li>Open <strong>GTM Preview</strong>, connect this page, and watch which tags fire:
+    <ul>
+      <li>With <em>Deny all</em>: only strictly necessary tags should run. GA4/AdSense must be blocked or load in limited/gray mode.</li>
+      <li>With <em>Grant all</em>: GA4/AdSense can fire normally.</li>
+    </ul>
+  </li>
+  <li>DevTools → Network:
+    <ul>
+      <li>Pre-consent: no <code>collect</code> (GA4) requests with client identifiers; no personalized ads calls.</li>
+      <li>Post-consent (grant): GA4 <code>collect</code> and ads requests appear.</li>
+    </ul>
+  </li>
+</ol>
+
+</body>
+</html>
+
