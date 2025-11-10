@@ -13,7 +13,8 @@
     "propose:redirects": "node tools/propose-redirects.mjs",
     "report:canon": "node tools/report-canonicals.mjs",
     "check:sitemap": "node tools/check-sitemap.mjs",
-    "verify:canon": "node tools/verify-canonicals.mjs"
+    "verify:canon": "node tools/verify-canonicals.mjs",
+    "test:consent": "node tools/test-consent-adsense.mjs"
   },
   "keywords": [
     "handbags",
@@ -24,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cheerio": "^1.1.2"
+    "cheerio": "^1.1.2",
+    "puppeteer": "^24.29.1"
   }
 }
