@@ -64,7 +64,19 @@ function detectCMP($){
 
 function detectGTM($, gtmId){
   const order = findScriptsOrder($);
-  const hasGTM = order.some(src => new RegExp(`googletagmanager\\.com\\/gtm\\.js\\?id=${gtmId}`, "i").test(src));
+  // Check both external script src AND inline script content for GTM
+  let hasGTM = order.some(src => new RegExp(`googletagmanager\\.com\\/gtm\\.js\\?id=${gtmId}`, "i").test(src));
+  
+  // Also check inline scripts for GTM code
+  if (!hasGTM) {
+    $("script").each((_, el) => {
+      const content = $(el).html() || "";
+      if (content.includes("googletagmanager.com/gtm.js") && content.includes(gtmId)) {
+        hasGTM = true;
+      }
+    });
+  }
+  
   // Also check noscript iframe somewhere in body (not mandatory to be in head)
   const hasNoscript = $("noscript iframe[src*='googletagmanager.com/ns.html?id=']").length > 0;
   return { hasGTM, hasNoscript, order };

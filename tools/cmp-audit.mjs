@@ -21,9 +21,9 @@ function hasKeys(jsonTxt, keys){
   const tcfapiRefs = findAll(/__tcfapi|tcfapi|iabeurope|consentmanager|oneTrust|quantcast|didomi|fundingchoices|googlefc|admob/ig, html);
   report.push(`CMP hints found: ${tcfapiRefs.length} (${tcfapiRefs.slice(0,5).map(x=>x.m[0]).join(', ') || 'none'})`);
 
-  // 2) GTM present?
-  const gtmScript = idx(html, 'googletagmanager.com/gtm.js?id=');
-  report.push(`GTM snippet present: ${gtmScript !== null ? 'YES' : 'NO'}`);
+  // 2) GTM present? (check for both inline and external script)
+  const gtmScript = idx(html, 'googletagmanager.com/gtm.js') !== null || idx(html, GTM_ID || 'GTM-') !== null;
+  report.push(`GTM snippet present: ${gtmScript ? 'YES' : 'NO'}`);
 
   // 3) Consent Mode default/update calls in HTML?
   //    Look for gtag('consent','default'...'analytics_storage'...)
